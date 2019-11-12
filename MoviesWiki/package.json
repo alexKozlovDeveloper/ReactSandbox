@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack --mode development",
+    "start": "webpack --mode development && webpack-dev-server",
     "build": "webpack --mode production",
-	"test": "jest"
+	"server": "webpack-dev-server",
+    "test": "jest"
   },
   "author": "",
   "license": "ISC",
@@ -22,7 +23,8 @@
     "react-router": "^5.1.2",
     "react-test-renderer": "^16.11.0",
     "redux": "^4.0.4",
-    "webpack": "^4.41.2"
+    "webpack": "^4.41.2",
+    "webpack-dev-server": "^3.9.0"
   },
   "devDependencies": {
     "@babel/core": "^7.7.0",
