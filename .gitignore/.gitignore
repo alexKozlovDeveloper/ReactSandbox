@@ -158,7 +158,7 @@ $RECYCLE.BIN/
 *.e2e
 AdamDemo.Web.Studio/Uploads
 
-node_modules
+MoviesWiki/node_modules/
 
 
 
