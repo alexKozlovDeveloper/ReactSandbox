@@ -8,12 +8,7 @@ let plugins = [new HtmlWebpackPlugin({
 
 let optimazers = new UglifyJsPlugin();
 
-const isProd = (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'production ');
-
-if(process.env.NODE_ENV === 'production') {
-	//plugins.push(new BabelMinifyWebpackPlugin());
-	//optimazers.push(new UglifyJsPlugin());
-}
+const isProd = (process.env.NODE_ENV === 'production');
 
 console.log("NODE_ENV '" + process.env.NODE_ENV + "'");
 
