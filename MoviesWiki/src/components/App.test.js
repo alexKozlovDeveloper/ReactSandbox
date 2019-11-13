@@ -9,15 +9,18 @@ test('My test Func', () => {
   let tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 
-  // manually trigger the callback
-  tree.props.onMouseEnter();
-  // re-rendering
+  const mouseArea = tree.children[1];
+
+  //console.log(' TREE !!! ' + JSON.stringify(mouseArea));
+
+  mouseArea.props.onMouseEnter();
+
   tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 
-  // manually trigger the callback
-  tree.props.onMouseLeave();
-  // re-rendering
+
+  mouseArea.props.onMouseLeave();
+
   tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });

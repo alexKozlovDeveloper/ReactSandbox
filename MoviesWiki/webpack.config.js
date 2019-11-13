@@ -20,7 +20,8 @@ module.exports = {
 	
 	output: {
 		filename: 'bundle.js',
-		path: isProd ? path.join(__dirname, 'prod') : path.join(__dirname, 'dev'),
+		//path: isProd ? path.join(__dirname, 'prod') : path.join(__dirname, 'dev'),
+		path: path.join(__dirname, 'dist'),
 	},
 	
 	optimization: isProd ? { minimizer: [optimazers] } : { },
