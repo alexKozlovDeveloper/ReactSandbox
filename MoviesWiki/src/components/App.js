@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 
+import Title from "./Title";
+import ItemBody from "./ItemBody";
+
 //import '../styles/App.css';
 
 class App extends Component {
@@ -22,15 +25,17 @@ class App extends Component {
 	handleClick() {
 		console.log('Click!');
 	}
-
+ 
     render() {
         return (
             <div onClick={this.handleClick}>
-                <h1>My React App!</h1>
+                <h1>My React App! 4</h1>
                 <div 
 				  onMouseEnter={this.handleMouseEnter} 
 				  onMouseLeave={this.handleMouseLeave} 
 				  >Mouse area</div>
+				  <Title name="abc"/>
+				  <ItemBody title="Kill Bill 2" genre="Action" image="img" releaseDate="2003" />
             </div>
         );
     }
