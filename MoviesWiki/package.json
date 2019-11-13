@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "SET NODE_ENV=development && cross-env webpack --mode development",
-    "build-prod": "cross-env NODE_ENV=production && webpack --mode production",
+    "build": "SET NODE_ENV=development&& webpack --mode development",
+    "build-prod": "SET NODE_ENV=production&& webpack --mode production",
     "server": "webpack-dev-server",
     "test": "jest"
   },

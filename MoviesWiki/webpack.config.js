@@ -8,25 +8,27 @@ let plugins = [new HtmlWebpackPlugin({
 
 let optimazers = new UglifyJsPlugin();
 
+const isProd = (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'production ');
+
 if(process.env.NODE_ENV === 'production') {
 	//plugins.push(new BabelMinifyWebpackPlugin());
 	//optimazers.push(new UglifyJsPlugin());
 }
 
+console.log("NODE_ENV '" + process.env.NODE_ENV + "'");
+
 module.exports = {
 	context: path.join(__dirname, 'src'),
 	entry: './index.js',
 		
-	devtool: process.env.NODE_ENV === 'production' ? 'none' : 'source-map',
+	devtool: isProd ? 'none' : 'source-map',
 	
 	output: {
 		filename: 'bundle.js',
-		path: path.join(__dirname, 'dist'),
+		path: isProd ? path.join(__dirname, 'prod') : path.join(__dirname, 'dev'),
 	},
 	
-	mode: process.env.NODE_ENV === 'production' ? "production": "development",
-	
-	optimization: process.env.NODE_ENV === 'production' ? { minimizer: [optimazers], } : { },
+	optimization: isProd ? { minimizer: [optimazers] } : { },
 	
 	module: {
 		rules: [
