@@ -5,9 +5,8 @@ import styles from "../styles/ItemTitle.css"
 class ItemTitle extends Component {
     render() {
         return (
-            <div className="title">
-                <div className={styles.title}>aa {styles.title} aa</div>
-                <div>Title {this.props.title}</div>
+            <div className={styles.title}>
+                Title '{this.props.title}'
             </div>
         );
     }

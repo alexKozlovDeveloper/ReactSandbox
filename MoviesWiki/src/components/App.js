@@ -1,7 +1,11 @@
 import React, { Component } from "react";
 
-import Title from "./Title";
 import ItemBody from "./ItemBody";
+
+import Header from "./Header";
+import Footer from "./Footer";
+
+import styles from "../styles/App.css"
 
 //import '../styles/App.css';
 
@@ -29,13 +33,14 @@ class App extends Component {
     render() {
         return (
             <div onClick={this.handleClick}>
+				<Header />
                 <h1>My React App! 4</h1>
                 <div 
 				  onMouseEnter={this.handleMouseEnter} 
 				  onMouseLeave={this.handleMouseLeave} 
 				  >Mouse area</div>
-				  <Title name="abc"/>
 				  <ItemBody title="Kill Bill 2" genre="Action" image="img" releaseDate="2003" />
+				  <Footer />
             </div>
         );
     }
