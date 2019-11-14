@@ -1,9 +1,13 @@
 .header {
-    background-color: #7f8eba;
+    background-image: url("https://cdn.wallpapersafari.com/38/44/SW3bML.jpg"); 
+    background-size: cover;   
 }
 
 .headertitle {
-    padding: 40px;
+    padding-left: 25px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     font-family: cursive;
-    color: aliceblue;
+    color: gold;
+    font-size: 32px;
 }

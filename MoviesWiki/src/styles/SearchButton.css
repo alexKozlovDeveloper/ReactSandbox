@@ -1,6 +1,6 @@
 .button {
     font-family: cursive;
-    background-color: #aa99ca;
+    background-color: #222327;
     border: none;
     color: white;
     padding: 6px 10px;
@@ -8,4 +8,6 @@
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+    cursor: pointer;
+    margin-left: 5px;
 }

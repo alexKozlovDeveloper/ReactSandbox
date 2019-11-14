@@ -6,6 +6,8 @@ import ItemsContainer from "./ItemsContainer";
 
 import styles from "../styles/App.css"
 
+import '../styles/Global.css';
+
 class App extends Component {
 	constructor(props) {
 		super(props);
