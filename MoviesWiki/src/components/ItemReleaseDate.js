@@ -6,7 +6,7 @@ class ItemReleaseDate extends Component {
     render() {
         return (
             <div className={styles.releasedate}>
-                Release Date '{this.props.releaseDate}' 
+                {this.props.releaseDate}
             </div>
         );
     }

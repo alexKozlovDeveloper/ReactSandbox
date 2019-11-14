@@ -6,7 +6,7 @@ class ItemTitle extends Component {
     render() {
         return (
             <div className={styles.title}>
-                Title '{this.props.title}'
+                {this.props.title}
             </div>
         );
     }

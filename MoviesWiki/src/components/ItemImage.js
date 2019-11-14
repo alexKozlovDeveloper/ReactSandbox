@@ -5,8 +5,8 @@ import styles from "../styles/ItemImage.css"
 class ItemImage extends Component {
     render() {
         return (
-            <div className={styles.image}>
-                <div>Image {this.props.image}</div>
+            <div className={styles.imagecontainer}>
+                <img className={styles.image} src={this.props.image}></img>
             </div>
         );
     }

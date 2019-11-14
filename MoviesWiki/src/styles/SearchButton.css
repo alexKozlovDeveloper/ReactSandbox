@@ -1,0 +1,11 @@
+.button {
+    font-family: cursive;
+    background-color: #aa99ca;
+    border: none;
+    color: white;
+    padding: 6px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}

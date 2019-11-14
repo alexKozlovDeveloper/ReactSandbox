@@ -6,7 +6,7 @@ class ItemGenre extends Component {
     render() {
         return (
             <div className={styles.genre}>
-                <div>Genre {this.props.genre}</div>
+                {this.props.genre}
             </div>
         );
     }

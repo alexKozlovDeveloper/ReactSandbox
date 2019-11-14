@@ -11,10 +11,10 @@ class ItemBody extends Component {
     render() {
         return (
             <div className={styles.body}>
-                <ItemTitle title={this.props.title} />
-                <ItemGenre genre={this.props.genre} />
                 <ItemImage image={this.props.image} />
                 <ItemReleaseDate releaseDate={this.props.releaseDate} />
+                <ItemTitle title={this.props.title} />                
+                <ItemGenre genre={this.props.genre} />            
             </div>
         );
     }

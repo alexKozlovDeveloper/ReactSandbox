@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 
-//import styles from "../styles/ItemTitle.css"
+import styles from "../styles/SearchButton.css"
 
 class SearchButton extends Component {
     render() {
         return (            
-            <button>Search</button>            
+            <button className={styles.button}>Search</button>            
         );
     }
 }
