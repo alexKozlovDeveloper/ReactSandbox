@@ -1,0 +1,13 @@
+.body {
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 128px;
+    padding-bottom: 35px;
+    background-image: url(http://hd-wallpapers.co/wp-content/uploads/walls/thumbs/Dark-Blue-1024x640.jpg);
+    background-size: contain;
+}
+
+.infocontainer {
+    width: 100%;
+    float: left;
+}

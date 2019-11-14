@@ -1,0 +1,37 @@
+.container {
+    font-family: cursive;
+    float: right;
+    color: white;
+    margin-left: 15px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    margin-right: 15px;
+}
+/* .container {
+    height: 36px;
+    padding: 5px;
+} */
+
+.item {
+    float: left;
+    padding: 5px;
+    margin: 2px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: cursive;
+    cursor: pointer;
+    background-color: #222327;
+    color: white;
+}
+
+.isactive {
+    background-color: gold;
+}
+
+.title {
+    float: left;
+    padding: 5px;
+    margin: 2px;
+    font-family: cursive;
+    color: white;
+}

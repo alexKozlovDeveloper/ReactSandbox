@@ -8,8 +8,17 @@ class Header extends Component {
     render() {
         return (
             <div className={styles.header}>
-                <div className={styles.headertitle}>Find Your Movies</div>
-                <Search />
+                <div className={styles.container}>
+                    <div className={styles.headertitle}>Find Your Movies</div>
+                    <Search />
+                    {/* <nav>
+                        <a href="#">Home</a>
+                        <a href="#">About</a>
+                        <a href="#">Products</a>
+                        <a href="#">Services</a>
+                        <a href="#">Contact Us</a>
+                    </nav> */}
+                </div>
             </div>
         );
     }

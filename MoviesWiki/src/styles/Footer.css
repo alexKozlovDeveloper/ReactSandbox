@@ -1,14 +1,26 @@
 .footer {
-    background-color: #7f8eba;
+    bottom: 0;
+    width: 100%;
+    position: fixed;        
+    background: #333;
+    padding: 10px 0;
+    color: #fff;
+    /* background-color: #7f8eba;
     text-align: center;
     padding: 5px;
     font-family: cursive;
     background-image: url(https://cdn.wallpapersafari.com/38/44/SW3bML.jpg);
     background-size: cover;
     color: white;
-    background-color: #222327;
+    background-color: #222327; */
     /* position: absolute;
     bottom: 0;
     width: 100%;
     height: 22px; */
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
 }

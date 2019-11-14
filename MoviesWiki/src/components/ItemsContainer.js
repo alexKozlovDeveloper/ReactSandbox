@@ -11,13 +11,24 @@ class ItemsContainer extends Component {
             <table>
                 <tr>
                     <td>
-                        <ItemBody title="Kill Bill 2" genre="Action" image="https://st.kp.yandex.net/images/film_big/2717.jpg" releaseDate="2003" />
+                        <ItemBody title="Interstellar" genre="Adventure, Drama, Sci-Fi" image="https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SY1000_SX675_AL_.jpg" releaseDate="2014" />
                     </td>
                     <td>
-                        <ItemBody title="Kill Bill 2" genre="Action" image="https://st.kp.yandex.net/images/film_big/2717.jpg" releaseDate="2003" />
+                        <ItemBody title="Interstellar" genre="Adventure, Drama, Sci-Fi" image="https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SY1000_SX675_AL_.jpg" releaseDate="2014" />
                     </td>
                     <td>
-                        <ItemBody title="Kill Bill 2" genre="Action" image="https://st.kp.yandex.net/images/film_big/2717.jpg" releaseDate="2003" /> 
+                        <ItemBody title="Interstellar" genre="Adventure, Drama, Sci-Fi" image="https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SY1000_SX675_AL_.jpg" releaseDate="2014" /> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ItemBody title="Interstellar" genre="Adventure, Drama, Sci-Fi" image="https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SY1000_SX675_AL_.jpg" releaseDate="2014" />
+                    </td>
+                    <td>
+                        <ItemBody title="Interstellar" genre="Adventure, Drama, Sci-Fi" image="https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SY1000_SX675_AL_.jpg" releaseDate="2014" />
+                    </td>
+                    <td>
+                        <ItemBody title="Interstellar" genre="Adventure, Drama, Sci-Fi" image="https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SY1000_SX675_AL_.jpg" releaseDate="2014" /> 
                     </td>
                 </tr>
             </table>

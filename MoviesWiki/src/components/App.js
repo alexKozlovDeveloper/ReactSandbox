@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import Header from "./Header";
 import Footer from "./Footer";
-import ItemsContainer from "./ItemsContainer";
+import ResultsBody from "./ResultsBody";
 
 import styles from "../styles/App.css"
 
@@ -17,7 +17,7 @@ class App extends Component {
         return (
             <div>
 				<Header />
-				<ItemsContainer />
+				<ResultsBody />
 				<Footer />
             </div>
         );

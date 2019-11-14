@@ -1,12 +1,22 @@
 import React, { Component } from "react";
 
-//import styles from "../styles/ItemTitle.css"
+import ResultsCount from "./ResultsCount";
+import ResultsSort from "./ResultsSort";
+import ItemsContainer from "./ItemsContainer";
+
+import styles from "../styles/ResultsBody.css"
 
 class ResultsBody extends Component {
     render() {
         return (
-            <div>
-                ResultsBody
+            <div className={styles.body}>
+                <div className={styles.infocontainer}>
+                    <ResultsCount count="3"/>
+                    <ResultsSort />
+                </div>
+                <div>
+                    <ItemsContainer />
+                </div>
             </div>
         );
     }
