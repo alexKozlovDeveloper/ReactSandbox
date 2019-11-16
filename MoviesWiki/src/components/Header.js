@@ -10,14 +10,7 @@ class Header extends Component {
             <div className={styles.header}>
                 <div className={styles.container}>
                     <div className={styles.headertitle}>Find Your Movies</div>
-                    <Search />
-                    {/* <nav>
-                        <a href="#">Home</a>
-                        <a href="#">About</a>
-                        <a href="#">Products</a>
-                        <a href="#">Services</a>
-                        <a href="#">Contact Us</a>
-                    </nav> */}
+                    <Search />                    
                 </div>
             </div>
         );

@@ -4,34 +4,44 @@ import ItemBody from "./ItemBody";
 
 import styles from "../styles/ItemsContainer.css"
 
+import { renderToString } from 'react-dom/server'
+
 class ItemsContainer extends Component {
+
     render() {
+        
+        function getTable(items, itemsPerRow) {
+            var tableContent = "<table>";
+        
+            for (var i = 0, rowIndex = 1; i < items.length; i++, rowIndex++) {
+        
+                if (rowIndex === 1) {
+                    tableContent += "<tr>";
+                }
+        
+                var htmlItem = renderToString(<ItemBody title={items[i].title} genre={items[i].genre} image={items[i].image} releaseDate={items[i].releaseDate}/>);
+
+                tableContent += "<td>" + htmlItem + "</td>";        
+
+                if (rowIndex === itemsPerRow) {
+                    tableContent += "</tr>";
+                    rowIndex = 0;
+                }
+            }
+        
+            if (items.length % itemsPerRow !== 0) {
+                tableContent += "</tr>";
+            }
+        
+            tableContent += "</table>";
+        
+            return tableContent;
+        }
+
+        var table = getTable(this.props.items, parseInt(this.props.itemsPerRow));
+
         return (
-            <div className={styles.container}>
-            <table>
-                <tr>
-                    <td>
-                        <ItemBody title="Interstellar" genre="Adventure, Drama, Sci-Fi" image="https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SY1000_SX675_AL_.jpg" releaseDate="2014" />
-                    </td>
-                    <td>
-                        <ItemBody title="Interstellar" genre="Adventure, Drama, Sci-Fi" image="https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SY1000_SX675_AL_.jpg" releaseDate="2014" />
-                    </td>
-                    <td>
-                        <ItemBody title="Interstellar" genre="Adventure, Drama, Sci-Fi" image="https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SY1000_SX675_AL_.jpg" releaseDate="2014" /> 
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <ItemBody title="Interstellar" genre="Adventure, Drama, Sci-Fi" image="https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SY1000_SX675_AL_.jpg" releaseDate="2014" />
-                    </td>
-                    <td>
-                        <ItemBody title="Interstellar" genre="Adventure, Drama, Sci-Fi" image="https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SY1000_SX675_AL_.jpg" releaseDate="2014" />
-                    </td>
-                    <td>
-                        <ItemBody title="Interstellar" genre="Adventure, Drama, Sci-Fi" image="https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SY1000_SX675_AL_.jpg" releaseDate="2014" /> 
-                    </td>
-                </tr>
-            </table>
+            <div className={styles.container} dangerouslySetInnerHTML={{__html: table}}>
             </div>
         );
     }
