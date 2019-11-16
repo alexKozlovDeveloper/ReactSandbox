@@ -12,7 +12,7 @@ class ResultsBody extends Component {
             <div className={styles.body}>
                 <div className={styles.infocontainer}>
                     <ResultsCount count="3"/>
-                    <ResultsSort />
+                    <ResultsSort title="Sort by" option1="Release date" option2="Rating" />
                 </div>
                 <div>
                     <ItemsContainer />

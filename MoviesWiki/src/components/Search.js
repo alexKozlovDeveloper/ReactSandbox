@@ -14,7 +14,7 @@ class Search extends Component {
                     <SearchField />
                     <SearchButton />
                 </div>
-                <SearchFilter />
+                <SearchFilter title="Search by" option1="Title" option2="Gengre"/>
             </div>           
         );
     }

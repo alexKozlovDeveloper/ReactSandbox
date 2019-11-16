@@ -7,30 +7,25 @@ class ResultsSort extends Component {
     constructor(props) {
         super(props);
 
-        this.state = { selectedItem: "ratingOption" };
+        this.state = { selectedItem: "option2" };
 
         this.handleClick = this.handleClick.bind(this);
     }
 
     handleClick(e) {
-
-        if(e.currentTarget.id === "releaseDateOption"){
-            this.setState({ selectedItem: "releaseDateOption" });
-        }
-
-        if(e.currentTarget.id === "ratingOption"){
-            this.setState({ selectedItem: "ratingOption" });
-        }
-
-        console.log('Click');
+        this.setState({ selectedItem: e.currentTarget.attributes["name"].nodeValue });
     }
     
     render() {
         return (
             <div className={styles.container}>
-                <div className={styles.title}>Sort By</div>
-                <div id="releaseDateOption" onClick={this.handleClick} className={styles.item + (this.state.selectedItem === "releaseDateOption" ? ' ' + styles.isactive : '') }>Release Date</div>                
-                <div id="ratingOption" onClick={this.handleClick} className={styles.item + (this.state.selectedItem === "ratingOption" ? ' ' + styles.isactive : '') }>Rating</div>
+                <div className={styles.title}>{this.props.title}</div>
+
+                <div name="option1" onClick={this.handleClick} className={styles.item + 
+                    (this.state.selectedItem === "option1" ? ' ' + styles.isactive : '') }>{this.props.option1}</div>   
+
+                <div name="option2" onClick={this.handleClick} className={styles.item + 
+                    (this.state.selectedItem === "option2" ? ' ' + styles.isactive : '') }>{this.props.option2}</div>
             </div>
         );
     }
