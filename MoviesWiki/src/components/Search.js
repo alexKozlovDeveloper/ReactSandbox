@@ -9,12 +9,12 @@ import styles from "../styles/Search.css"
 class Search extends Component {
     render() {
         return (            
-            <div className={styles.search}>                
+            <div className={styles.search}> 
                 <div>                
-                    <SearchField />
-                    <SearchButton />
+                    <SearchField placeHolder={this.props.config.placeHolder}/>
+                    <SearchButton buttonText={this.props.config.buttonText}/>
                 </div>
-                <SearchFilter title="Search by" option1="Title" option2="Gengre"/>
+                <SearchFilter title={this.props.config.searchFilter.title} option1={this.props.config.searchFilter.option1} option2={this.props.config.searchFilter.option2}/>
             </div>           
         );
     }

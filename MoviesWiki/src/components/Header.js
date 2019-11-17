@@ -7,10 +7,10 @@ import styles from "../styles/Header.css"
 class Header extends Component {
     render() {
         return (
-            <div className={styles.header}>
+            <div className={styles.header}> 
                 <div className={styles.container}>
-                    <div className={styles.headertitle}>Find Your Movies</div>
-                    <Search />                    
+                <div className={styles.headertitle}>{this.props.config.title}</div>
+                    <Search config={this.props.config.searchConfig} />                    
                 </div>
             </div>
         );

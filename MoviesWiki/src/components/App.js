@@ -52,17 +52,40 @@ class App extends Component {
             genre: "action 5",
         }];
 
-        var resultSortConfig = {
-            title: "Sort by",
-            option1: "Release date",
-            option2: "Rating"
+        var headerConfig = {
+            title:"Find Your Movies",
+                searchConfig: {
+                placeHolder: "Quentin Tarantino",
+                buttonText: "Search",
+                searchFilter: {
+                    title: "Search by",
+                    option1: "Title",
+                    option2: "Gengre"
+                }
+            }
+        };
+
+        var footerConfig ={
+            title: "Copyright &copy; 2019 AkTest"
+        };
+
+        var resultsBodyConfig = {
+            itemsPerRow: 4,
+            resultSortConfig: {
+                title: "Sort by",
+                option1: "Release date",
+                option2: "Rating"
+            },
+            resultsCountConfig: {
+                title: "movies found"
+            }
         }
 
         return (
             <div>
-				<Header />
-				<ResultsBody items={items} itemsPerRow="4" resultSortConfig={resultSortConfig}/>
-				<Footer />
+				<Header config={headerConfig} />
+				<ResultsBody items={items} config={resultsBodyConfig}/>
+				<Footer config={footerConfig}/>
             </div>
         );
     }

@@ -6,7 +6,7 @@ class ResultsCount extends Component {
     render() {
         return (
             <div className={styles.container}>
-                {this.props.count} movies found
+                {this.props.count} {this.props.title}
             </div>
         );
     }

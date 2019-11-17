@@ -11,11 +11,11 @@ class ResultsBody extends Component {
         return (
             <div className={styles.body}>
                 <div className={styles.infocontainer}>
-                    <ResultsCount count={this.props.items.length}/>
-                    <ResultsSort title={this.props.resultSortConfig.title} option1={this.props.resultSortConfig.option1} option2={this.props.resultSortConfig.option2} />
+                    <ResultsCount count={this.props.items.length} title={this.props.config.resultsCountConfig.title}/>
+                    <ResultsSort title={this.props.config.resultSortConfig.title} option1={this.props.config.resultSortConfig.option1} option2={this.props.config.resultSortConfig.option2} />
                 </div>
                 <div>
-                    <ItemsContainer items={this.props.items} itemsPerRow={this.props.itemsPerRow}/>
+                    <ItemsContainer items={this.props.items} itemsPerRow={this.props.config.itemsPerRow}/>
                 </div>
             </div>
         );

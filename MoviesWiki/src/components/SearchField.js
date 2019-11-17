@@ -5,7 +5,7 @@ import styles from "../styles/SearchField.css"
 class SearchField extends Component {
     render() {
         return (
-            <input className={styles.searchfield} type="text" placeholder="Quentin Tarantino" />           
+            <input className={styles.searchfield} type="text" placeholder={this.props.placeHolder} />           
         );
     }
 }
