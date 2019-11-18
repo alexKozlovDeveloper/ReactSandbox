@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import styles from "../styles/SearchField.css"
+import styles from "../styles/SearchField.css";
 
 class SearchField extends Component {
     render() {

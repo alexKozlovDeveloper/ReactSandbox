@@ -86,23 +86,6 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "../node_modules/css-loader/dist/cjs.js?!./styles/App.css":
-/*!*************************************************************************!*\
-  !*** ../node_modules/css-loader/dist/cjs.js??ref--5-1!./styles/App.css ***!
-  \*************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "../node_modules/css-loader/dist/runtime/api.js")(false);
-// Module
-exports.push([module.i, "h1 {\r\n    color: #27aedb;\r\n    text-align: center;\r\n}\r\n\r\n.App__body___ZoOs6 {\r\n    background-color: dimgray;\r\n}\r\n\r\n", ""]);
-// Exports
-exports.locals = {
-	"body": "App__body___ZoOs6"
-};
-
-/***/ }),
-
 /***/ "../node_modules/css-loader/dist/cjs.js?!./styles/Footer.css":
 /*!****************************************************************************!*\
   !*** ../node_modules/css-loader/dist/cjs.js??ref--5-1!./styles/Footer.css ***!
@@ -256,6 +239,23 @@ exports.push([module.i, ".ItemsContainer__container___1xKMj {\r\n    \r\n}", ""]
 // Exports
 exports.locals = {
 	"container": "ItemsContainer__container___1xKMj"
+};
+
+/***/ }),
+
+/***/ "../node_modules/css-loader/dist/cjs.js?!./styles/NoItemLabel.css":
+/*!*********************************************************************************!*\
+  !*** ../node_modules/css-loader/dist/cjs.js??ref--5-1!./styles/NoItemLabel.css ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "../node_modules/css-loader/dist/runtime/api.js")(false);
+// Module
+exports.push([module.i, ".NoItemLabel__title___3W5yp {\r\n    background-color: tomato;\r\n}", ""]);
+// Exports
+exports.locals = {
+	"title": "NoItemLabel__title___3W5yp"
 };
 
 /***/ }),
@@ -37006,10 +37006,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Header */ "./components/Header.js");
 /* harmony import */ var _Footer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Footer */ "./components/Footer.js");
 /* harmony import */ var _ResultsBody__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ResultsBody */ "./components/ResultsBody.js");
-/* harmony import */ var _styles_App_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../styles/App.css */ "./styles/App.css");
-/* harmony import */ var _styles_App_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_styles_App_css__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _styles_Global_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../styles/Global.css */ "./styles/Global.css");
-/* harmony import */ var _styles_Global_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_styles_Global_css__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _styles_Global_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../styles/Global.css */ "./styles/Global.css");
+/* harmony import */ var _styles_Global_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_styles_Global_css__WEBPACK_IMPORTED_MODULE_4__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -37027,7 +37025,6 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
 
 
 
@@ -37085,23 +37082,38 @@ function (_Component) {
         image: "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SY1000_SX675_AL_.jpg",
         genre: "action 5"
       }];
-      var resultBodyConfig = {
-        itemsPerRow: "4",
+      var headerConfig = {
+        title: "Find Your Movies",
+        searchConfig: {
+          placeHolder: "Quentin Tarantino",
+          buttonText: "Search",
+          searchFilter: {
+            title: "Search by",
+            option1: "Title",
+            option2: "Gengre"
+          }
+        }
+      };
+      var footerConfig = {
+        title: "Copyright &copy; 2019 AkTest"
+      };
+      var resultsBodyConfig = {
+        itemsPerRow: 4,
         resultSortConfig: {
           title: "Sort by",
           option1: "Release date",
           option2: "Rating"
+        },
+        resultsCountConfig: {
+          title: "movies found"
         }
       };
-      var headerConfig = {
-        title: "Find Your Movies"
-      };
-      var footerConfig = {};
+      items = [];
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Header__WEBPACK_IMPORTED_MODULE_1__["default"], {
         config: headerConfig
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ResultsBody__WEBPACK_IMPORTED_MODULE_3__["default"], {
         items: items,
-        config: resultBodyConfig
+        config: resultsBodyConfig
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Footer__WEBPACK_IMPORTED_MODULE_2__["default"], {
         config: footerConfig
       }));
@@ -37167,7 +37179,7 @@ function (_Component) {
         className: _styles_Footer_css__WEBPACK_IMPORTED_MODULE_1___default.a.footer
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: _styles_Footer_css__WEBPACK_IMPORTED_MODULE_1___default.a.container
-      }, "Copyright \xA9 2019 AkTest"));
+      }, this.props.config.title));
     }
   }]);
 
@@ -37234,7 +37246,9 @@ function (_Component) {
         className: _styles_Header_css__WEBPACK_IMPORTED_MODULE_2___default.a.container
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: _styles_Header_css__WEBPACK_IMPORTED_MODULE_2___default.a.headertitle
-      }, this.props.config.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Search__WEBPACK_IMPORTED_MODULE_1__["default"], null)));
+      }, this.props.config.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Search__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        config: this.props.config.searchConfig
+      })));
     }
   }]);
 
@@ -37581,10 +37595,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "../node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _ItemBody__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ItemBody */ "./components/ItemBody.js");
-/* harmony import */ var _styles_ItemsContainer_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../styles/ItemsContainer.css */ "./styles/ItemsContainer.css");
-/* harmony import */ var _styles_ItemsContainer_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_styles_ItemsContainer_css__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var react_dom_server__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-dom/server */ "../node_modules/react-dom/server.browser.js");
-/* harmony import */ var react_dom_server__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_dom_server__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _NoItemLabel__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./NoItemLabel */ "./components/NoItemLabel.js");
+/* harmony import */ var _styles_ItemsContainer_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../styles/ItemsContainer.css */ "./styles/ItemsContainer.css");
+/* harmony import */ var _styles_ItemsContainer_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_styles_ItemsContainer_css__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var react_dom_server__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-dom/server */ "../node_modules/react-dom/server.browser.js");
+/* harmony import */ var react_dom_server__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_dom_server__WEBPACK_IMPORTED_MODULE_4__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -37602,6 +37617,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -37630,7 +37646,7 @@ function (_Component) {
             tableContent += "<tr>";
           }
 
-          var htmlItem = Object(react_dom_server__WEBPACK_IMPORTED_MODULE_3__["renderToString"])(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ItemBody__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          var htmlItem = Object(react_dom_server__WEBPACK_IMPORTED_MODULE_4__["renderToString"])(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ItemBody__WEBPACK_IMPORTED_MODULE_1__["default"], {
             title: items[i].title,
             genre: items[i].genre,
             image: items[i].image,
@@ -37652,9 +37668,16 @@ function (_Component) {
         return tableContent;
       }
 
-      var table = getTable(this.props.items, parseInt(this.props.itemsPerRow));
+      var table = "";
+
+      if (this.props.items.length !== 0) {
+        table = getTable(this.props.items, parseInt(this.props.itemsPerRow));
+      } else {
+        table = Object(react_dom_server__WEBPACK_IMPORTED_MODULE_4__["renderToString"])(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_NoItemLabel__WEBPACK_IMPORTED_MODULE_2__["default"], null));
+      }
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: _styles_ItemsContainer_css__WEBPACK_IMPORTED_MODULE_2___default.a.container,
+        className: _styles_ItemsContainer_css__WEBPACK_IMPORTED_MODULE_3___default.a.container,
         dangerouslySetInnerHTML: {
           __html: table
         }
@@ -37666,6 +37689,67 @@ function (_Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
 /* harmony default export */ __webpack_exports__["default"] = (ItemsContainer);
+
+/***/ }),
+
+/***/ "./components/NoItemLabel.js":
+/*!***********************************!*\
+  !*** ./components/NoItemLabel.js ***!
+  \***********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "../node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _styles_NoItemLabel_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../styles/NoItemLabel.css */ "./styles/NoItemLabel.css");
+/* harmony import */ var _styles_NoItemLabel_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_styles_NoItemLabel_css__WEBPACK_IMPORTED_MODULE_1__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+var NoItemLabel =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(NoItemLabel, _Component);
+
+  function NoItemLabel() {
+    _classCallCheck(this, NoItemLabel);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(NoItemLabel).apply(this, arguments));
+  }
+
+  _createClass(NoItemLabel, [{
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: _styles_NoItemLabel_css__WEBPACK_IMPORTED_MODULE_1___default.a.title
+      }, "No films found");
+    }
+  }]);
+
+  return NoItemLabel;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+/* harmony default export */ __webpack_exports__["default"] = (NoItemLabel);
 
 /***/ }),
 
@@ -37728,14 +37812,15 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: _styles_ResultsBody_css__WEBPACK_IMPORTED_MODULE_4___default.a.infocontainer
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ResultsCount__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        count: this.props.items.length
+        count: this.props.items.length,
+        title: this.props.config.resultsCountConfig.title
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ResultsSort__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        title: this.props.resultSortConfig.title,
-        option1: this.props.resultSortConfig.option1,
-        option2: this.props.resultSortConfig.option2
+        title: this.props.config.resultSortConfig.title,
+        option1: this.props.config.resultSortConfig.option1,
+        option2: this.props.config.resultSortConfig.option2
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ItemsContainer__WEBPACK_IMPORTED_MODULE_3__["default"], {
         items: this.props.items,
-        itemsPerRow: this.props.itemsPerRow
+        itemsPerRow: this.props.config.itemsPerRow
       })));
     }
   }]);
@@ -37797,7 +37882,7 @@ function (_Component) {
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: _styles_ResultsCount_css__WEBPACK_IMPORTED_MODULE_1___default.a.container
-      }, this.props.count, " movies found");
+      }, this.props.count, " ", this.props.title);
     }
   }]);
 
@@ -37950,13 +38035,13 @@ function (_Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: _styles_Search_css__WEBPACK_IMPORTED_MODULE_4___default.a.search
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_SearchField__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        placeHolder: "Quentin Tarantino"
+        placeHolder: this.props.config.placeHolder
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_SearchButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        buttonText: "Search"
+        buttonText: this.props.config.buttonText
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_SearchFilter__WEBPACK_IMPORTED_MODULE_3__["default"], {
-        title: "Search by",
-        option1: "Title",
-        option2: "Gengre"
+        title: this.props.config.searchFilter.title,
+        option1: this.props.config.searchFilter.option1,
+        option2: this.props.config.searchFilter.option2
       }));
     }
   }]);
@@ -38198,33 +38283,6 @@ react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_
 
 /***/ }),
 
-/***/ "./styles/App.css":
-/*!************************!*\
-  !*** ./styles/App.css ***!
-  \************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var content = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js??ref--5-1!./App.css */ "../node_modules/css-loader/dist/cjs.js?!./styles/App.css");
-
-if (typeof content === 'string') {
-  content = [[module.i, content, '']];
-}
-
-var options = {}
-
-options.insert = "head";
-options.singleton = false;
-
-var update = __webpack_require__(/*! ../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js")(content, options);
-
-if (content.locals) {
-  module.exports = content.locals;
-}
-
-
-/***/ }),
-
 /***/ "./styles/Footer.css":
 /*!***************************!*\
   !*** ./styles/Footer.css ***!
@@ -38449,6 +38507,33 @@ if (content.locals) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var content = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js??ref--5-1!./ItemsContainer.css */ "../node_modules/css-loader/dist/cjs.js?!./styles/ItemsContainer.css");
+
+if (typeof content === 'string') {
+  content = [[module.i, content, '']];
+}
+
+var options = {}
+
+options.insert = "head";
+options.singleton = false;
+
+var update = __webpack_require__(/*! ../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js")(content, options);
+
+if (content.locals) {
+  module.exports = content.locals;
+}
+
+
+/***/ }),
+
+/***/ "./styles/NoItemLabel.css":
+/*!********************************!*\
+  !*** ./styles/NoItemLabel.css ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var content = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js??ref--5-1!./NoItemLabel.css */ "../node_modules/css-loader/dist/cjs.js?!./styles/NoItemLabel.css");
 
 if (typeof content === 'string') {
   content = [[module.i, content, '']];

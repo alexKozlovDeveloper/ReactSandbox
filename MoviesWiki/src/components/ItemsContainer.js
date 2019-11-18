@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 import ItemBody from "./ItemBody";
+import NoItemLabel from "./NoItemLabel";
 
 import styles from "../styles/ItemsContainer.css"
 
@@ -38,7 +39,14 @@ class ItemsContainer extends Component {
             return tableContent;
         }
 
-        var table = getTable(this.props.items, parseInt(this.props.itemsPerRow));
+
+        var table = "";
+
+        if(this.props.items.length !== 0) {
+            table = getTable(this.props.items, parseInt(this.props.itemsPerRow));
+        } else{            
+            table = renderToString(<NoItemLabel />);
+        }
 
         return (
             <div className={styles.container} dangerouslySetInnerHTML={{__html: table}}>
