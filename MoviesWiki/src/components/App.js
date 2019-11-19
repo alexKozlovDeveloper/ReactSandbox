@@ -5,7 +5,7 @@ import Footer from "./Footer";
 import ResultsBody from "./ResultsBody";
 import ItemDetails from "./ItemDetails";
 
-import '../styles/Global.css';
+import styles from "../styles/App.css"
 
 class App extends Component {
 	constructor(props) {
@@ -104,7 +104,7 @@ class App extends Component {
         //items = [];
 
         return (
-            <div>
+            <div className={styles.font}>
 				<Header config={headerConfig} />
                 {/* <ItemDetails item={items[0]}/> */}
 				<ResultsBody items={items} config={resultsBodyConfig}/>

@@ -9,7 +9,6 @@
     margin: 2px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    font-family: cursive;
     cursor: pointer;
     background-color: #222327;
     color: white;
@@ -23,6 +22,5 @@
     float: left;
     padding: 5px;
     margin: 2px;
-    font-family: cursive;
     color: white;
 }
