@@ -2,14 +2,10 @@ import React, { Component } from "react";
 
 import styles from "../styles/NoItemLabel.css"
 
-class NoItemLabel extends Component {
-    render() {
-        return (
-            <div className={styles.title}>
+function NoItemLabel(props) {
+    return  <div className={styles.title}>
                 No films found
-            </div>
-        );
-    }
+            </div>;
 }
 
 export default NoItemLabel;

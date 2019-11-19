@@ -1,13 +1,9 @@
 import React, { Component } from "react";
 
-class ItemDescription extends Component {
-    render() {
-        return (
-            <div>
-                {this.props.description}
-            </div>
-        );
-    }
+function ItemDescription(props) {
+    return  <div>
+                {props.description}
+            </div>;
 }
 
 export default ItemDescription;

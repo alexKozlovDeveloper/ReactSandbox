@@ -101,12 +101,12 @@ class App extends Component {
             }
         }
 
-        //items = [];
+        //items = [items[0],items[1]];
 
         return (
             <div className={styles.font}>
 				<Header config={headerConfig} />
-                {/* <ItemDetails item={items[0]}/> */}
+                <ItemDetails item={items[0]}/>
 				<ResultsBody items={items} config={resultsBodyConfig}/>
 				<Footer config={footerConfig}/>
             </div>

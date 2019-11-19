@@ -1,0 +1,12 @@
+.number {
+    font-weight: 600;
+    padding: 6px;
+}
+
+.string {
+    font-size: 12px;
+}
+
+.container {
+    display: flex;
+}

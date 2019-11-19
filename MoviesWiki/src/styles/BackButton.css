@@ -1,0 +1,11 @@
+.button {
+    padding: 8px;
+    font-size: 40px;
+    background: url(https://static.thenounproject.com/png/95-200.png);
+    min-width: 20px;
+    min-height: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 5px;
+    cursor: pointer;
+}

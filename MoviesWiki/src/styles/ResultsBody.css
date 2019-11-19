@@ -1,5 +1,4 @@
 .body {
-    width: 100%;
     margin: 0 auto;
     /* padding-top: 128px;
     padding-bottom: 35px; */
@@ -10,6 +9,13 @@
 }
 
 .infocontainer {
-    width: 100%;
+
+}
+
+.resultscountcontainer {
     float: left;
+}
+
+.customoptionlistcontainer {
+    float: right;
 }

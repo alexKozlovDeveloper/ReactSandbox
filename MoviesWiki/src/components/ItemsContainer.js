@@ -11,45 +11,27 @@ class ItemsContainer extends Component {
 
     render() {
         
-        function getTable(items, itemsPerRow) {
-            var tableContent = "<table>";
-        
-            for (var i = 0, rowIndex = 1; i < items.length; i++, rowIndex++) {
-        
-                if (rowIndex === 1) {
-                    tableContent += "<tr>";
-                }
-        
-                var htmlItem = renderToString(<ItemBody title={items[i].title} genre={items[i].genre} image={items[i].image} releaseDate={items[i].releaseDate}/>);
+        function getDivTable(items, itemsPerRow) {
+            var tableContent = [];     
 
-                tableContent += "<td>" + htmlItem + "</td>";        
-
-                if (rowIndex === itemsPerRow) {
-                    tableContent += "</tr>";
-                    rowIndex = 0;
-                }
+            for (var i = 0, rowIndex = 1; i < items.length; i++, rowIndex++) {        
+                tableContent.push(<ItemBody title={items[i].title} genre={items[i].genre} image={items[i].image} releaseDate={items[i].releaseDate}/>);        
             }
-        
-            if (items.length % itemsPerRow !== 0) {
-                tableContent += "</tr>";
-            }
-        
-            tableContent += "</table>";
         
             return tableContent;
         }
 
-
         var table = "";
 
         if(this.props.items.length !== 0) {
-            table = getTable(this.props.items, parseInt(this.props.itemsPerRow));
+            table = getDivTable(this.props.items, parseInt(this.props.itemsPerRow));
         } else{            
             table = renderToString(<NoItemLabel />);
         }
 
         return (
-            <div className={styles.container} dangerouslySetInnerHTML={{__html: table}}>
+            <div className={styles.container} >
+                {table}
             </div>
         );
     }

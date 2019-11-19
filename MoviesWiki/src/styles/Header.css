@@ -1,12 +1,9 @@
 .header {
     background-image: url("https://cdn.wallpapersafari.com/38/44/SW3bML.jpg"); 
     background-size: cover;   
-    width: 100%;
     position: sticky;        
-    /* background: #333; */
     padding: 10px 0;
     color: #fff;
-    top: 0;
     min-width: 500px;
 }
 

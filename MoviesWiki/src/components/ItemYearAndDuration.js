@@ -1,19 +1,18 @@
 import React, { Component } from "react";
 
-//import styles from "../styles/ItemImage.css"
+import styles from "../styles/ItemYearAndDuration.css"
 
-class ItemYearAndDuration extends Component {
-    render() {
-        
-        //className={styles.imagecontainer}
-        
-        return (
-            <div>
-                <div>{this.props.year}</div>
-                <div>{this.props.duration}</div>
-            </div>
-        );
-    }
+function ItemYearAndDuration(props) {
+    return  <React.Fragment>
+                <div className={styles.container}>
+                    <div className={styles.number}>{props.year}</div>
+                    <div className={styles.string}>year</div>
+                </div>
+                <div className={styles.container}>
+                    <div className={styles.number}>{props.duration}</div>
+                    <div className={styles.string}>min</div>
+                </div>
+            </React.Fragment>;
 }
 
 export default ItemYearAndDuration;
