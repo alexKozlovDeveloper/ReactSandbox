@@ -79,8 +79,8 @@ class App extends Component {
                 buttonText: "Search",
                 searchFilter: {
                     title: "Search by",
-                    option1: "Title",
-                    option2: "Gengre"
+                    selectedIndex: "0",
+                    options: ["Title", "Ganre"]
                 }
             }
         };
@@ -93,8 +93,8 @@ class App extends Component {
             itemsPerRow: 4,
             resultSortConfig: {
                 title: "Sort by",
-                option1: "Release date",
-                option2: "Rating"
+                selectedIndex: "1",
+                options: ["Release date", "Rating"]
             },
             resultsCountConfig: {
                 title: "movies found"

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import SearchField from "./SearchField";
 import SearchButton from "./SearchButton";
-import SearchFilter from "./SearchFilter";
+import CustomOptionList from "./CustomOptionList";
 
 import styles from "../styles/Search.css"
 
@@ -14,7 +14,7 @@ class Search extends Component {
                     <SearchField placeHolder={this.props.config.placeHolder}/>
                     <SearchButton buttonText={this.props.config.buttonText}/>
                 </div>
-                <SearchFilter title={this.props.config.searchFilter.title} option1={this.props.config.searchFilter.option1} option2={this.props.config.searchFilter.option2}/>
+                <CustomOptionList config={this.props.config.searchFilter}/>
             </div>           
         );
     }
