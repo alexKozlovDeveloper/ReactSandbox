@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import styles from "../styles/ItemReleaseDate.css"
+import styles from "../../styles/ItemReleaseDate.css"
 
 function ItemReleaseDate(props) {
     return  <div className={styles.releasedate}>

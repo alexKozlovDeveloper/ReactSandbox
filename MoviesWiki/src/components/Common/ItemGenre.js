@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import styles from "../styles/ItemGenre.css"
+import styles from "../../styles/ItemGenre.css"
 
 function ItemGenre(props) {
     return  <div className={styles.genre}>

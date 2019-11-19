@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 
-import ResultsCount from "./ResultsCount";
-import ItemsContainer from "./ItemsContainer";
+import ResultsCount from "./Common/ResultsCount";
+import ItemsContainer from "./Container/ItemsContainer";
+import CustomOptionList from "./Common/CustomOptionList";
 
 import styles from "../styles/ResultsBody.css"
-import CustomOptionList from "./CustomOptionList";
 
 class ResultsBody extends Component {
     render() {

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import styles from "../styles/ItemImage.css"
+import styles from "../../styles/ItemImage.css"
 
 function ItemImage(props) {
     return  <div className={styles.imagecontainer}>

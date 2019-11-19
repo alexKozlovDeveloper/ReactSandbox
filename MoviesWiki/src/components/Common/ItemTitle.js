@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 
-import styles from "../styles/ItemDetailsTitle.css"
+import styles from "../../styles/ItemTitle.css"
 
-function ItemDetailsTitle(props) {
+function ItemTitle(props) {
     return  <div className={styles.title}>
                 {props.title}
             </div>;
 }
 
-export default ItemDetailsTitle;
+export default ItemTitle;

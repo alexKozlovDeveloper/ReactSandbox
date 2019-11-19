@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import styles from "../styles/ItemYearAndDuration.css"
+import styles from "../../styles/ItemYearAndDuration.css"
 
 function ItemYearAndDuration(props) {
     return  <React.Fragment>

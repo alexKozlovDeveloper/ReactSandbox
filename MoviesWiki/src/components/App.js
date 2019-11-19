@@ -5,7 +5,7 @@ import Footer from "./Footer";
 import ResultsBody from "./ResultsBody";
 import ItemDetails from "./ItemDetails";
 
-import ErrorBoundary from "./ErrorBoundary";
+import ErrorBoundary from "./Error/ErrorBoundary";
 
 import styles from "../styles/App.css"
 
@@ -14,7 +14,7 @@ class App extends Component {
         super(props);
         
         this.state = { 
-            items: [ {
+            moviesList: [ {
                 title: "Interstellar",
                 releaseDate: "2014",
                 image: "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SY1000_SX675_AL_.jpg",        
@@ -104,8 +104,8 @@ class App extends Component {
         return  <div className={styles.font}>
                     <ErrorBoundary>
                         <Header config={this.state.headerConfig} />
-                        <ItemDetails item={this.state.items[0]}/>
-                        <ResultsBody items={this.state.items} config={this.state.resultsBodyConfig}/>
+                        <ItemDetails item={this.state.moviesList[0]}/>
+                        <ResultsBody items={this.state.moviesList} config={this.state.resultsBodyConfig}/>
                         <Footer config={this.state.footerConfig}/>
                     </ErrorBoundary>
                 </div>;

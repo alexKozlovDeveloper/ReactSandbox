@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 
-import ItemImage from "./ItemImage";
-import ItemDetailsTitle from "./ItemDetailsTitle";
-import ItemRating from "./ItemRating";
-import ItemDescription from "./ItemDescription";
-import ItemYearAndDuration from "./ItemYearAndDuration";
-import BackButton from "./BackButton";
+import ItemImage from "./Common/ItemImage";
+import ItemDetailsTitle from "./Common/ItemDetailsTitle";
+import ItemRating from "./Common/ItemRating";
+import ItemDescription from "./Common/ItemDescription";
+import ItemYearAndDuration from "./Common/ItemYearAndDuration";
+import BackButton from "./Common/BackButton";
 
 import styles from "../styles/ItemDetails.css"
 

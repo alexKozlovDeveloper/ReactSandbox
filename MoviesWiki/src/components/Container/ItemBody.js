@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 
-import ItemTitle from "./ItemTitle";
-import ItemGenre from "./ItemGenre";
-import ItemImage from "./ItemImage";
-import ItemReleaseDate from "./ItemReleaseDate";
+import ItemTitle from "../Common/ItemTitle";
+import ItemGenre from "../Common/ItemGenre";
+import ItemImage from "../Common/ItemImage";
+import ItemReleaseDate from "../Common/ItemReleaseDate";
 
-import styles from "../styles/ItemBody.css"
+import styles from "../../styles/ItemBody.css"
 
 class ItemBody extends Component {
     render() {

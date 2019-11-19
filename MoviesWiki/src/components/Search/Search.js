@@ -2,9 +2,9 @@ import React, { Component } from "react";
 
 import SearchField from "./SearchField";
 import SearchButton from "./SearchButton";
-import CustomOptionList from "./CustomOptionList";
+import CustomOptionList from "../Common/CustomOptionList";
 
-import styles from "../styles/Search.css"
+import styles from "../../styles/Search.css"
 
 class Search extends Component {
     render() {

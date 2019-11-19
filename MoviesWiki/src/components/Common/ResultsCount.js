@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import styles from "../styles/ResultsCount.css"
+import styles from "../../styles/ResultsCount.css"
 
 function ResultsCount(props) {
     return  <div className={styles.container}>

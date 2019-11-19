@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import styles from "../styles/CustomOptionList.css"
+import styles from "../../styles/CustomOptionList.css"
 
 class CustomOptionList extends Component {
     
