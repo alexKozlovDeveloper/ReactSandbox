@@ -80,7 +80,7 @@ class App extends Component {
                 searchFilter: {
                     title: "Search by",
                     selectedIndex: "0",
-                    options: ["Title", "Ganre"]
+                    options: ["Title", "Genre"]
                 }
             }
         };

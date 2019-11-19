@@ -13,7 +13,7 @@ class CustomOptionList extends Component {
     }
 
     handleClick(e) {
-        this.setState({ selectedItem: e.currentTarget.attributes["key"].nodeValue });
+        this.setState({ selectedItem: e.currentTarget.attributes["name"].nodeValue });
     }
     
     render() {
@@ -25,7 +25,7 @@ class CustomOptionList extends Component {
             var name = "option" + i;
             var itemStyles = styles.item + (this.state.selectedItem === name ? ' ' + styles.isactive : '');
 
-            optionsHtml.push(<div key={name} onClick={this.handleClick} className={itemStyles}>{options[i]}</div>);
+            optionsHtml.push(<div name={name} key={i} onClick={this.handleClick} className={itemStyles}>{options[i]}</div>);
         }
 
         return (
