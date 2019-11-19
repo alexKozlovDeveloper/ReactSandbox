@@ -1,0 +1,7 @@
+.container {
+    background: tomato;
+    font-size: 50px;
+    padding-left: 50px;
+    padding-top: 50px;
+    min-height: calc(100vh - 50px);
+}

@@ -5,6 +5,8 @@ import Footer from "./Footer";
 import ResultsBody from "./ResultsBody";
 import ItemDetails from "./ItemDetails";
 
+import ErrorBoundary from "./ErrorBoundary";
+
 import styles from "../styles/App.css"
 
 class App extends Component {
@@ -103,13 +105,15 @@ class App extends Component {
 
         //items = [items[0],items[1]];
 
-        return (
+        return (            
             <div className={styles.font}>
-				<Header config={headerConfig} />
-                <ItemDetails item={items[0]}/>
-				<ResultsBody items={items} config={resultsBodyConfig}/>
-				<Footer config={footerConfig}/>
-            </div>
+                <ErrorBoundary>
+                    <Header config={headerConfig} />
+                    <ItemDetails item={items[0]}/>
+                    <ResultsBody items={items} config={resultsBodyConfig}/>
+                    <Footer config={footerConfig}/>
+                </ErrorBoundary>
+            </div>            
         );
     }
 }
