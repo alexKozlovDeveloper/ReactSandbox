@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ItemImage rendering test 1`] = `
+<div
+  className="imagecontainer"
+>
+  <img
+    className="image"
+    src="someImage"
+  />
+</div>
+`;

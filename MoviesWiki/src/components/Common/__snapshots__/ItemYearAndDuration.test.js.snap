@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ItemYearAndDuration rendering test 1`] = `
+<Fragment>
+  <div
+    className="container"
+  >
+    <div
+      className="number"
+    >
+      someYear
+    </div>
+    <div
+      className="string"
+    >
+      year
+    </div>
+  </div>
+  <div
+    className="container"
+  >
+    <div
+      className="number"
+    >
+      someDuration
+    </div>
+    <div
+      className="string"
+    >
+      min
+    </div>
+  </div>
+</Fragment>
+`;
