@@ -45,6 +45,8 @@
     "webpack-cli": "^3.3.10"
   },
   "jest": {
+    "collectCoverage": true,
+    "coverageReporters": ["json", "html"],
     "moduleNameMapper": {
       ".+\\.(css|styl|sass|scss)$": "identity-obj-proxy"
     }
