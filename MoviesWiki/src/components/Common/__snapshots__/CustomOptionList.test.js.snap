@@ -1,29 +1,42 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CustomOptionList rendering test 1`] = `
-<div
-  className="container"
+exports[`CustomOptionList component Rendering test 1`] = `
+<CustomOptionList
+  config={
+    Object {
+      "options": Array [
+        "Title",
+        "Genre",
+      ],
+      "selectedIndex": "0",
+      "title": "Search by",
+    }
+  }
 >
   <div
-    className="title"
+    className="container"
   >
-    Search by
+    <div
+      className="title"
+    >
+      Search by
+    </div>
+    <div
+      className="item isactive"
+      key="0"
+      name="option0"
+      onClick={[Function]}
+    >
+      Title
+    </div>
+    <div
+      className="item"
+      key="1"
+      name="option1"
+      onClick={[Function]}
+    >
+      Genre
+    </div>
   </div>
-  <div
-    className="item isactive"
-    key="0"
-    name="option0"
-    onClick={[Function]}
-  >
-    Title
-  </div>
-  <div
-    className="item"
-    key="1"
-    name="option1"
-    onClick={[Function]}
-  >
-    Genre
-  </div>
-</div>
+</CustomOptionList>
 `;
