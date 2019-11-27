@@ -30,6 +30,7 @@
     "react-router": "^5.1.2",
     "react-test-renderer": "^16.11.0",
     "redux": "^4.0.4",
+    "sinon": "^7.5.0",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "webpack": "^4.41.2",
     "webpack-dev-server": "^3.9.0"
@@ -46,7 +47,10 @@
   },
   "jest": {
     "collectCoverage": true,
-    "coverageReporters": ["json", "html"],
+    "coverageReporters": [
+      "json",
+      "html"
+    ],
     "moduleNameMapper": {
       ".+\\.(css|styl|sass|scss)$": "identity-obj-proxy"
     }
