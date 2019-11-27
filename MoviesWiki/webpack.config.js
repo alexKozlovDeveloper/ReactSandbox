@@ -59,9 +59,6 @@ module.exports = {
 	
 	plugins: plugins,
 	
-	watch: false,
-	
-	moduleNameMapper: {
-		"\\.css$": "identity-obj-proxy",
-	}
+	watch: false
+
 };
