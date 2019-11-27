@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header rendering test 1`] = `
+<div
+  className="header"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="headertitle"
+    >
+      Find Your Movies
+    </div>
+    <Search
+      config={
+        Object {
+          "buttonText": "Search",
+          "placeHolder": "Quentin Tarantino",
+          "searchFilter": Object {
+            "options": Array [
+              "Title",
+              "Genre",
+            ],
+            "selectedIndex": "0",
+            "title": "Search by",
+          },
+        }
+      }
+    />
+  </div>
+</div>
+`;

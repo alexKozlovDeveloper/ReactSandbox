@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchField rendering test 1`] = `
+<input
+  className="searchfield"
+  type="text"
+/>
+`;

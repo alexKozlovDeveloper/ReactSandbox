@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ItemDetails rendering test 1`] = `
+<div
+  className="body"
+>
+  <div
+    className="imagecontainer"
+  >
+    <ItemImage
+      image="https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SY1000_SX675_AL_.jpg"
+    />
+  </div>
+  <div
+    className="detailscontainer"
+  >
+    <div
+      className="maintitlecontainer"
+    >
+      <ItemDetailsTitle
+        title="Interstellar 4"
+      />
+      <ItemRating
+        rating={7.2}
+      />
+    </div>
+    <div
+      className="propertiescontainer"
+    >
+      <ItemYearAndDuration
+        duration={145}
+        year="2017"
+      />
+    </div>
+    <div
+      className="descriptioncontainer"
+    >
+      <ItemDescription
+        description="is a 2014 British-American epic science fiction film directed and produced by Christopher Nolan. ... Set in a dystopian future where humanity is struggling to survive, the film follows a group of astronauts who travel through a wormhole near Saturn in search of a new home for humanity."
+      />
+    </div>
+  </div>
+  <div>
+    <BackButton
+      buttonText=""
+    />
+  </div>
+</div>
+`;
