@@ -11,7 +11,7 @@ test('ItemImage rendering test', () => {
 
     var image = "someImage";
 
-    const output = shallow(<ItemImage image={image} />);
-    expect(shallowToJson(output)).toMatchSnapshot();
+    const component = shallow(<ItemImage image={image} />);
+    expect(shallowToJson(component)).toMatchSnapshot();
  });
 

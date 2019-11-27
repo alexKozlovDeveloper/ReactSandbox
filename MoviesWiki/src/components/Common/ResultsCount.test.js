@@ -12,7 +12,7 @@ test('ResultsCount rendering test', () => {
     var count = "someCount";
     var title = "someTitle";
 
-    const output = shallow(<ResultsCount count={count} title={title}/>);
-    expect(shallowToJson(output)).toMatchSnapshot();
+    const component = shallow(<ResultsCount count={count} title={title}/>);
+    expect(shallowToJson(component)).toMatchSnapshot();
  });
 

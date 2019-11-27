@@ -12,7 +12,7 @@ test('ItemYearAndDuration rendering test', () => {
     var year = "someYear";
     var duration = "someDuration";
 
-    const output = shallow(<ItemYearAndDuration year={year} duration={duration}/>);
-    expect(shallowToJson(output)).toMatchSnapshot();
+    const component = shallow(<ItemYearAndDuration year={year} duration={duration}/>);
+    expect(shallowToJson(component)).toMatchSnapshot();
  });
 

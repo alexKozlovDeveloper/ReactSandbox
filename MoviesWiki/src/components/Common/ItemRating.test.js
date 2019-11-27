@@ -11,7 +11,7 @@ test('ItemRating rendering test', () => {
 
     var rating = "someRating";
 
-    const output = shallow(<ItemRating rating={rating} />);
-    expect(shallowToJson(output)).toMatchSnapshot();
+    const component = shallow(<ItemRating rating={rating} />);
+    expect(shallowToJson(component)).toMatchSnapshot();
  });
 

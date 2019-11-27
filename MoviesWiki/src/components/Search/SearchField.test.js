@@ -3,15 +3,15 @@ import { shallow, configure } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
 import Adapter from 'enzyme-adapter-react-16';
 
-import BackButton from "./BackButton";
+import SearchField from "./SearchField";
 
 configure({adapter: new Adapter()});
 
-test('BackButton rendering test', () => {
+test('SearchField rendering test', () => {
 
-    var buttonText = "someButtonText";
+    var placeholder = 'some placeholder';
 
-    const component = shallow(<BackButton buttonText={buttonText} />);
+    const component = shallow(<SearchField placeholder={placeholder}/>);
     expect(shallowToJson(component)).toMatchSnapshot();
  });
 

@@ -11,7 +11,7 @@ test('ItemReleaseDate rendering test', () => {
 
     var releaseDate = "someReleaseDate";
 
-    const output = shallow(<ItemReleaseDate releaseDate={releaseDate} />);
-    expect(shallowToJson(output)).toMatchSnapshot();
+    const component = shallow(<ItemReleaseDate releaseDate={releaseDate} />);
+    expect(shallowToJson(component)).toMatchSnapshot();
  });
 

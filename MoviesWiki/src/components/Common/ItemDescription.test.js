@@ -11,7 +11,7 @@ test('ItemDescription rendering test', () => {
 
     var description = "someDescription";
 
-    const output = shallow(<ItemDescription description={description} />);
-    expect(shallowToJson(output)).toMatchSnapshot();
+    const component = shallow(<ItemDescription description={description} />);
+    expect(shallowToJson(component)).toMatchSnapshot();
  });
 

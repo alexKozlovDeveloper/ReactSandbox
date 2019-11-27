@@ -18,11 +18,11 @@ describe('CustomOptionList component', () => {
             options: ["Title", "Genre"]
         }
     
-        const output = mount(<CustomOptionList config={config} />);
-        expect(shallowToJson(output)).toMatchSnapshot();
+        const component = mount(<CustomOptionList config={config} />);
+        expect(shallowToJson(component)).toMatchSnapshot();
     });
 
-    it('Click test', () => {
+    it('Click to second button', () => {
 
         var config = {
             title: "Search by",
@@ -30,16 +30,29 @@ describe('CustomOptionList component', () => {
             options: ["Title", "Genre"]
         }
     
-        const output = mount(<CustomOptionList config={config} />);
+        const component = mount(<CustomOptionList config={config} />);
                 
-        const btn2 = output.findWhere(node => node.key() === '1').simulate('click');
+        component.findWhere(node => node.key() === '1').simulate('click');
 
-        expect(output.findWhere(node => node.key() === '1').hasClass(styles.isactive)).to.equal(true);
-
-        //expect(shallowToJson(output)).toMatchSnapshot();
+        expect(component.findWhere(node => node.key() === '1').hasClass(styles.isactive)).toBe(true);
+        expect(component.state().selectedItem).toBe('option1');
     });
 
+    it('Click to first button', () => {
 
+        var config = {
+            title: "Search by",
+            selectedIndex: "1",
+            options: ["Title", "Genre"]
+        }
+    
+        const component = mount(<CustomOptionList config={config} />);
+                
+        component.findWhere(node => node.key() === '0').simulate('click');
+
+        expect(component.findWhere(node => node.key() === '0').hasClass(styles.isactive)).toBe(true);
+        expect(component.state().selectedItem).toBe('option0');
+    });
 })
 
 
