@@ -6,18 +6,16 @@ import CustomOptionList from "../Common/CustomOptionList";
 
 import styles from "../../styles/Search.css"
 
-class Search extends Component {
-    render() {
-        return (            
-            <div className={styles.search}> 
-                <div>                
-                    <SearchField placeHolder={this.props.config.placeHolder}/>
-                    <SearchButton buttonText={this.props.config.buttonText}/>
-                </div>
-                <CustomOptionList config={this.props.config.searchFilter}/>
-            </div>           
-        );
-    }
+const Search = ({ config }) => {
+    return (            
+        <div className={styles.search}> 
+            <div>                
+                <SearchField placeHolder={config.placeHolder}/>
+                <SearchButton buttonText={config.buttonText}/>
+            </div>
+            <CustomOptionList config={config.searchFilter}/>
+        </div>           
+    );    
 }
 
 export default Search;

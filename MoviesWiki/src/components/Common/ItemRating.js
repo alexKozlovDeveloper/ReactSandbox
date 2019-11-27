@@ -1,11 +1,13 @@
-import React, { Component } from "react";
+import React, { Component, useMemo } from "react";
 
 import styles from "../../styles/ItemRating.css"
 
-function ItemRating(props) {
-    return  <div className={styles.title}>
-                {props.rating}
-            </div>;
+const ItemRating = ({ rating }) => {
+    return useMemo(()=> {
+        return  <div className={styles.title}>
+                    {rating}
+                </div>
+    });
 }
 
 export default ItemRating;

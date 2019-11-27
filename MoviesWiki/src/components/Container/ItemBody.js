@@ -7,17 +7,15 @@ import ItemReleaseDate from "../Common/ItemReleaseDate";
 
 import styles from "../../styles/ItemBody.css"
 
-class ItemBody extends Component {
-    render() {
-        return (
-            <div className={styles.body}>
-                <ItemImage image={this.props.image} />
-                <ItemReleaseDate releaseDate={this.props.releaseDate} />
-                <ItemTitle title={this.props.title} />                
-                <ItemGenre genre={this.props.genre} />            
-            </div>
-        );
-    }
+const ItemBody = ({ image, releaseDate, title, genre}) => {
+    return (
+        <div className={styles.body}>
+            <ItemImage image={image} />
+            <ItemReleaseDate releaseDate={releaseDate} />
+            <ItemTitle title={title} />                
+            <ItemGenre genre={genre} />            
+        </div>
+    );    
 }
 
 export default ItemBody;

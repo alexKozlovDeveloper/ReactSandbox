@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 
-function ItemDescription(props) {
+const ItemDescription = ({ description }) => {
     return  <div>
-                {props.description}
+                {description}
             </div>;
 }
 

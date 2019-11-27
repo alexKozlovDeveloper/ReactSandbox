@@ -11,7 +11,7 @@ test('ItemGenre rendering test', () => {
 
     var genre = "someGenre";
 
-    const output = shallow(<ItemGenre genre={genre} />);
-    expect(shallowToJson(output)).toMatchSnapshot();
+    const component = shallow(<ItemGenre genre={genre} />);
+    expect(shallowToJson(component)).toMatchSnapshot();
  });
 

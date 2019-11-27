@@ -2,9 +2,9 @@ import React, { Component } from "react";
 
 import styles from "../../styles/ItemImage.css"
 
-function ItemImage(props) {
+const ItemImage = ({ image }) => {
     return  <div className={styles.imagecontainer}>
-                <img className={styles.image} src={props.image}></img>
+                <img className={styles.image} src={image}></img>
             </div>;
 }
 

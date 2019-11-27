@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import styles from "../../styles/NoItemLabel.css"
 
-function NoItemLabel(props) {
+const NoItemLabel = () => {
     return  <div className={styles.title}>
                 No films found
             </div>;

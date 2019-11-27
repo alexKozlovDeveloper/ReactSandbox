@@ -2,8 +2,8 @@ import React, { Component } from "react";
 
 import styles from "../../styles/BackButton.css"
 
-function BackButton(props) {
-    return  <div className={styles.button}>{props.buttonText}</div>;
+const BackButton = ({ buttonText }) => {
+    return  <div className={styles.button}>{buttonText}</div>;
 }
 
 export default BackButton;

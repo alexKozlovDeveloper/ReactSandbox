@@ -72,8 +72,8 @@ class App extends Component {
                 description: "is a 2014 British-American epic science fiction film directed and produced by Christopher Nolan. ... Set in a dystopian future where humanity is struggling to survive, the film follows a group of astronauts who travel through a wormhole near Saturn in search of a new home for humanity.",
             }],
             headerConfig: {
-                title:"Find Your Movies",
-                    searchConfig: {
+                title: "Find Your Movies",
+                searchConfig: {
                     placeHolder: "Quentin Tarantino",
                     buttonText: "Search",
                     searchFilter: {

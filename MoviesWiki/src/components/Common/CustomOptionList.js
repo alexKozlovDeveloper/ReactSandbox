@@ -21,12 +21,12 @@ class CustomOptionList extends Component {
        
         var optionsHtml = [];
 
-        for(var i = 0; i < options.length; i++) {
-            var name = "option" + i;
+        options.map((option, index) => {
+            var name = "option" + index;
             var itemStyles = styles.item + (this.state.selectedItem === name ? ' ' + styles.isactive : '');
 
-            optionsHtml.push(<div name={name} key={i} onClick={this.handleClick} className={itemStyles}>{options[i]}</div>);
-        }
+            optionsHtml.push(<div name={name} key={index} onClick={this.handleClick} className={itemStyles}>{option}</div>);
+        });
 
         return (
             <div className={styles.container}>

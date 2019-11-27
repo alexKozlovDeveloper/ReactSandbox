@@ -4,17 +4,15 @@ import Search from "./Search/Search";
 
 import styles from "../styles/Header.css"
 
-class Header extends Component {
-    render() {
-        return (
-            <div className={styles.header}> 
-                <div className={styles.container}>
-                <div className={styles.headertitle}>{this.props.config.title}</div>
-                    <Search config={this.props.config.searchConfig} />                    
-                </div>
+const Header = ({ config }) => {
+    return (
+        <div className={styles.header}> 
+            <div className={styles.container}>
+            <div className={styles.headertitle}>{config.title}</div>
+                <Search config={config.searchConfig} />                    
             </div>
-        );
-    }
+        </div>
+    );    
 }
 
 export default Header;

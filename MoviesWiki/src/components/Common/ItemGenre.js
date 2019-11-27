@@ -2,9 +2,9 @@ import React, { Component } from "react";
 
 import styles from "../../styles/ItemGenre.css"
 
-function ItemGenre(props) {
+const ItemGenre = ({ genre }) => {
     return  <div className={styles.genre}>
-                {props.genre}
+                {genre}
             </div>;
 }
 

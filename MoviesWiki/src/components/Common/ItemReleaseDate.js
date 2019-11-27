@@ -2,9 +2,9 @@ import React, { Component } from "react";
 
 import styles from "../../styles/ItemReleaseDate.css"
 
-function ItemReleaseDate(props) {
+const ItemReleaseDate = ({ releaseDate }) => {
     return  <div className={styles.releasedate}>
-                {props.releaseDate}
+                {releaseDate}
             </div>;
 }
 

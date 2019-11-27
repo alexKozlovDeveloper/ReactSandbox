@@ -2,9 +2,9 @@ import React, { Component } from "react";
 
 import styles from "../styles/Footer.css"
 
-function Footer(props) {
+const Footer = ({ config }) => {
     return <div className={styles.footer}>
-                <div className={styles.container}>{props.config.title}</div>        
+                <div className={styles.container}>{config.title}</div>        
             </div>;
   }
 

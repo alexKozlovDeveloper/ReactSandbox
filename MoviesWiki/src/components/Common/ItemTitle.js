@@ -2,9 +2,9 @@ import React, { Component } from "react";
 
 import styles from "../../styles/ItemTitle.css"
 
-function ItemTitle(props) {
+const ItemTitle = ({ title }) => {
     return  <div className={styles.title}>
-                {props.title}
+                {title}
             </div>;
 }
 
