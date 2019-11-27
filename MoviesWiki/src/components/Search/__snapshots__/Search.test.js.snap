@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search rendering test 1`] = `
+<div
+  className="search"
+>
+  <div>
+    <SearchField
+      placeHolder="Quentin Tarantino"
+    />
+    <SearchButton
+      buttonText="Search"
+    />
+  </div>
+  <CustomOptionList
+    config={
+      Object {
+        "options": Array [
+          "Title",
+          "Genre",
+        ],
+        "selectedIndex": "0",
+        "title": "Search by",
+      }
+    }
+  />
+</div>
+`;
