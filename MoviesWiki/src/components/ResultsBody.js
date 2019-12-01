@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import ResultsCount from "./Common/ResultsCount";
 import ItemsContainer from "./Container/ItemsContainer";
 import CustomOptionList from "./Common/CustomOptionList";
+import Spinner from "./Common/Spinner";
 
 import styles from "../styles/ResultsBody.css"
 
@@ -24,7 +25,7 @@ class ResultsBody extends React.Component {
             (result) => {
                 debugger;
 
-                this.props.updateMoviesFunc(result);
+               //this.props.updateMoviesFunc(result);
 
             //   this.setState({
             //     isLoaded: true,
@@ -45,7 +46,19 @@ class ResultsBody extends React.Component {
 
 //const ResultsBody = ({movies, config}) => {
     render() {
-        //debugger;
+
+
+
+        debugger;
+
+        var container = "";
+
+        if(this.props.isLoaded === true){
+            container = (<ItemsContainer items={this.props.movies} itemsPerRow={this.props.config.itemsPerRow}/>)
+        } else {
+            container = (<Spinner></Spinner>)
+        }
+
         return (
             <div className={styles.body}>
                 <div className={styles.infocontainer}>
@@ -57,7 +70,7 @@ class ResultsBody extends React.Component {
                     </div>
                 </div>
                 <div>
-                    <ItemsContainer items={this.props.movies} itemsPerRow={this.props.config.itemsPerRow}/>
+                    {container}
                 </div>
             </div>
         ); 
@@ -77,9 +90,13 @@ function mapStateToProps(state){
     //debugger;
 
     
-    const { movies } = state.moviesReducer;
+    const { movies, isLoaded, error } = state.moviesReducer;
     //console.log("lol2" + title);
-    return { movies: movies };
+    return { 
+        movies: movies,
+        isLoaded: isLoaded,
+        error: error
+    };
 }
 
 export default  connect(mapStateToProps, mapDispatchToProps)(ResultsBody);
