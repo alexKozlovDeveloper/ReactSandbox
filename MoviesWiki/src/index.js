@@ -5,7 +5,15 @@ import { Provider } from 'react-redux'
 import { createStore } from 'redux'
 import rootReducer from './reducers'
 
-const store = createStore(rootReducer)
+const defaultStore = {
+    titleReducers: [{
+          title: "defa"
+        }]
+    }
+
+
+
+const store = createStore(rootReducer, defaultStore)
 
 render(
     <Provider store={store}>
