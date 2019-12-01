@@ -1,4 +1,5 @@
 export const setTitle = title => ({
-  type: 'SET_TITLE',
-  title: {title}
+  type: 'UPDATE_TITLE',
+  title: {title},
+  payload: {title}
 })

@@ -6,6 +6,7 @@ import ResultsBody from "./ResultsBody";
 import ItemDetails from "./ItemDetails";
 
 import ErrorBoundary from "./Error/ErrorBoundary";
+import TestReduxTitle from "./TestReduxTitle";
 
 import styles from "../styles/App.css"
 
@@ -103,6 +104,7 @@ class App extends Component {
     render() {
         return  <div className={styles.font}>
                     <ErrorBoundary>
+                        <TestReduxTitle></TestReduxTitle>
                         <Header config={this.state.headerConfig} />
                         <ItemDetails item={this.state.moviesList[0]}/>
                         <ResultsBody items={this.state.moviesList} config={this.state.resultsBodyConfig}/>
