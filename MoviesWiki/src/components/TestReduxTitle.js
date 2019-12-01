@@ -23,7 +23,7 @@ function mapDispatchToProps(dispatch) {
 }
 
 function mapStateToProps(state){
-    debugger;
+    //debugger;
 
     var title = state.titleReducers === undefined ? '' : (state.titleReducers.length > 0 ? state.titleReducers[0].title : '');
     //const { title } = state.titleReducers[0];
