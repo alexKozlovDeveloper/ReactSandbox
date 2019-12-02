@@ -11,7 +11,7 @@ import BackButton from "./Common/BackButton";
 import styles from "../styles/ItemDetails.css"
 
 
-class ItemDetails extends React.Component {
+class ItemDetails extends Component {
     constructor(props) {
         super(props);
     }

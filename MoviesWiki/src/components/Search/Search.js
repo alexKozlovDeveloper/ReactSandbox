@@ -8,18 +8,16 @@ import { updateSearchText, updateSearchBy, loading, updateMovies } from "../../a
 
 import styles from "../../styles/Search.css"
 
-class Search extends React.Component {
+class Search extends Component {
     constructor(props) {
         super(props);
     }
 
     searchMovies() {
-        debugger;
         this.props.updateMoviesBySeachFunc(this.props.searchText, this.props.searchBy);
     }
 
     render() {
-        //debugger;
         return (            
             <div className={styles.search}> 
                 <div>                
@@ -35,31 +33,26 @@ class Search extends React.Component {
 function mapDispatchToProps(dispatch) {
     return {
          updateSearchTextFunc: (searchText) => {
-             //debugger;
              dispatch(updateSearchText(searchText))
          },
          updateSearchByFunc: (searchBy) => {
             dispatch(updateSearchBy(searchBy))
          },
          updateMoviesBySeachFunc: (searchText, searchBy) => {
-
             dispatch(loading())
-            debugger;
+
             var url = "https://reactjs-cdp.herokuapp.com/movies?search=" + searchText + "&searchBy=" + searchBy + "&sortBy=id&sortOrder=asc";
 
             fetch(url)
-          .then(res => res.json())
-          .then(
-            (result) => {
-                //debugger;
-                dispatch(updateMovies(result));
-            },
-            (error) => {
-                debugger;
-                // TODO: Process error
-            }
-          )            
-         }
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    dispatch(updateMovies(result));
+                },
+                (error) => {
+                    // TODO: Process error
+                })            
+        }
     }
 }
 

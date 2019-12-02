@@ -9,7 +9,7 @@ import { updateSearchBy, updateMovies, sortMovies, updateSortBy } from "../actio
 
 import styles from "../styles/ResultsBody.css"
 
-class ResultsBody extends React.Component {
+class ResultsBody extends Component {
     constructor(props) {
         super(props);
     }
