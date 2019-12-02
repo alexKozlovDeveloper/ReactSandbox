@@ -57,6 +57,10 @@
     ],
     "moduleNameMapper": {
       ".+\\.(css|styl|sass|scss)$": "identity-obj-proxy"
-    }
+    },
+    "testPathIgnorePatterns" : [
+      "<rootDir>/coverage",
+      "<rootDir>/cypress"
+    ]
   }
 }

@@ -3,6 +3,7 @@
 exports[`SearchField rendering test 1`] = `
 <input
   className="searchfield"
+  onInput={[Function]}
   type="text"
 />
 `;
