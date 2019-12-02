@@ -75,12 +75,12 @@ class App extends Component {
             headerConfig: {
                 title: "Find Your Movies",
                 searchConfig: {
-                    placeHolder: "Quentin Tarantino",
+                    placeHolder: "The Godfather",
                     buttonText: "Search",
                     searchFilter: {
                         title: "Search by",
                         selectedIndex: "0",
-                        options: ["Title", "Genres"]
+                        options: [{title: "Title", value: "title"}, {title: "Genre", value: "genres"}]
                     }
                 }
             },
@@ -92,7 +92,7 @@ class App extends Component {
                 resultSortConfig: {
                     title: "Sort by",
                     selectedIndex: "1",
-                    options: ["Release date", "Rating"]
+                    options: [{title: "Release date", value: "release_date"}, {title: "Rating", value: "vote_average"}]
                 },
                 resultsCountConfig: {
                     title: "movies found"

@@ -13,9 +13,8 @@ class CustomOptionList extends Component {
     }
 
     handleClick(e) {
-        //debugger;
         this.setState({ selectedItem: e.currentTarget.attributes["name"].nodeValue });
-        this.props.updateFunc(e.currentTarget.innerText);
+        this.props.updateFunc(e.currentTarget.attributes["value"].nodeValue);
     }
     
     render() {
@@ -27,7 +26,7 @@ class CustomOptionList extends Component {
             var name = "option" + index;
             var itemStyles = styles.item + (this.state.selectedItem === name ? ' ' + styles.isactive : '');
 
-            optionsHtml.push(<div name={name} key={index} onClick={this.handleClick} className={itemStyles}>{option}</div>);
+            optionsHtml.push(<div name={name} key={index} onClick={this.handleClick} className={itemStyles} value={option.value}>{option.title}</div>);
         });
 
         return (

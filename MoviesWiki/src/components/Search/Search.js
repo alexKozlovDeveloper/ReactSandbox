@@ -63,7 +63,7 @@ function mapDispatchToProps(dispatch) {
 
             dispatch(loading())
             debugger;
-            var url = "https://reactjs-cdp.herokuapp.com/movies?search=" + searchText + "&searchBy=" + searchBy + "&sortBy=release_date&sortOrder=asc";
+            var url = "https://reactjs-cdp.herokuapp.com/movies?search=" + searchText + "&searchBy=" + searchBy + "&sortBy=id&sortOrder=asc";
 
             fetch(url)
           .then(res => res.json())

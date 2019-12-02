@@ -1,7 +1,6 @@
 const moviesReducer = (state = [], action) => {
     switch (action.type) {
        case 'UPDATE_MOVIES':
-         //debugger;
          return {
           ...state,
           isLoaded: true,
@@ -10,41 +9,56 @@ const moviesReducer = (state = [], action) => {
         }
         
         case 'UPDATE_SEARCH_TEXT':
-          //debugger;
           return {
             ...state,
             searchText: action.searchText,
           }
 
         case 'UPDATE_SEARCH_BY':
-          debugger;
-
-          var item = action.searchBy.toLowerCase();
-
           return {
             ...state,
-            searchBy: item
+            searchBy: action.searchBy
           }
 
         case 'LOADING':
-            //debugger;
             return {
               ...state,
               isLoaded: false
             }
           
         case 'UPDATE_SORT_BY':
-            //debugger;
+          return {
+            ...state,
+            sortBy: action.sortBy
+          }
+
+        case 'SORT_MOVIES':
+            debugger;            
+
+            function compare( a, b ) {
+              if ( a[state.sortBy] < b[state.sortBy] ){
+                return -1;
+              }
+              if ( a[state.sortBy] > b[state.sortBy] ){
+                return 1;
+              }
+              return 0;
+            }
+            
+            state.movies.sort( compare );
+
+            var sortedMovies = state.movies.concat([]);
+
             return {
               ...state,
-              sortBy: action.sortBy
+              movies: sortedMovies
             }
 
       default:
         var defaultState = {
           searchText: '',
           searchBy: 'title',
-          sortBy: 'Rating',
+          sortBy: 'vote_average',
           isLoaded: false,
           error: null,   
           movies: []    

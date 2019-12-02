@@ -13,17 +13,27 @@ const updateMovies = (movies) => ({
     movies: movies
 });
 
+const updateSortBy = (sortBy) => ({
+    type: 'UPDATE_SORT_BY',
+    sortBy: sortBy
+});
+
+const sortMovies = () => ({
+    type: 'SORT_MOVIES'
+});
+
 class ResultsBody extends React.Component {
     constructor(props) {
         super(props);
     }
 
     componentDidMount() {
-        fetch("https://reactjs-cdp.herokuapp.com/movies?sortBy=vote_average")
+        fetch("https://reactjs-cdp.herokuapp.com/movies?sortBy=id")
           .then(res => res.json())
           .then(
             (result) => {
                this.props.updateMoviesFunc(result);
+
             },
             (error) => {
                 debugger;
@@ -42,7 +52,7 @@ class ResultsBody extends React.Component {
                                 <ResultsCount count={this.props.movies.length} title={this.props.config.resultsCountConfig.title}/>
                             </div>
                             <div className={styles.customoptionlistcontainer}>
-                                <CustomOptionList config={this.props.config.resultSortConfig} />
+                                <CustomOptionList config={this.props.config.resultSortConfig} updateFunc={this.props.updateSearchByFunc}/>
                             </div>
                         </div>
                         <div>
@@ -65,7 +75,12 @@ function mapDispatchToProps(dispatch) {
     return {
          updateMoviesFunc: (movies) => {
              dispatch(updateMovies(movies))
-         }
+             dispatch(sortMovies())
+         },
+         updateSearchByFunc: (sortBy) => {
+            dispatch(updateSortBy(sortBy))
+            dispatch(sortMovies())
+        }
     }
 }
 
