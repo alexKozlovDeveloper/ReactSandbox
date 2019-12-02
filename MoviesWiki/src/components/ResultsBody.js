@@ -85,12 +85,13 @@ function mapDispatchToProps(dispatch) {
 }
 
 function mapStateToProps(state){    
-    const { movies, isLoaded, error } = state.moviesReducer;
+    const { movies, isLoaded, error, sortBy } = state.moviesReducer;
 
     return { 
         movies: movies,
         isLoaded: isLoaded,
-        error: error
+        error: error,
+        sortBy: sortBy
     };
 }
 

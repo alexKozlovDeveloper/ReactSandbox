@@ -106,7 +106,7 @@ class App extends Component {
                     <ErrorBoundary>
                         <TestReduxTitle></TestReduxTitle>
                         <Header config={this.state.headerConfig} />
-                        <ItemDetails item={this.state.moviesList[0]}/>
+                        <ItemDetails/>
                         <ResultsBody items={this.state.moviesList} config={this.state.resultsBodyConfig}/>
                         <Footer config={this.state.footerConfig}/>
                     </ErrorBoundary>

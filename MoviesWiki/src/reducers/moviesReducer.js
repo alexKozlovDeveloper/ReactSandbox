@@ -1,5 +1,11 @@
 const moviesReducer = (state = [], action) => {
     switch (action.type) {
+      case 'UPDATE_SELECTED_ITEM':
+        return {
+          ...state,
+          selectedItem: action.selectedItem,
+        }
+
        case 'UPDATE_MOVIES':
          return {
           ...state,
@@ -33,8 +39,6 @@ const moviesReducer = (state = [], action) => {
           }
 
         case 'SORT_MOVIES':
-            debugger;            
-
             function compare( a, b ) {
               if ( a[state.sortBy] < b[state.sortBy] ){
                 return -1;
@@ -61,7 +65,8 @@ const moviesReducer = (state = [], action) => {
           sortBy: 'vote_average',
           isLoaded: false,
           error: null,   
-          movies: []    
+          movies: [],
+          selectedItem: ''  
         } 
         return defaultState
     }

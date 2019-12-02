@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { connect } from 'react-redux'
 
 import ItemImage from "./Common/ItemImage";
 import ItemDetailsTitle from "./Common/ItemDetailsTitle";
@@ -9,29 +10,45 @@ import BackButton from "./Common/BackButton";
 
 import styles from "../styles/ItemDetails.css"
 
-const ItemDetails = ({ item }) => {
-    return (
-        <div className={styles.body}>
-            <div className={styles.imagecontainer}>
-                <ItemImage image={item.image} />
-            </div>
-            <div className={styles.detailscontainer}>
-                <div className={styles.maintitlecontainer}>
-                    <ItemDetailsTitle title={item.title} />  
-                    <ItemRating rating={item.rating} />     
+
+class ItemDetails extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        debugger;
+        return (
+            <div className={styles.body}>
+                <div className={styles.imagecontainer}>
+                    <ItemImage image={this.props.item.poster_path} />
                 </div>
-                <div className={styles.propertiescontainer}>
-                    <ItemYearAndDuration year={item.releaseDate} duration={item.duration}/>
-                </div>
-                <div className={styles.descriptioncontainer}>
-                    <ItemDescription description={item.description} />   
+                <div className={styles.detailscontainer}>
+                    <div className={styles.maintitlecontainer}>
+                        <ItemDetailsTitle title={this.props.item.title} />  
+                        <ItemRating rating={this.props.item.vote_average} />     
+                    </div>
+                    <div className={styles.propertiescontainer}>
+                        <ItemYearAndDuration year={this.props.item.release_date} duration={this.props.item.runtime}/>
+                    </div>
+                    <div className={styles.descriptioncontainer}>
+                        <ItemDescription description={this.props.item.overview} />   
+                    </div>  
                 </div>  
-            </div>  
-            <div>
-                <BackButton buttonText=""/>
-            </div> 
-        </div>
-    );    
+                <div>
+                    <BackButton buttonText=""/>
+                </div> 
+            </div>
+        );   
+    } 
 }
 
-export default ItemDetails;
+function mapStateToProps(state){    
+    const { selectedItem } = state.moviesReducer;
+
+    return { 
+        item: selectedItem
+    };
+}
+
+export default connect(mapStateToProps)(ItemDetails);

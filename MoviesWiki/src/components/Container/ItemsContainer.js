@@ -12,7 +12,7 @@ const ItemsContainer = ({ items }) => {
 
         items.map((item, index) => {
             //debugger;
-            tableContent.push(<ItemBody key={index} title={item.title} genre={item.genres.join(' ')} image={item.poster_path} releaseDate={item.release_date}/>);
+            tableContent.push(<ItemBody key={index} item={item}/>);
         });
 
         return tableContent;
