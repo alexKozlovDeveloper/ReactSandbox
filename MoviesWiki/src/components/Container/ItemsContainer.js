@@ -11,14 +11,13 @@ const ItemsContainer = ({ items }) => {
         var tableContent = [];
 
         items.map((item, index) => {
-            //debugger;
             tableContent.push(<ItemBody key={index} item={item}/>);
         });
 
         return tableContent;
     }
 
-    var table = "";
+    var table;
 
     if(items.length !== 0) {
         table = getDivTable(items);

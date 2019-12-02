@@ -5,22 +5,9 @@ import ResultsCount from "./Common/ResultsCount";
 import ItemsContainer from "./Container/ItemsContainer";
 import CustomOptionList from "./Common/CustomOptionList";
 import Spinner from "./Common/Spinner";
+import { updateSearchBy, updateMovies, sortMovies, updateSortBy } from "../actions/index";
 
 import styles from "../styles/ResultsBody.css"
-
-const updateMovies = (movies) => ({
-    type: 'UPDATE_MOVIES',
-    movies: movies
-});
-
-const updateSortBy = (sortBy) => ({
-    type: 'UPDATE_SORT_BY',
-    sortBy: sortBy
-});
-
-const sortMovies = () => ({
-    type: 'SORT_MOVIES'
-});
 
 class ResultsBody extends React.Component {
     constructor(props) {
@@ -32,33 +19,32 @@ class ResultsBody extends React.Component {
           .then(res => res.json())
           .then(
             (result) => {
-               this.props.updateMoviesFunc(result);
-
+                this.props.updateMoviesFunc(result);
+                this.props.updateSelectedItemFunc(result.data[0]);
             },
             (error) => {
-                debugger;
                 // TODO: Process error
             }
-          )
-      }
+        )
+    }
 
     render() {
-        var content = "";
+        var content;
 
         if(this.props.isLoaded === true){
             content = (<> 
-                         <div className={styles.infocontainer}>
-                            <div className={styles.resultscountcontainer}>
-                                <ResultsCount count={this.props.movies.length} title={this.props.config.resultsCountConfig.title}/>
-                            </div>
-                            <div className={styles.customoptionlistcontainer}>
-                                <CustomOptionList config={this.props.config.resultSortConfig} updateFunc={this.props.updateSearchByFunc}/>
-                            </div>
+                    <div className={styles.infocontainer}>
+                        <div className={styles.resultscountcontainer}>
+                            <ResultsCount count={this.props.movies.length} title={this.props.config.resultsCountConfig.title}/>
                         </div>
-                        <div>
-                            <ItemsContainer items={this.props.movies} itemsPerRow={this.props.config.itemsPerRow}/>
+                        <div className={styles.customoptionlistcontainer}>
+                            <CustomOptionList config={this.props.config.resultSortConfig} updateFunc={this.props.updateSearchByFunc}/>
                         </div>
-                        </>);
+                    </div>
+                    <div>
+                        <ItemsContainer items={this.props.movies} itemsPerRow={this.props.config.itemsPerRow}/>
+                    </div>
+                </>);
         } else {
             content = (<Spinner></Spinner>)
         }
@@ -80,6 +66,9 @@ function mapDispatchToProps(dispatch) {
          updateSearchByFunc: (sortBy) => {
             dispatch(updateSortBy(sortBy))
             dispatch(sortMovies())
+        },
+        updateSelectedItemFunc: (item) => {
+            dispatch(updateSearchBy(item))
         }
     }
 }

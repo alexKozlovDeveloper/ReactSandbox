@@ -4,27 +4,9 @@ import { connect } from 'react-redux'
 import SearchField from "./SearchField";
 import SearchButton from "./SearchButton";
 import CustomOptionList from "../Common/CustomOptionList";
+import { updateSearchText, updateSearchBy, loading, updateMovies } from "../../actions/index";
 
 import styles from "../../styles/Search.css"
-
-const updateSearchText = (searchText) => ({
-    type: 'UPDATE_SEARCH_TEXT',
-    searchText: searchText
-});
-
-const updateSearchBy = (searchBy) => ({
-    type: 'UPDATE_SEARCH_BY',
-    searchBy: searchBy
-});
-
-const loading = () => ({
-    type: 'LOADING'
-});
-
-const updateMovies = (movies) => ({
-    type: 'UPDATE_MOVIES',
-    movies: movies
-});
 
 class Search extends React.Component {
     constructor(props) {
@@ -76,10 +58,7 @@ function mapDispatchToProps(dispatch) {
                 debugger;
                 // TODO: Process error
             }
-          )
-
-
-            
+          )            
          }
     }
 }
