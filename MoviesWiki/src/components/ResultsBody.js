@@ -23,55 +23,39 @@ class ResultsBody extends React.Component {
           .then(res => res.json())
           .then(
             (result) => {
-                debugger;
-
-               //this.props.updateMoviesFunc(result);
-
-            //   this.setState({
-            //     isLoaded: true,
-            //     items: result.items
-            //   });
+               this.props.updateMoviesFunc(result);
             },
-            // Примечание: важно обрабатывать ошибки именно здесь, а не в блоке catch(),
-            // чтобы не перехватывать исключения из ошибок в самих компонентах.
             (error) => {
                 debugger;
-              this.setState({
-                isLoaded: true,
-                error
-              });
+                // TODO: Process error
             }
           )
       }
 
-//const ResultsBody = ({movies, config}) => {
     render() {
-
-
-
-        debugger;
-
-        var container = "";
+        var content = "";
 
         if(this.props.isLoaded === true){
-            container = (<ItemsContainer items={this.props.movies} itemsPerRow={this.props.config.itemsPerRow}/>)
+            content = (<> 
+                         <div className={styles.infocontainer}>
+                            <div className={styles.resultscountcontainer}>
+                                <ResultsCount count={this.props.movies.length} title={this.props.config.resultsCountConfig.title}/>
+                            </div>
+                            <div className={styles.customoptionlistcontainer}>
+                                <CustomOptionList config={this.props.config.resultSortConfig} />
+                            </div>
+                        </div>
+                        <div>
+                            <ItemsContainer items={this.props.movies} itemsPerRow={this.props.config.itemsPerRow}/>
+                        </div>
+                        </>);
         } else {
-            container = (<Spinner></Spinner>)
+            content = (<Spinner></Spinner>)
         }
 
         return (
             <div className={styles.body}>
-                <div className={styles.infocontainer}>
-                    <div className={styles.resultscountcontainer}>
-                        <ResultsCount count={this.props.movies.length} title={this.props.config.resultsCountConfig.title}/>
-                    </div>
-                    <div className={styles.customoptionlistcontainer}>
-                        <CustomOptionList config={this.props.config.resultSortConfig} />
-                    </div>
-                </div>
-                <div>
-                    {container}
-                </div>
+                {content}
             </div>
         ); 
     }   
@@ -80,18 +64,14 @@ class ResultsBody extends React.Component {
 function mapDispatchToProps(dispatch) {
     return {
          updateMoviesFunc: (movies) => {
-             console.log("Updating");
              dispatch(updateMovies(movies))
          }
     }
 }
 
-function mapStateToProps(state){
-    //debugger;
-
-    
+function mapStateToProps(state){    
     const { movies, isLoaded, error } = state.moviesReducer;
-    //console.log("lol2" + title);
+
     return { 
         movies: movies,
         isLoaded: isLoaded,

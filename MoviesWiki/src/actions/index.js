@@ -1,5 +1,4 @@
-export const setTitle = title => ({
-  type: 'UPDATE_TITLE',
-  title: {title},
-  payload: {title}
+export const updateMovies = (movies) => ({
+  type: 'UPDATE_MOVIES',
+  movies: movies
 })

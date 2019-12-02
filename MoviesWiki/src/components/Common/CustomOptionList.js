@@ -13,7 +13,9 @@ class CustomOptionList extends Component {
     }
 
     handleClick(e) {
+        //debugger;
         this.setState({ selectedItem: e.currentTarget.attributes["name"].nodeValue });
+        this.props.updateFunc(e.currentTarget.innerText);
     }
     
     render() {
