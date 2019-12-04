@@ -5,13 +5,20 @@ exports[`CustomOptionList component Rendering test 1`] = `
   config={
     Object {
       "options": Array [
-        "Title",
-        "Genre",
+        Object {
+          "title": "Title",
+          "value": "title",
+        },
+        Object {
+          "title": "Genre",
+          "value": "genres",
+        },
       ],
       "selectedIndex": "0",
       "title": "Search by",
     }
   }
+  updateFunc={[Function]}
 >
   <div
     className="container"
@@ -26,13 +33,19 @@ exports[`CustomOptionList component Rendering test 1`] = `
       key="0"
       name="option0"
       onClick={[Function]}
-    />
+      value="title"
+    >
+      Title
+    </div>
     <div
       className="item"
       key="1"
       name="option1"
       onClick={[Function]}
-    />
+      value="genres"
+    >
+      Genre
+    </div>
   </div>
 </CustomOptionList>
 `;

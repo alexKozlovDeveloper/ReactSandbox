@@ -15,10 +15,16 @@ describe('CustomOptionList component', () => {
         var config = {
             title: "Search by",
             selectedIndex: "0",
-            options: ["Title", "Genre"]
-        }
-    
-        const component = mount(<CustomOptionList config={config} />);
+            options: [{
+                title: "Title", 
+                value: "title"
+            }, {
+                title: "Genre", 
+                value: "genres"
+            }]
+        } 
+
+        const component = mount(<CustomOptionList config={config} updateFunc={() => {}}/>);
         expect(shallowToJson(component)).toMatchSnapshot();
     });
 
@@ -27,15 +33,24 @@ describe('CustomOptionList component', () => {
         var config = {
             title: "Search by",
             selectedIndex: "0",
-            options: ["Title", "Genre"]
+            options: [{
+                title: "Title", 
+                value: "title"
+            }, {
+                title: "Genre", 
+                value: "genres"
+            }]
         }
     
-        const component = mount(<CustomOptionList config={config} />);
+        var updateFunc = jest.fn();
+
+        const component = mount(<CustomOptionList config={config}  updateFunc={updateFunc}/>);
                 
         component.findWhere(node => node.key() === '1').simulate('click');
 
         expect(component.findWhere(node => node.key() === '1').hasClass(styles.isactive)).toBe(true);
         expect(component.state().selectedItem).toBe('option1');
+        expect(updateFunc.mock.calls.length).toBe(1);
     });
 
     it('Click to first button', () => {
@@ -43,15 +58,24 @@ describe('CustomOptionList component', () => {
         var config = {
             title: "Search by",
             selectedIndex: "1",
-            options: ["Title", "Genre"]
+            options: [{
+                title: "Title", 
+                value: "title"
+            }, {
+                title: "Genre", 
+                value: "genres"
+            }]
         }
     
-        const component = mount(<CustomOptionList config={config} />);
+        var updateFunc = jest.fn();
+
+        const component = mount(<CustomOptionList config={config} updateFunc={updateFunc} />);
                 
         component.findWhere(node => node.key() === '0').simulate('click');
 
         expect(component.findWhere(node => node.key() === '0').hasClass(styles.isactive)).toBe(true);
         expect(component.state().selectedItem).toBe('option0');
+        expect(updateFunc.mock.calls.length).toBe(1);
     });
 })
 
