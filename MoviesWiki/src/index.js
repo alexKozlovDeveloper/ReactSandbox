@@ -5,11 +5,29 @@ import { Provider } from 'react-redux'
 import { createStore } from 'redux'
 import rootReducer from './reducers'
 
-const store = createStore(rootReducer)
+import { persistStore, persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
+import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
+
+import { PersistGate } from 'redux-persist/lib/integration/react';
+
+const persistConfig = {
+ key: 'root',
+ storage: storage,
+ stateReconciler: autoMergeLevel2 // see "Merge Process" section for details.
+};
+
+const pReducer = persistReducer(persistConfig, rootReducer);
+
+const store = createStore(pReducer);
+const persistor = persistStore(store);
+
 
 render(
     <Provider store={store}>
-        <App />
+        <PersistGate persistor={persistor}>
+            <App />
+        </PersistGate>
     </Provider>
     , document.getElementById("root")
 );
