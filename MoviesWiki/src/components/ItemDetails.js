@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import ItemImage from "./Common/ItemImage";
 import ItemDetailsTitle from "./Common/ItemDetailsTitle";
 import ItemRating from "./Common/ItemRating";
-import ItemDescription from "./Common/ItemDescription";
+import Description from "./Common/Description";
 import ItemYearAndDuration from "./Common/ItemYearAndDuration";
 import BackButton from "./Common/BackButton";
 
@@ -32,7 +32,7 @@ class ItemDetails extends Component {
                         <ItemYearAndDuration year={this.props.item.release_date} duration={this.props.item.runtime}/>
                     </div>
                     <div className={styles.descriptioncontainer}>
-                        <ItemDescription description={this.props.item.overview} />   
+                        <Description description={this.props.item.overview} />   
                     </div>  
                 </div>  
                 <div>

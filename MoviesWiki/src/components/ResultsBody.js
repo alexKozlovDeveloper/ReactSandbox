@@ -5,7 +5,7 @@ import ResultsCount from "./Common/ResultsCount";
 import ItemsContainer from "./Container/ItemsContainer";
 import CustomOptionList from "./Common/CustomOptionList";
 import Spinner from "./Common/Spinner";
-import { updateSearchBy, updateMovies, sortMovies, updateSortBy } from "../actions/index";
+import { updateSelectedItem, updateMovies, sortMovies, updateSortBy } from "../actions/index";
 
 import styles from "../styles/ResultsBody.css"
 
@@ -68,7 +68,7 @@ function mapDispatchToProps(dispatch) {
             dispatch(sortMovies())
         },
         updateSelectedItemFunc: (item) => {
-            dispatch(updateSearchBy(item))
+            dispatch(updateSelectedItem(item))
         }
     }
 }
