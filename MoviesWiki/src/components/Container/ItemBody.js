@@ -5,7 +5,7 @@ import ItemTitle from "../Common/ItemTitle";
 import ItemGenre from "../Common/ItemGenre";
 import ItemImage from "../Common/ItemImage";
 import ItemReleaseDate from "../Common/ItemReleaseDate";
-import { updateSearchBy } from "../../actions/index";
+import { updateSelectedItem } from "../../actions/index";
 
 import styles from "../../styles/ItemBody.css"
 
@@ -36,7 +36,7 @@ class ItemBody extends Component {
 function mapDispatchToProps(dispatch) {
     return {
          updateSelectedItemFunc: (item) => {
-             dispatch(updateSearchBy(item))
+             dispatch(updateSelectedItem(item))
          }       
     }
 }

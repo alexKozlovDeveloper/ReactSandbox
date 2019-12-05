@@ -3,7 +3,12 @@ export const updateMovies = (movies) => ({
   movies: movies
 })
 
-export const updateSearchBy = (item) => ({
+export const updateSearchBy = (searchBy) => ({
+  type: 'UPDATE_SEARCH_BY',
+  searchBy: searchBy
+});
+
+export const updateSelectedItem = (item) => ({
   type: 'UPDATE_SELECTED_ITEM',
   selectedItem: item
 });
