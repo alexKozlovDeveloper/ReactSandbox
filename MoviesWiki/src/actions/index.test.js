@@ -1,4 +1,5 @@
 import { updateMovies, updateSearchBy, updateSelectedItem, updateSortBy, sortMovies, updateSearchText,loading } from './index'
+import { UPDATE_MOVIES, UPDATE_SEARCH_BY, UPDATE_SELECTED_ITEM, UPDATE_SORT_BY, SORT_MOVIES, UPDATE_SEARCH_TEXT, LOADING } from './actionTypes';
 
 describe('Test Actions', () => {
     
@@ -6,7 +7,7 @@ describe('Test Actions', () => {
     const content = [{title: 'title1'},{title: 'title2'}]
 
     const expectedAction = {
-      type: 'UPDATE_MOVIES',
+      type: UPDATE_MOVIES,
       movies: content
     }
     expect(updateMovies(content)).toEqual(expectedAction)
@@ -16,7 +17,7 @@ describe('Test Actions', () => {
     const content = 'test'
 
     const expectedAction = {
-      type: 'UPDATE_SEARCH_BY',
+      type: UPDATE_SEARCH_BY,
       searchBy: content
     }
     expect(updateSearchBy(content)).toEqual(expectedAction)
@@ -26,7 +27,7 @@ describe('Test Actions', () => {
     const content = {title: 'title1'}
 
     const expectedAction = {
-      type: 'UPDATE_SELECTED_ITEM',
+      type: UPDATE_SELECTED_ITEM,
       selectedItem: content
     }
     expect(updateSelectedItem(content)).toEqual(expectedAction)
@@ -36,7 +37,7 @@ describe('Test Actions', () => {
     const content = 'test'
 
     const expectedAction = {
-      type: 'UPDATE_SORT_BY',
+      type: UPDATE_SORT_BY,
       sortBy: content
     }
     expect(updateSortBy(content)).toEqual(expectedAction)
@@ -44,7 +45,7 @@ describe('Test Actions', () => {
 
   it('Test sortMovies action', () => {
     const expectedAction = {
-      type: 'SORT_MOVIES'
+      type: SORT_MOVIES
     }
     expect(sortMovies()).toEqual(expectedAction)
   })
@@ -53,7 +54,7 @@ describe('Test Actions', () => {
     const content = 'test'
 
     const expectedAction = {
-      type: 'UPDATE_SEARCH_TEXT',
+      type: UPDATE_SEARCH_TEXT,
       searchText: content
     }
     expect(updateSearchText(content)).toEqual(expectedAction)
@@ -61,7 +62,7 @@ describe('Test Actions', () => {
   
   it('Test loading action', () => {
     const expectedAction = {
-      type: 'LOADING'
+      type: LOADING
     }
     expect(loading()).toEqual(expectedAction)
   })
