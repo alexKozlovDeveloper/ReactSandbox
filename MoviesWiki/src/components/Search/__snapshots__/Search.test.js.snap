@@ -1,28 +1,50 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Search rendering test 1`] = `
-<div
-  className="search"
+<ContextProvider
+  value={
+    Object {
+      "store": Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+        Symbol(observable): [Function],
+      },
+      "subscription": Subscription {
+        "handleChangeWrapper": [Function],
+        "listeners": Object {
+          "notify": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "dispatch": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+          Symbol(observable): [Function],
+        },
+        "unsubscribe": null,
+      },
+    }
+  }
 >
-  <div>
-    <SearchField
-      placeHolder="Quentin Tarantino"
-    />
-    <SearchButton
-      buttonText="Search"
-    />
-  </div>
-  <CustomOptionList
+  <Connect(Search)
     config={
       Object {
-        "options": Array [
-          "Title",
-          "Genre",
-        ],
-        "selectedIndex": "0",
-        "title": "Search by",
+        "buttonText": "Search",
+        "placeHolder": "Quentin Tarantino",
+        "searchFilter": Object {
+          "options": Array [
+            "Title",
+            "Genre",
+          ],
+          "selectedIndex": "0",
+          "title": "Search by",
+        },
       }
     }
   />
-</div>
+</ContextProvider>
 `;

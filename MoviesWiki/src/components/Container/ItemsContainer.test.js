@@ -2,6 +2,9 @@ import React from 'react';
 import { shallow, mount, configure } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
 import Adapter from 'enzyme-adapter-react-16';
+import rootReducer from '../../reducers'
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
 
 import ItemsContainer from "./ItemsContainer";
 
@@ -24,7 +27,9 @@ describe('ItemsContainer component', () => {
             }
         };
 
-        const component = mount(<ItemsContainer items={moviesList} config={resultsBodyConfig} />);
+        const store = createStore(rootReducer)
+
+        const component = mount(<Provider store={store}><ItemsContainer items={moviesList} config={resultsBodyConfig} /></Provider>);
         expect(shallowToJson(component)).toMatchSnapshot();
     });  
     
@@ -33,7 +38,7 @@ describe('ItemsContainer component', () => {
             title: "Interstellar",
             releaseDate: "2014",
             image: "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SY1000_SX675_AL_.jpg",        
-            genre: "action",
+            genres: ["action"],
             rating: 7.2,
             duration: 145,
             description: "is a 2014 British-American epic science fiction film directed and produced by Christopher Nolan. ... Set in a dystopian future where humanity is struggling to survive, the film follows a group of astronauts who travel through a wormhole near Saturn in search of a new home for humanity.",
@@ -41,7 +46,7 @@ describe('ItemsContainer component', () => {
             title: "Interstellar 2",
             releaseDate: "2015",
             image: "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SY1000_SX675_AL_.jpg",        
-            genre: "action2",
+            genres: ["action2"],
             rating: 7.2,
             duration: 145,
             description: "is a 2014 British-American epic science fiction film directed and produced by Christopher Nolan. ... Set in a dystopian future where humanity is struggling to survive, the film follows a group of astronauts who travel through a wormhole near Saturn in search of a new home for humanity.",
@@ -49,7 +54,7 @@ describe('ItemsContainer component', () => {
             title: "Interstellar 3",
             releaseDate: "2016",
             image: "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SY1000_SX675_AL_.jpg",        
-            genre: "action 3",
+            genres: ["action 3"],
             rating: 7.2,
             duration: 145,
             description: "is a 2014 British-American epic science fiction film directed and produced by Christopher Nolan. ... Set in a dystopian future where humanity is struggling to survive, the film follows a group of astronauts who travel through a wormhole near Saturn in search of a new home for humanity.",
@@ -67,7 +72,9 @@ describe('ItemsContainer component', () => {
             }
         };
 
-        const component = mount(<ItemsContainer items={moviesList} config={resultsBodyConfig} />);
+        const store = createStore(rootReducer)
+
+        const component = mount(<Provider store={store}><ItemsContainer items={moviesList} config={resultsBodyConfig} /></Provider>);
         expect(shallowToJson(component)).toMatchSnapshot();
     }); 
 

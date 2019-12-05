@@ -2,6 +2,9 @@ import React from 'react';
 import { shallow, configure } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
 import Adapter from 'enzyme-adapter-react-16';
+import rootReducer from '../reducers'
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
 
 import ItemDetails from "./ItemDetails";
 
@@ -19,7 +22,17 @@ test('ItemDetails rendering test', () => {
         description: "is a 2014 British-American epic science fiction film directed and produced by Christopher Nolan. ... Set in a dystopian future where humanity is struggling to survive, the film follows a group of astronauts who travel through a wormhole near Saturn in search of a new home for humanity.",
     }
 
-    const component = shallow(<ItemDetails item={item}/>);
+    var defaultStore = {
+        moviesReducer: {
+            selectedItem: item
+        }
+    }
+
+    const store = createStore(rootReducer, defaultStore)
+
+    const component = shallow(<Provider store={store}>
+                                <ItemDetails item={item}/>
+                              </Provider>);
     expect(shallowToJson(component)).toMatchSnapshot();
  });
 

@@ -17,7 +17,6 @@ class ItemBody extends Component {
     }
 
     handleClick(e) {
-        debugger;
         this.props.updateSelectedItemFunc(this.props.item);
     }
 
