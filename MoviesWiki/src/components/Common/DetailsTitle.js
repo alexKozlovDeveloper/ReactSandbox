@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 
-import styles from "../../styles/ItemDetailsTitle.css"
+import styles from "../../styles/DetailsTitle.css"
 
-const ItemDetailsTitle = ({ title}) => {
+const DetailsTitle = ({ title}) => {
     return  <div className={styles.title}>
                 {title}
             </div>;
 }
 
-export default ItemDetailsTitle;
+export default DetailsTitle;

@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 
-import styles from "../../styles/ItemReleaseDate.css"
+import styles from "../../styles/ReleaseDate.css"
 
-const ItemReleaseDate = ({ releaseDate }) => {
+const ReleaseDate = ({ releaseDate }) => {
     return  <div className={styles.releasedate}>
                 {releaseDate}
             </div>;
 }
 
-export default ItemReleaseDate;
+export default ReleaseDate;

@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 
-import styles from "../../styles/ItemGenre.css"
+import styles from "../../styles/Genre.css"
 
-const ItemGenre = ({ genre }) => {
+const Genre = ({ genre }) => {
     return  <div className={styles.genre}>
                 {genre}
             </div>;
 }
 
-export default ItemGenre;
+export default Genre;

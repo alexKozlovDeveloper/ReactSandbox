@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 
-import styles from "../../styles/ItemYearAndDuration.css"
+import styles from "../../styles/YearAndDuration.css"
 
-const ItemYearAndDuration = ({ year, duration}) => {
+const YearAndDuration = ({ year, duration}) => {
     return  <>
                 <div className={styles.container}>
                     <div className={styles.number}>{year}</div>
@@ -15,4 +15,4 @@ const ItemYearAndDuration = ({ year, duration}) => {
             </>;
 }
 
-export default ItemYearAndDuration;
+export default YearAndDuration;

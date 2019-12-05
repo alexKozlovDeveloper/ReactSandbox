@@ -1,35 +1,34 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux'
 
-import ItemImage from "./Common/ItemImage";
-import ItemDetailsTitle from "./Common/ItemDetailsTitle";
-import ItemRating from "./Common/ItemRating";
+import Image from "./Common/Image";
+import DetailsTitle from "./Common/DetailsTitle";
+import Rating from "./Common/Rating";
 import Description from "./Common/Description";
-import ItemYearAndDuration from "./Common/ItemYearAndDuration";
+import YearAndDuration from "./Common/YearAndDuration";
 import BackButton from "./Common/BackButton";
 
-import styles from "../styles/ItemDetails.css"
+import styles from "../styles/DetailsView.css"
 
 
-class ItemDetails extends Component {
+class DetailsView extends Component {
     constructor(props) {
         super(props);
     }
 
     render() {
-        debugger;
         return (
             <div className={styles.body}>
                 <div className={styles.imagecontainer}>
-                    <ItemImage image={this.props.item.poster_path} />
+                    <Image image={this.props.item.poster_path} />
                 </div>
                 <div className={styles.detailscontainer}>
                     <div className={styles.maintitlecontainer}>
-                        <ItemDetailsTitle title={this.props.item.title} />  
-                        <ItemRating rating={this.props.item.vote_average} />     
+                        <DetailsTitle title={this.props.item.title} />  
+                        <Rating rating={this.props.item.vote_average} />     
                     </div>
                     <div className={styles.propertiescontainer}>
-                        <ItemYearAndDuration year={this.props.item.release_date} duration={this.props.item.runtime}/>
+                        <YearAndDuration year={this.props.item.release_date} duration={this.props.item.runtime}/>
                     </div>
                     <div className={styles.descriptioncontainer}>
                         <Description description={this.props.item.overview} />   
@@ -51,4 +50,4 @@ function mapStateToProps(state){
     };
 }
 
-export default connect(mapStateToProps)(ItemDetails);
+export default connect(mapStateToProps)(DetailsView);

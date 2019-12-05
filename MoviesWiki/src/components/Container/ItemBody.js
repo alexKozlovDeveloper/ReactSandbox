@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux'
 
-import ItemTitle from "../Common/ItemTitle";
-import ItemGenre from "../Common/ItemGenre";
-import ItemImage from "../Common/ItemImage";
-import ItemReleaseDate from "../Common/ItemReleaseDate";
+import Title from "../Common/Title";
+import Genre from "../Common/Genre";
+import Image from "../Common/Image";
+import ReleaseDate from "../Common/ReleaseDate";
 import { updateSelectedItem } from "../../actions/index";
 
 import styles from "../../styles/ItemBody.css"
@@ -23,10 +23,10 @@ class ItemBody extends Component {
     render() {        
         return (
             <div className={styles.body} onClick={this.handleClick}>
-                <ItemImage image={this.props.item.poster_path} />
-                <ItemReleaseDate releaseDate={this.props.item.release_date} />
-                <ItemTitle title={this.props.item.title} />                
-                <ItemGenre genre={this.props.item.genres.join(' ')} />            
+                <Image image={this.props.item.poster_path} />
+                <ReleaseDate releaseDate={this.props.item.release_date} />
+                <Title title={this.props.item.title} />                
+                <Genre genre={this.props.item.genres.join(' ')} />            
             </div>
         );    
     }

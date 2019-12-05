@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import ResultsBody from "./ResultsBody";
-import ItemDetails from "./ItemDetails";
+import DetailsView from "./DetailsView";
 
 import ErrorBoundary from "./Error/ErrorBoundary";
 
@@ -59,7 +59,7 @@ class App extends Component {
         return  <div className={styles.font}>
                     <ErrorBoundary>
                         <Header config={this.state.headerConfig} />
-                        <ItemDetails/>
+                        <DetailsView/>
                         <ResultsBody config={this.state.resultsBodyConfig}/>
                         <Footer config={this.state.footerConfig}/>
                     </ErrorBoundary>
