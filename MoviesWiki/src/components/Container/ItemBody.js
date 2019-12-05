@@ -5,6 +5,7 @@ import Title from "../Common/Title";
 import Genre from "../Common/Genre";
 import Image from "../Common/Image";
 import ReleaseDate from "../Common/ReleaseDate";
+import Rating from "../Common/Rating";
 import { updateSelectedItem } from "../../actions/index";
 
 import styles from "../../styles/ItemBody.css"
@@ -26,7 +27,8 @@ class ItemBody extends Component {
                 <Image image={this.props.item.poster_path} />
                 <ReleaseDate releaseDate={this.props.item.release_date} />
                 <Title title={this.props.item.title} />                
-                <Genre genre={this.props.item.genres.join(' ')} />            
+                <Genre genre={this.props.item.genres.join(' ')} /> 
+                <Rating rating={this.props.item.vote_average} />                  
             </div>
         );    
     }

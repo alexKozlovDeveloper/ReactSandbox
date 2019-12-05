@@ -20,8 +20,7 @@ class App extends Component {
                     placeHolder: "The Godfather",
                     buttonText: "Search",
                     searchFilter: {
-                        title: "Search by",
-                        selectedIndex: "0",
+                        title: "Search by",                        
                         options: [{
                             title: "Title", 
                             value: "title"
@@ -38,8 +37,7 @@ class App extends Component {
             resultsBodyConfig: {
                 itemsPerRow: 4,
                 resultSortConfig: {
-                    title: "Sort by",
-                    selectedIndex: "1",
+                    title: "Sort by",                    
                     options: [{
                         title: "Release date", 
                         value: "release_date"

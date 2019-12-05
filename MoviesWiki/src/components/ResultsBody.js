@@ -31,6 +31,8 @@ class ResultsBody extends Component {
     render() {
         var content;
 
+        var selectedIndex = this.props.sortBy === 'release_date' ? "0" : "1";
+
         if(this.props.isLoaded === true){
             content = (<> 
                     <div className={styles.infocontainer}>
@@ -38,7 +40,7 @@ class ResultsBody extends Component {
                             <ResultsCount count={this.props.movies.length} title={this.props.config.resultsCountConfig.title}/>
                         </div>
                         <div className={styles.customoptionlistcontainer}>
-                            <CustomOptionList config={this.props.config.resultSortConfig} updateFunc={this.props.updateSearchByFunc}/>
+                            <CustomOptionList config={this.props.config.resultSortConfig} selectedIndex={selectedIndex} updateFunc={this.props.updateSortByFunc}/>
                         </div>
                     </div>
                     <div>
@@ -60,11 +62,11 @@ class ResultsBody extends Component {
 function mapDispatchToProps(dispatch) {
     return {
          updateMoviesFunc: (movies) => {
-             dispatch(updateMovies(movies))
+             dispatch(updateMovies(movies.data))
              dispatch(sortMovies())
          },
-         updateSearchByFunc: (sortBy) => {
-            dispatch(updateSortBy(sortBy))
+         updateSortByFunc: (sortBy) => {
+            dispatch(updateSortBy(sortBy))         
             dispatch(sortMovies())
         },
         updateSelectedItemFunc: (item) => {
@@ -74,14 +76,13 @@ function mapDispatchToProps(dispatch) {
 }
 
 function mapStateToProps(state){    
-    const { movies, isLoaded, error, sortBy } = state.moviesReducer;
+    const { movies, isLoaded, sortBy } = state.moviesReducer;
 
     return { 
         movies: movies,
         isLoaded: isLoaded,
-        error: error,
         sortBy: sortBy
     };
 }
 
-export default  connect(mapStateToProps, mapDispatchToProps)(ResultsBody);
+export default connect(mapStateToProps, mapDispatchToProps)(ResultsBody);

@@ -7,7 +7,7 @@ class CustomOptionList extends Component {
     constructor(props) {
         super(props);
 
-        this.state = { selectedItem: "option" + this.props.config.selectedIndex };
+        this.state = { selectedItem: "option" + this.props.selectedIndex };
 
         this.handleClick = this.handleClick.bind(this);
     }
@@ -19,7 +19,7 @@ class CustomOptionList extends Component {
     
     render() {
         var options = this.props.config.options; 
-       
+
         var optionsHtml = [];
 
         options.map((option, index) => {

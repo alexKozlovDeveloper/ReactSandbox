@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import SearchField from "./SearchField";
 import SearchButton from "./SearchButton";
 import CustomOptionList from "../Common/CustomOptionList";
-import { updateSearchText, updateSearchBy, loading, updateMovies } from "../../actions/index";
+import { updateSearchText, updateSearchBy, loading, updateMovies, sortMovies } from "../../actions/index";
 
 import styles from "../../styles/Search.css"
 
@@ -18,13 +18,16 @@ class Search extends Component {
     }
 
     render() {
+        debugger;
+        var selectedIndex = this.props.searchBy === 'title' ? "0" : "1";        
+
         return (            
             <div className={styles.search}> 
                 <div>                
                     <SearchField placeHolder={this.props.config.placeHolder} updateFunc={this.props.updateSearchTextFunc}/>
                     <SearchButton buttonText={this.props.config.buttonText} updateFunc={() => this.searchMovies()}/>
                 </div>
-                <CustomOptionList config={this.props.config.searchFilter} updateFunc={this.props.updateSearchByFunc}/>
+                <CustomOptionList config={this.props.config.searchFilter} selectedIndex={selectedIndex} updateFunc={this.props.updateSearchByFunc}/>
             </div>           
         );  
     }  
@@ -47,7 +50,8 @@ function mapDispatchToProps(dispatch) {
             .then(res => res.json())
             .then(
                 (result) => {
-                    dispatch(updateMovies(result));
+                    dispatch(updateMovies(result.data));
+                    dispatch(sortMovies())
                 },
                 (error) => {
                     // TODO: Process error

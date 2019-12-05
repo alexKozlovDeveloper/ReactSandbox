@@ -1,74 +1,76 @@
-const moviesReducer = (state = [], action) => {
+import { UPDATE_MOVIES, UPDATE_SEARCH_BY, UPDATE_SELECTED_ITEM, UPDATE_SORT_BY, SORT_MOVIES, UPDATE_SEARCH_TEXT, LOADING } from '../actions/actionTypes';
+
+const initialState = {
+    searchText: '',
+    searchBy: 'title',
+    sortBy: 'vote_average',
+    isLoaded: false,
+    movies: [],
+    selectedItem: null 
+  }
+
+const moviesReducer = (state = initialState, action) => {
     switch (action.type) {
-      case 'UPDATE_SELECTED_ITEM':
+      case UPDATE_SELECTED_ITEM:
         return {
           ...state,
           selectedItem: action.selectedItem,
         }
 
-       case 'UPDATE_MOVIES':
+       case UPDATE_MOVIES:
+          debugger;
          return {
           ...state,
           isLoaded: true,
-          error: null,   
-          movies: action.movies.data
+          movies: action.movies
         }
         
-        case 'UPDATE_SEARCH_TEXT':
+        case UPDATE_SEARCH_TEXT:
           return {
             ...state,
             searchText: action.searchText,
           }
 
-        case 'UPDATE_SEARCH_BY':
+        case UPDATE_SEARCH_BY:
           return {
             ...state,
             searchBy: action.searchBy
           }
 
-        case 'LOADING':
+        case LOADING:
+          debugger;
             return {
               ...state,
               isLoaded: false
             }
           
-        case 'UPDATE_SORT_BY':
+        case UPDATE_SORT_BY:
           return {
             ...state,
             sortBy: action.sortBy
           }
 
-        case 'SORT_MOVIES':
-            function compare( a, b ) {
-              if ( a[state.sortBy] < b[state.sortBy] ){
-                return -1;
-              }
-              if ( a[state.sortBy] > b[state.sortBy] ){
-                return 1;
-              }
-              return 0;
+        case SORT_MOVIES:
+          function compare( a, b ) {
+            if ( a[state.sortBy] < b[state.sortBy] ){
+              return -1;
             }
-            
-            state.movies.sort( compare );
-
-            var sortedMovies = state.movies.concat([]);
-
-            return {
-              ...state,
-              movies: sortedMovies
+            if ( a[state.sortBy] > b[state.sortBy] ){
+              return 1;
             }
+            return 0;
+          }
 
-      default:
-        var defaultState = {
-          searchText: '',
-          searchBy: 'title',
-          sortBy: 'vote_average',
-          isLoaded: false,
-          error: null,   
-          movies: [],
-          selectedItem: ''  
-        } 
-        return defaultState
+          let sortedMovies = state.movies.concat([]);
+          sortedMovies.sort(compare);
+
+          return {
+            ...state,
+            movies: sortedMovies
+          }
+
+      default:        
+        return initialState
     }
   }
   
