@@ -6,7 +6,7 @@ import rootReducer from '../reducers'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 
-import ItemDetails from "./ItemDetails";
+import DetailsView from "./DetailsView";
 
 configure({adapter: new Adapter()});
 
@@ -31,7 +31,7 @@ test('ItemDetails rendering test', () => {
     const store = createStore(rootReducer, defaultStore)
 
     const component = shallow(<Provider store={store}>
-                                <ItemDetails item={item}/>
+                                <DetailsView item={item}/>
                               </Provider>);
     expect(shallowToJson(component)).toMatchSnapshot();
  });

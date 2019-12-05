@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ItemGenre rendering test 1`] = `
+exports[`Genre rendering test 1`] = `
 <div
   className="genre"
 >

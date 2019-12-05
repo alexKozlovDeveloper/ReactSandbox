@@ -3,15 +3,15 @@ import { shallow, configure } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
 import Adapter from 'enzyme-adapter-react-16';
 
-import ItemImage from "./ItemImage";
+import Image from "./Image";
 
 configure({adapter: new Adapter()});
 
-test('ItemImage rendering test', () => {
+test('Image rendering test', () => {
 
     var image = "someImage";
 
-    const component = shallow(<ItemImage image={image} />);
+    const component = shallow(<Image image={image} />);
     expect(shallowToJson(component)).toMatchSnapshot();
  });
 

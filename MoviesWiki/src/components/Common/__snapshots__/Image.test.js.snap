@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ItemImage rendering test 1`] = `
+exports[`Image rendering test 1`] = `
 <div
   className="imagecontainer"
 >

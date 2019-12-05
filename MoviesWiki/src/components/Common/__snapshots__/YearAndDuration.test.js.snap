@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ItemYearAndDuration rendering test 1`] = `
+exports[`YearAndDuration rendering test 1`] = `
 <Fragment>
   <div
     className="container"

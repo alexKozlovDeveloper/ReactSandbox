@@ -152,7 +152,7 @@ exports[`ItemsContainer component Rendering test - with items 1`] = `
             className="body"
             onClick={[Function]}
           >
-            <ItemImage>
+            <Image>
               <div
                 className="imagecontainer"
               >
@@ -160,13 +160,13 @@ exports[`ItemsContainer component Rendering test - with items 1`] = `
                   className="image"
                 />
               </div>
-            </ItemImage>
-            <ItemReleaseDate>
+            </Image>
+            <ReleaseDate>
               <div
                 className="releasedate"
               />
-            </ItemReleaseDate>
-            <ItemTitle
+            </ReleaseDate>
+            <Title
               title="Interstellar"
             >
               <div
@@ -174,8 +174,8 @@ exports[`ItemsContainer component Rendering test - with items 1`] = `
               >
                 Interstellar
               </div>
-            </ItemTitle>
-            <ItemGenre
+            </Title>
+            <Genre
               genre="action"
             >
               <div
@@ -183,7 +183,7 @@ exports[`ItemsContainer component Rendering test - with items 1`] = `
               >
                 action
               </div>
-            </ItemGenre>
+            </Genre>
           </div>
         </ItemBody>
       </Connect(ItemBody)>
@@ -223,7 +223,7 @@ exports[`ItemsContainer component Rendering test - with items 1`] = `
             className="body"
             onClick={[Function]}
           >
-            <ItemImage>
+            <Image>
               <div
                 className="imagecontainer"
               >
@@ -231,13 +231,13 @@ exports[`ItemsContainer component Rendering test - with items 1`] = `
                   className="image"
                 />
               </div>
-            </ItemImage>
-            <ItemReleaseDate>
+            </Image>
+            <ReleaseDate>
               <div
                 className="releasedate"
               />
-            </ItemReleaseDate>
-            <ItemTitle
+            </ReleaseDate>
+            <Title
               title="Interstellar 2"
             >
               <div
@@ -245,8 +245,8 @@ exports[`ItemsContainer component Rendering test - with items 1`] = `
               >
                 Interstellar 2
               </div>
-            </ItemTitle>
-            <ItemGenre
+            </Title>
+            <Genre
               genre="action2"
             >
               <div
@@ -254,7 +254,7 @@ exports[`ItemsContainer component Rendering test - with items 1`] = `
               >
                 action2
               </div>
-            </ItemGenre>
+            </Genre>
           </div>
         </ItemBody>
       </Connect(ItemBody)>
@@ -294,7 +294,7 @@ exports[`ItemsContainer component Rendering test - with items 1`] = `
             className="body"
             onClick={[Function]}
           >
-            <ItemImage>
+            <Image>
               <div
                 className="imagecontainer"
               >
@@ -302,13 +302,13 @@ exports[`ItemsContainer component Rendering test - with items 1`] = `
                   className="image"
                 />
               </div>
-            </ItemImage>
-            <ItemReleaseDate>
+            </Image>
+            <ReleaseDate>
               <div
                 className="releasedate"
               />
-            </ItemReleaseDate>
-            <ItemTitle
+            </ReleaseDate>
+            <Title
               title="Interstellar 3"
             >
               <div
@@ -316,8 +316,8 @@ exports[`ItemsContainer component Rendering test - with items 1`] = `
               >
                 Interstellar 3
               </div>
-            </ItemTitle>
-            <ItemGenre
+            </Title>
+            <Genre
               genre="action 3"
             >
               <div
@@ -325,7 +325,7 @@ exports[`ItemsContainer component Rendering test - with items 1`] = `
               >
                 action 3
               </div>
-            </ItemGenre>
+            </Genre>
           </div>
         </ItemBody>
       </Connect(ItemBody)>

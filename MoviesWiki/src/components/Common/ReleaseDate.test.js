@@ -3,7 +3,7 @@ import { shallow, configure } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
 import Adapter from 'enzyme-adapter-react-16';
 
-import ItemReleaseDate from "./ItemReleaseDate";
+import ReleaseDate from "./ReleaseDate";
 
 configure({adapter: new Adapter()});
 
@@ -11,7 +11,7 @@ test('ItemReleaseDate rendering test', () => {
 
     var releaseDate = "someReleaseDate";
 
-    const component = shallow(<ItemReleaseDate releaseDate={releaseDate} />);
+    const component = shallow(<ReleaseDate releaseDate={releaseDate} />);
     expect(shallowToJson(component)).toMatchSnapshot();
  });
 

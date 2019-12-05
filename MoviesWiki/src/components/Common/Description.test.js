@@ -7,7 +7,7 @@ import Description from "./Description";
 
 configure({adapter: new Adapter()});
 
-test('ItemDescription rendering test', () => {
+test('Description rendering test', () => {
 
     var description = "someDescription";
 

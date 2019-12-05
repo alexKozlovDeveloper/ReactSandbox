@@ -30,7 +30,7 @@ exports[`App rendering test 1`] = `
         }
       }
     />
-    <Connect(ItemDetails) />
+    <Connect(DetailsView) />
     <Connect(ResultsBody)
       config={
         Object {

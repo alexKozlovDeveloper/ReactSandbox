@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ItemDescription rendering test 1`] = `
+exports[`Description rendering test 1`] = `
 <div>
   someDescription
 </div>
