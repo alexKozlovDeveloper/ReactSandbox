@@ -18,7 +18,6 @@ const moviesReducer = (state = initialState, action) => {
         }
 
        case UPDATE_MOVIES:
-          debugger;
          return {
           ...state,
           isLoaded: true,
@@ -38,7 +37,6 @@ const moviesReducer = (state = initialState, action) => {
           }
 
         case LOADING:
-          debugger;
             return {
               ...state,
               isLoaded: false

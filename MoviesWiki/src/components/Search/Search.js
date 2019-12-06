@@ -17,14 +17,19 @@ class Search extends Component {
         this.props.updateMoviesBySeachFunc(this.props.searchText, this.props.searchBy);
     }
 
+    submitSearch(e) {
+        if (e.which == 13) {
+            this.searchMovies()
+        }        
+    }
+
     render() {
-        debugger;
         var selectedIndex = this.props.searchBy === 'title' ? "0" : "1";        
 
         return (            
             <div className={styles.search}> 
                 <div>                
-                    <SearchField placeHolder={this.props.config.placeHolder} updateFunc={this.props.updateSearchTextFunc}/>
+                    <SearchField placeHolder={this.props.config.placeHolder} updateFunc={this.props.updateSearchTextFunc} submitFunc={(e) => this.submitSearch(e)}/>
                     <SearchButton buttonText={this.props.config.buttonText} updateFunc={() => this.searchMovies()}/>
                 </div>
                 <CustomOptionList config={this.props.config.searchFilter} selectedIndex={selectedIndex} updateFunc={this.props.updateSearchByFunc}/>
