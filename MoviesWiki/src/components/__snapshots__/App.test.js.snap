@@ -22,7 +22,6 @@ exports[`App rendering test 1`] = `
                   "value": "genres",
                 },
               ],
-              "selectedIndex": "0",
               "title": "Search by",
             },
           },
@@ -46,7 +45,6 @@ exports[`App rendering test 1`] = `
                 "value": "vote_average",
               },
             ],
-            "selectedIndex": "1",
             "title": "Sort by",
           },
           "resultsCountConfig": Object {

@@ -22,12 +22,12 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>0/17</span>
+        <span class='fraction'>0/18</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/2</span>
+        <span class='fraction'>0/4</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
@@ -37,7 +37,7 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>0/17</span>
+        <span class='fraction'>0/18</span>
       </div>
     </div>
     <p class="quiet">
@@ -132,7 +132,8 @@
 <a name='L84'></a><a href='#L84'>84</a>
 <a name='L85'></a><a href='#L85'>85</a>
 <a name='L86'></a><a href='#L86'>86</a>
-<a name='L87'></a><a href='#L87'>87</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -166,24 +167,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -194,15 +185,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -211,7 +198,22 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -251,6 +253,8 @@ class ResultsBody extends Component {
 <span class="fstat-no" title="function not covered" >    re</span>nder() {
         var content;
 &nbsp;
+        var selectedIndex = <span class="cstat-no" title="statement not covered" >this.props.sortBy === 'release_date' ? "0" : "1";</span>
+&nbsp;
 <span class="cstat-no" title="statement not covered" >        if(this.props.isLoaded === true){</span>
 <span class="cstat-no" title="statement not covered" >            content = (&lt;&gt; </span>
                     &lt;div className={styles.infocontainer}&gt;
@@ -258,7 +262,7 @@ class ResultsBody extends Component {
                             &lt;ResultsCount count={this.props.movies.length} title={this.props.config.resultsCountConfig.title}/&gt;
                         &lt;/div&gt;
                         &lt;div className={styles.customoptionlistcontainer}&gt;
-                            &lt;CustomOptionList config={this.props.config.resultSortConfig} updateFunc={this.props.updateSearchByFunc}/&gt;
+                            &lt;CustomOptionList config={this.props.config.resultSortConfig} selectedIndex={selectedIndex} updateFunc={this.props.updateSortByFunc}/&gt;
                         &lt;/div&gt;
                     &lt;/div&gt;
                     &lt;div&gt;
@@ -280,11 +284,11 @@ class ResultsBody extends Component {
 function <span class="fstat-no" title="function not covered" >mapDispatchToProps(</span>dispatch) {
 <span class="cstat-no" title="statement not covered" >    return {</span>
          updateMoviesFunc: <span class="fstat-no" title="function not covered" >(m</span>ovies) =&gt; {
-<span class="cstat-no" title="statement not covered" >             dispatch(updateMovies(movies))</span>
+<span class="cstat-no" title="statement not covered" >             dispatch(updateMovies(movies.data))</span>
 <span class="cstat-no" title="statement not covered" >             dispatch(sortMovies())</span>
          },
-         updateSearchByFunc: <span class="fstat-no" title="function not covered" >(s</span>ortBy) =&gt; {
-<span class="cstat-no" title="statement not covered" >            dispatch(updateSortBy(sortBy))</span>
+         updateSortByFunc: <span class="fstat-no" title="function not covered" >(s</span>ortBy) =&gt; {
+<span class="cstat-no" title="statement not covered" >            dispatch(updateSortBy(sortBy))         </span>
 <span class="cstat-no" title="statement not covered" >            dispatch(sortMovies())</span>
         },
         updateSelectedItemFunc: <span class="fstat-no" title="function not covered" >(i</span>tem) =&gt; {
@@ -294,23 +298,22 @@ function <span class="fstat-no" title="function not covered" >mapDispatchToProps
 }
 &nbsp;
 function <span class="fstat-no" title="function not covered" >mapStateToProps(</span>state){    
-    const { movies, isLoaded, error, sortBy } = <span class="cstat-no" title="statement not covered" >state.moviesReducer;</span>
+    const { movies, isLoaded, sortBy } = <span class="cstat-no" title="statement not covered" >state.moviesReducer;</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    return { </span>
         movies: movies,
         isLoaded: isLoaded,
-        error: error,
         sortBy: sortBy
     };
 }
 &nbsp;
-export default  connect(mapStateToProps, mapDispatchToProps)(ResultsBody);</pre></td></tr>
+export default connect(mapStateToProps, mapDispatchToProps)(ResultsBody);</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Dec 05 2019 19:24:09 GMT+0300 (Moscow Standard Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Dec 06 2019 03:10:51 GMT+0300 (GMT+03:00)
 </div>
 </div>
 <script src="..\prettify.js"></script>

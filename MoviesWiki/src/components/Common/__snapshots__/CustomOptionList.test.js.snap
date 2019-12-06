@@ -29,7 +29,7 @@ exports[`CustomOptionList component Rendering test 1`] = `
       Search by
     </div>
     <div
-      className="item isactive"
+      className="item"
       key="0"
       name="option0"
       onClick={[Function]}

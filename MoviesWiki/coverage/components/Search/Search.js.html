@@ -22,12 +22,12 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>0/14</span>
+        <span class='fraction'>0/17</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/0</span>
+        <span class='fraction'>0/2</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
@@ -37,7 +37,7 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>0/14</span>
+        <span class='fraction'>0/17</span>
       </div>
     </div>
     <p class="quiet">
@@ -116,7 +116,11 @@
 <a name='L68'></a><a href='#L68'>68</a>
 <a name='L69'></a><a href='#L69'>69</a>
 <a name='L70'></a><a href='#L70'>70</a>
-<a name='L71'></a><a href='#L71'>71</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -137,6 +141,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -165,6 +172,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -192,7 +200,7 @@ import { connect } from 'react-redux'
 import SearchField from "./SearchField";
 import SearchButton from "./SearchButton";
 import CustomOptionList from "../Common/CustomOptionList";
-import { updateSearchText, updateSearchBy, loading, updateMovies } from "../../actions/index";
+import { updateSearchText, updateSearchBy, loading, updateMovies, sortMovies } from "../../actions/index";
 &nbsp;
 import styles from "../../styles/Search.css"
 &nbsp;
@@ -206,13 +214,16 @@ class Search extends Component {
     }
 &nbsp;
 <span class="fstat-no" title="function not covered" >    re</span>nder() {
+<span class="cstat-no" title="statement not covered" >        debugger;</span>
+        var selectedIndex = <span class="cstat-no" title="statement not covered" >this.props.searchBy === 'title' ? "0" : "1";        </span>
+&nbsp;
 <span class="cstat-no" title="statement not covered" >        return (            </span>
             &lt;div className={styles.search}&gt; 
                 &lt;div&gt;                
                     &lt;SearchField placeHolder={this.props.config.placeHolder} updateFunc={this.props.updateSearchTextFunc}/&gt;
                     &lt;SearchButton buttonText={this.props.config.buttonText} updateFunc={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >this.searchMovies()}</span>/&gt;
                 &lt;/div&gt;
-                &lt;CustomOptionList config={this.props.config.searchFilter} updateFunc={this.props.updateSearchByFunc}/&gt;
+                &lt;CustomOptionList config={this.props.config.searchFilter} selectedIndex={selectedIndex} updateFunc={this.props.updateSearchByFunc}/&gt;
             &lt;/div&gt;           
         );  
     }  
@@ -235,7 +246,8 @@ function <span class="fstat-no" title="function not covered" >mapDispatchToProps
             .then(<span class="fstat-no" title="function not covered" >re</span>s =&gt; <span class="cstat-no" title="statement not covered" >res.json())</span>
             .then(
 <span class="fstat-no" title="function not covered" >                (r</span>esult) =&gt; {
-<span class="cstat-no" title="statement not covered" >                    dispatch(updateMovies(result));</span>
+<span class="cstat-no" title="statement not covered" >                    dispatch(updateMovies(result.data));</span>
+<span class="cstat-no" title="statement not covered" >                    dispatch(sortMovies())</span>
                 },
 <span class="fstat-no" title="function not covered" >                (e</span>rror) =&gt; {
                     // TODO: Process error
@@ -262,7 +274,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(Search);</pre></td><
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Dec 05 2019 19:24:09 GMT+0300 (Moscow Standard Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Dec 06 2019 03:10:51 GMT+0300 (GMT+03:00)
 </div>
 </div>
 <script src="..\..\prettify.js"></script>

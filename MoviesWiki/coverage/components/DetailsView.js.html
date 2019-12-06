@@ -22,12 +22,12 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>0/4</span>
+        <span class='fraction'>0/7</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/0</span>
+        <span class='fraction'>0/2</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
@@ -37,7 +37,7 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>0/4</span>
+        <span class='fraction'>0/7</span>
       </div>
     </div>
     <p class="quiet">
@@ -99,7 +99,19 @@
 <a name='L51'></a><a href='#L51'>51</a>
 <a name='L52'></a><a href='#L52'>52</a>
 <a name='L53'></a><a href='#L53'>53</a>
-<a name='L54'></a><a href='#L54'>54</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -118,6 +130,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -136,6 +151,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -161,6 +183,7 @@ import Rating from "./Common/Rating";
 import Description from "./Common/Description";
 import YearAndDuration from "./Common/YearAndDuration";
 import BackButton from "./Common/BackButton";
+import DetailsViewNoItemLabel from "./Common/DetailsViewNoItemLabel";
 &nbsp;
 import styles from "../styles/DetailsView.css"
 &nbsp;
@@ -171,26 +194,36 @@ class DetailsView extends Component {
     }
 &nbsp;
 <span class="fstat-no" title="function not covered" >    re</span>nder() {
+        var content;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if(this.props.item != null){</span>
+<span class="cstat-no" title="statement not covered" >            content = ( &lt;&gt;</span>
+                    &lt;div className={styles.imagecontainer}&gt;
+                        &lt;Image image={this.props.item.poster_path} /&gt;
+                    &lt;/div&gt;
+                    &lt;div className={styles.detailscontainer}&gt;
+                        &lt;div className={styles.maintitlecontainer}&gt;
+                            &lt;DetailsTitle title={this.props.item.title} /&gt;  
+                            &lt;Rating rating={this.props.item.vote_average} /&gt;     
+                        &lt;/div&gt;
+                        &lt;div className={styles.propertiescontainer}&gt;
+                            &lt;YearAndDuration year={this.props.item.release_date} duration={this.props.item.runtime}/&gt;
+                        &lt;/div&gt;
+                        &lt;div className={styles.descriptioncontainer}&gt;
+                            &lt;Description description={this.props.item.overview} /&gt;   
+                        &lt;/div&gt;  
+                    &lt;/div&gt;  
+                    &lt;div&gt;
+                        &lt;BackButton buttonText=""/&gt;
+                    &lt;/div&gt;
+                &lt;/&gt;)
+        } else {
+<span class="cstat-no" title="statement not covered" >            content = (&lt;DetailsViewNoItemLabel&gt;&lt;/DetailsViewNoItemLabel&gt;)</span>
+        }
+&nbsp;
 <span class="cstat-no" title="statement not covered" >        return (</span>
             &lt;div className={styles.body}&gt;
-                &lt;div className={styles.imagecontainer}&gt;
-                    &lt;Image image={this.props.item.poster_path} /&gt;
-                &lt;/div&gt;
-                &lt;div className={styles.detailscontainer}&gt;
-                    &lt;div className={styles.maintitlecontainer}&gt;
-                        &lt;DetailsTitle title={this.props.item.title} /&gt;  
-                        &lt;Rating rating={this.props.item.vote_average} /&gt;     
-                    &lt;/div&gt;
-                    &lt;div className={styles.propertiescontainer}&gt;
-                        &lt;YearAndDuration year={this.props.item.release_date} duration={this.props.item.runtime}/&gt;
-                    &lt;/div&gt;
-                    &lt;div className={styles.descriptioncontainer}&gt;
-                        &lt;Description description={this.props.item.overview} /&gt;   
-                    &lt;/div&gt;  
-                &lt;/div&gt;  
-                &lt;div&gt;
-                    &lt;BackButton buttonText=""/&gt;
-                &lt;/div&gt; 
+                {content}
             &lt;/div&gt;
         );   
     } 
@@ -211,7 +244,7 @@ export default connect(mapStateToProps)(DetailsView);
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Dec 05 2019 19:24:09 GMT+0300 (Moscow Standard Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Dec 06 2019 03:10:51 GMT+0300 (GMT+03:00)
 </div>
 </div>
 <script src="..\prettify.js"></script>

@@ -184,6 +184,11 @@ exports[`ItemsContainer component Rendering test - with items 1`] = `
                 action
               </div>
             </Genre>
+            <Rating>
+              <div
+                className="title"
+              />
+            </Rating>
           </div>
         </ItemBody>
       </Connect(ItemBody)>
@@ -255,6 +260,11 @@ exports[`ItemsContainer component Rendering test - with items 1`] = `
                 action2
               </div>
             </Genre>
+            <Rating>
+              <div
+                className="title"
+              />
+            </Rating>
           </div>
         </ItemBody>
       </Connect(ItemBody)>
@@ -326,6 +336,11 @@ exports[`ItemsContainer component Rendering test - with items 1`] = `
                 action 3
               </div>
             </Genre>
+            <Rating>
+              <div
+                className="title"
+              />
+            </Rating>
           </div>
         </ItemBody>
       </Connect(ItemBody)>

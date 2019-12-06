@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">50% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>7/14</span>
+        <span class='fraction'>14/14</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -30,9 +30,9 @@
         <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>0/7</span>
+        <span class='fraction'>7/7</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -44,7 +44,7 @@
       Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
     </p>
   </div>
-  <div class='status-line medium'></div>
+  <div class='status-line high'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -78,69 +78,75 @@
 <a name='L30'></a><a href='#L30'>30</a>
 <a name='L31'></a><a href='#L31'>31</a>
 <a name='L32'></a><a href='#L32'>32</a>
-<a name='L33'></a><a href='#L33'>33</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">6x</span>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export const updateMovies = <span class="fstat-no" title="function not covered" >(m</span>ovies) =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
-  type: 'UPDATE_MOVIES',
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { UPDATE_MOVIES, UPDATE_SEARCH_BY, UPDATE_SELECTED_ITEM, UPDATE_SORT_BY, SORT_MOVIES, UPDATE_SEARCH_TEXT, LOADING } from './actionTypes';
+&nbsp;
+export const updateMovies = (movies) =&gt; ({
+  type: UPDATE_MOVIES,
   movies: movies
 })
 &nbsp;
-export const updateSearchBy = <span class="fstat-no" title="function not covered" >(s</span>earchBy) =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
-  type: 'UPDATE_SEARCH_BY',
+export const updateSearchBy = (searchBy) =&gt; ({
+  type: UPDATE_SEARCH_BY,
   searchBy: searchBy
 });
 &nbsp;
-export const updateSelectedItem = <span class="fstat-no" title="function not covered" >(i</span>tem) =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
-  type: 'UPDATE_SELECTED_ITEM',
+export const updateSelectedItem = (item) =&gt; ({
+  type: UPDATE_SELECTED_ITEM,
   selectedItem: item
 });
 &nbsp;
-export const updateSortBy = <span class="fstat-no" title="function not covered" >(s</span>ortBy) =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
-  type: 'UPDATE_SORT_BY',
+export const updateSortBy = (sortBy) =&gt; ({
+  type: UPDATE_SORT_BY,
   sortBy: sortBy
 });
 &nbsp;
-export const sortMovies = <span class="fstat-no" title="function not covered" >()</span> =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
-  type: 'SORT_MOVIES'
+export const sortMovies = () =&gt; ({
+  type: SORT_MOVIES
 });
 &nbsp;
-export const updateSearchText = <span class="fstat-no" title="function not covered" >(s</span>earchText) =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
-  type: 'UPDATE_SEARCH_TEXT',
+export const updateSearchText = (searchText) =&gt; ({
+  type: UPDATE_SEARCH_TEXT,
   searchText: searchText
 });
 &nbsp;
-export const loading = <span class="fstat-no" title="function not covered" >()</span> =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
-  type: 'LOADING'
+export const loading = () =&gt; ({
+  type: LOADING
 });
 &nbsp;</pre></td></tr>
 </table></pre>
@@ -148,7 +154,7 @@ export const loading = <span class="fstat-no" title="function not covered" >()</
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Dec 05 2019 19:24:09 GMT+0300 (Moscow Standard Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Dec 06 2019 03:10:51 GMT+0300 (GMT+03:00)
 </div>
 </div>
 <script src="..\prettify.js"></script>

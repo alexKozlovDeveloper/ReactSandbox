@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DetailsViewNoItemLabel rendering test 1`] = `
+<div
+  className="title"
+>
+  Select any movie...
+</div>
+`;
