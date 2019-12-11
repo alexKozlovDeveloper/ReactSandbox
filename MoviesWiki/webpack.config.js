@@ -3,8 +3,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 let plugins = [new HtmlWebpackPlugin({
-      template: "./index.html"
-    })]
+	template: "./index.html"
+})]
 
 let optimazers = new UglifyJsPlugin();
 
@@ -15,17 +15,21 @@ console.log("NODE_ENV '" + process.env.NODE_ENV + "'");
 module.exports = {
 	context: path.join(__dirname, 'src'),
 	entry: './index.js',
-		
+
 	devtool: isProd ? 'none' : 'source-map',
-	
+
+	devServer: {
+		historyApiFallback: true
+	},
+
 	output: {
 		filename: 'bundle.js',
 		//path: isProd ? path.join(__dirname, 'prod') : path.join(__dirname, 'dev'),
 		path: path.join(__dirname, 'dist'),
 	},
-	
-	optimization: isProd ? { minimizer: [optimazers] } : { },
-	
+
+	optimization: isProd ? { minimizer: [optimazers] } : {},
+
 	module: {
 		rules: [
 			{
@@ -38,27 +42,26 @@ module.exports = {
 			{
 				test: /\.css$/,
 				use: [
-						'style-loader',
-							{
-								loader: 'css-loader',
-								options: {
-									importLoaders: 1,
-									modules: {
-										localIdentName: '[name]__[local]___[hash:base64:5]'
-									}
-								}
+					'style-loader',
+					{
+						loader: 'css-loader',
+						options: {
+							importLoaders: 1,
+							modules: {
+								localIdentName: '[name]__[local]___[hash:base64:5]'
+							}
 						}
-				    ]
+					}
+				]
 			}
 		]
 	},
-	
+
 	resolve: {
 		extensions: ['.js']
 	},
-	
-	plugins: plugins,
-	
-	watch: false
 
+	plugins: plugins,
+
+	watch: false
 };

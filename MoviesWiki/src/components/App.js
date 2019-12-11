@@ -9,6 +9,8 @@ import ErrorBoundary from "./Error/ErrorBoundary";
 
 import styles from "../styles/App.css"
 
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+
 class App extends Component {
     constructor(props) {
         super(props);
@@ -55,12 +57,15 @@ class App extends Component {
 
     render() {
         return <div className={styles.font}>
-            <ErrorBoundary>
-                <Header config={this.state.headerConfig} />
-                <DetailsView />
-                <ResultsBody config={this.state.resultsBodyConfig} />
-                <Footer config={this.state.footerConfig} />
-            </ErrorBoundary>
+            <Router>
+                <ErrorBoundary>                    
+                    <Header config={this.state.headerConfig} />
+                    <Route path="/view" component={DetailsView} />
+                    {/* <DetailsView /> */}
+                    <ResultsBody config={this.state.resultsBodyConfig} />
+                    <Footer config={this.state.footerConfig} />
+                </ErrorBoundary>
+            </Router>
         </div>;
     }
 }
