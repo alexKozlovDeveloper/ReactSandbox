@@ -29,7 +29,7 @@ class Search extends Component {
         return (
             <div className={styles.search}>
                 <div>
-                    <SearchField placeHolder={this.props.config.placeHolder} updateFunc={this.props.updateSearchTextFunc} submitFunc={(e) => this.submitSearch(e)} />
+                    <SearchField searchText={this.props.searchText} placeHolder={this.props.config.placeHolder} updateFunc={this.props.updateSearchTextFunc} submitFunc={(e) => this.submitSearch(e)} />
                     <SearchButton buttonText={this.props.config.buttonText} updateFunc={() => this.searchMovies()} />
                 </div>
                 <CustomOptionList config={this.props.config.searchFilter} selectedIndex={selectedIndex} updateFunc={this.props.updateSearchByFunc} />
@@ -56,7 +56,6 @@ function mapDispatchToProps(dispatch) {
                 .then(
                     (result) => {
                         dispatch(updateMovies(result.data));
-                        //dispatch(sortMovies())
                     },
                     (error) => {
                         // TODO: Process error

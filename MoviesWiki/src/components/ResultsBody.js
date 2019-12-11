@@ -15,16 +15,18 @@ class ResultsBody extends Component {
     }
 
     componentDidMount() {
-        fetch("https://reactjs-cdp.herokuapp.com/movies?sortBy=id")
-            .then(res => res.json())
-            .then(
-                (result) => {
-                    this.props.updateMoviesFunc(result);
-                },
-                (error) => {
-                    // TODO: Process error
-                }
-            )
+        if (this.props.isLoaded == false) {
+            fetch("https://reactjs-cdp.herokuapp.com/movies?sortBy=id")
+                .then(res => res.json())
+                .then(
+                    (result) => {
+                        this.props.updateMoviesFunc(result);
+                    },
+                    (error) => {
+                        // TODO: Process error
+                    }
+                )
+        }
     }
 
     render() {
@@ -44,14 +46,8 @@ class ResultsBody extends Component {
             return 0;
         }
 
-
-
         let sortedMovies = this.props.movies.concat([]);
         sortedMovies.sort(compare);
-
-        // if (sortedMovies.length > 0) {
-        //     this.props.updateSelectedItemFunc(sortedMovies[0]);
-        // }
 
         if (this.props.isLoaded === true) {
             content = (<>
@@ -83,11 +79,9 @@ function mapDispatchToProps(dispatch) {
     return {
         updateMoviesFunc: (movies) => {
             dispatch(updateMovies(movies.data))
-            //dispatch(sortMovies())
         },
         updateSortByFunc: (sortBy) => {
             dispatch(updateSortBy(sortBy))
-            //dispatch(sortMovies())
         },
         updateSelectedItemFunc: (item) => {
             dispatch(updateSelectedItem(item))
