@@ -2,8 +2,9 @@ import React from "react";
 import { render } from "react-dom";
 import App from "./components/App.js";
 import { Provider } from 'react-redux'
-import { createStore } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
 import rootReducer from './reducers'
+import { createLogger } from 'redux-logger'
 
 // import { persistStore, persistReducer } from 'redux-persist';
 // import storage from 'redux-persist/lib/storage';
@@ -21,7 +22,8 @@ import rootReducer from './reducers'
 
 // const store = createStore(pReducer);
 // const persistor = persistStore(store);
-const store = createStore(rootReducer);
+const logger = createLogger()
+const store = createStore(rootReducer, undefined, applyMiddleware(logger));
 
 render(
     <Provider store={store}>
