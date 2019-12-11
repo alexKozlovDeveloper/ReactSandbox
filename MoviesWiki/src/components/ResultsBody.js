@@ -30,7 +30,13 @@ class ResultsBody extends Component {
     }
 
     render() {
-        var content;
+
+        if (this.props.isLoaded === false) {
+            return (
+                <div className={styles.body}>
+                    <Spinner></Spinner>
+                </div>)
+        }
 
         var selectedIndex = this.props.sortBy === 'release_date' ? "0" : "1";
 
@@ -49,8 +55,8 @@ class ResultsBody extends Component {
         let sortedMovies = this.props.movies.concat([]);
         sortedMovies.sort(compare);
 
-        if (this.props.isLoaded === true) {
-            content = (<>
+        return (
+            <div className={styles.body}>
                 <div className={styles.infocontainer}>
                     <div className={styles.resultscountcontainer}>
                         <ResultsCount count={this.props.movies.length} title={this.props.config.resultsCountConfig.title} />
@@ -62,14 +68,6 @@ class ResultsBody extends Component {
                 <div>
                     <ItemsContainer items={sortedMovies} itemsPerRow={this.props.config.itemsPerRow} />
                 </div>
-            </>);
-        } else {
-            content = (<Spinner></Spinner>)
-        }
-
-        return (
-            <div className={styles.body}>
-                {content}
             </div>
         );
     }

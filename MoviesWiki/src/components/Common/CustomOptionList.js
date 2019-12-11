@@ -20,13 +20,11 @@ class CustomOptionList extends Component {
     render() {
         var options = this.props.config.options;
 
-        var optionsHtml = [];
-
-        options.map((option, index) => {
+        var optionsHtml = options.map((option, index) => {
             var name = "option" + index;
             var itemStyles = styles.item + (this.state.selectedItem === name ? ' ' + styles.isactive : '');
 
-            optionsHtml.push(<div name={name} key={index} onClick={this.handleClick} className={itemStyles} value={option.value}>{option.title}</div>);
+            return <div name={name} key={index} onClick={this.handleClick} className={itemStyles} value={option.value}>{option.title}</div>;
         });
 
         return (

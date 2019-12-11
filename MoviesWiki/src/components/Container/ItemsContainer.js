@@ -7,11 +7,9 @@ import styles from "../../styles/ItemsContainer.css"
 
 const ItemsContainer = ({ items }) => {
 
-    function getDivTable(items) {
-        var tableContent = [];
-
-        items.map((item, index) => {
-            tableContent.push(<ItemBody key={index} item={item} />);
+    function getDivTable(items) {      
+        var tableContent = items.map((item, index) => {
+            return <ItemBody key={index} item={item} />;
         });
 
         return tableContent;
