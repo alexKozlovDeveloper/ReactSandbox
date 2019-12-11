@@ -20,9 +20,9 @@ export const updateSortBy = (sortBy) => ({
   sortBy: sortBy
 });
 
-export const sortMovies = () => ({
-  type: SORT_MOVIES
-});
+// export const sortMovies = () => ({
+//   type: SORT_MOVIES
+// });
 
 export const updateSearchText = (searchText) => ({
   type: UPDATE_SEARCH_TEXT,

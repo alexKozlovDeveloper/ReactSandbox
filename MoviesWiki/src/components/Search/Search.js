@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import SearchField from "./SearchField";
 import SearchButton from "./SearchButton";
 import CustomOptionList from "../Common/CustomOptionList";
-import { updateSearchText, updateSearchBy, loading, updateMovies, sortMovies } from "../../actions/index";
+import { updateSearchText, updateSearchBy, loading, updateMovies } from "../../actions/index";
 
 import styles from "../../styles/Search.css"
 
@@ -56,7 +56,7 @@ function mapDispatchToProps(dispatch) {
             .then(
                 (result) => {
                     dispatch(updateMovies(result.data));
-                    dispatch(sortMovies())
+                    //dispatch(sortMovies())
                 },
                 (error) => {
                     // TODO: Process error
