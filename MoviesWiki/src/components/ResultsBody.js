@@ -31,7 +31,7 @@ class ResultsBody extends Component {
 
     render() {
 
-        if (this.props.isLoaded === false) {
+        if (this.props.isLoaded === false || this.props.movies == null) {
             return (
                 <div className={styles.body}>
                     <Spinner></Spinner>
