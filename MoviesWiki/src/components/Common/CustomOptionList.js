@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import styles from "../../styles/CustomOptionList.css"
 
 class CustomOptionList extends Component {
-    
+
     constructor(props) {
         super(props);
 
@@ -16,9 +16,9 @@ class CustomOptionList extends Component {
         this.setState({ selectedItem: e.currentTarget.attributes["name"].nodeValue });
         this.props.updateFunc(e.currentTarget.attributes["value"].nodeValue);
     }
-    
+
     render() {
-        var options = this.props.config.options; 
+        var options = this.props.config.options;
 
         var optionsHtml = [];
 
@@ -33,7 +33,7 @@ class CustomOptionList extends Component {
             <div className={styles.container}>
                 <div className={styles.title}>{this.props.config.title}</div>
                 {optionsHtml}
-           </div>
+            </div>
         );
     }
 }

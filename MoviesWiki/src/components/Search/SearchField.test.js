@@ -5,13 +5,13 @@ import Adapter from 'enzyme-adapter-react-16';
 
 import SearchField from "./SearchField";
 
-configure({adapter: new Adapter()});
+configure({ adapter: new Adapter() });
 
 test('SearchField rendering test', () => {
 
     var placeholder = 'some placeholder';
 
-    const component = shallow(<SearchField placeholder={placeholder}/>);
+    const component = shallow(<SearchField placeholder={placeholder} />);
     expect(shallowToJson(component)).toMatchSnapshot();
- });
+});
 

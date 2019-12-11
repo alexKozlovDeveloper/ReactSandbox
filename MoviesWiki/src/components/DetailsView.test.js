@@ -8,14 +8,14 @@ import { Provider } from 'react-redux'
 
 import DetailsView from "./DetailsView";
 
-configure({adapter: new Adapter()});
+configure({ adapter: new Adapter() });
 
 test('ItemDetails rendering test', () => {
 
     var item = {
         title: "Interstellar 4",
         releaseDate: "2017",
-        image: "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SY1000_SX675_AL_.jpg",        
+        image: "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SY1000_SX675_AL_.jpg",
         genre: "action 4",
         rating: 7.2,
         duration: 145,
@@ -31,8 +31,8 @@ test('ItemDetails rendering test', () => {
     const store = createStore(rootReducer, defaultStore)
 
     const component = shallow(<Provider store={store}>
-                                <DetailsView item={item}/>
-                              </Provider>);
+        <DetailsView item={item} />
+    </Provider>);
     expect(shallowToJson(component)).toMatchSnapshot();
- });
+});
 

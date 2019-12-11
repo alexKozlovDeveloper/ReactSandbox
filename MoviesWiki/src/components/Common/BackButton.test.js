@@ -5,7 +5,7 @@ import Adapter from 'enzyme-adapter-react-16';
 
 import BackButton from "./BackButton";
 
-configure({adapter: new Adapter()});
+configure({ adapter: new Adapter() });
 
 test('BackButton rendering test', () => {
 
@@ -13,5 +13,5 @@ test('BackButton rendering test', () => {
 
     const component = shallow(<BackButton buttonText={buttonText} />);
     expect(shallowToJson(component)).toMatchSnapshot();
- });
+});
 

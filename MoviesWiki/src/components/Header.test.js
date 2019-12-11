@@ -5,7 +5,7 @@ import Adapter from 'enzyme-adapter-react-16';
 
 import Header from "./Header";
 
-configure({adapter: new Adapter()});
+configure({ adapter: new Adapter() });
 
 test('Header rendering test', () => {
 
@@ -22,7 +22,7 @@ test('Header rendering test', () => {
         }
     }
 
-    const component = shallow(<Header config={headerConfig}/>);
+    const component = shallow(<Header config={headerConfig} />);
     expect(shallowToJson(component)).toMatchSnapshot();
- });
+});
 

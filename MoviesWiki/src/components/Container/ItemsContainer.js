@@ -6,12 +6,12 @@ import NoItemLabel from "./NoItemLabel";
 import styles from "../../styles/ItemsContainer.css"
 
 const ItemsContainer = ({ items }) => {
-    
+
     function getDivTable(items) {
         var tableContent = [];
 
         items.map((item, index) => {
-            tableContent.push(<ItemBody key={index} item={item}/>);
+            tableContent.push(<ItemBody key={index} item={item} />);
         });
 
         return tableContent;
@@ -19,9 +19,9 @@ const ItemsContainer = ({ items }) => {
 
     var table;
 
-    if(items.length !== 0) {
+    if (items.length !== 0) {
         table = getDivTable(items);
-    } else{            
+    } else {
         table = (<NoItemLabel />);
     }
 
@@ -29,7 +29,7 @@ const ItemsContainer = ({ items }) => {
         <div className={styles.container} >
             {table}
         </div>
-    );    
+    );
 }
 
 export default ItemsContainer;

@@ -8,7 +8,7 @@ import { createStore } from 'redux'
 
 import Search from "./Search";
 
-configure({adapter: new Adapter()});
+configure({ adapter: new Adapter() });
 
 test('Search rendering test', () => {
 
@@ -35,8 +35,8 @@ test('Search rendering test', () => {
     const store = createStore(rootReducer, defaultStore)
 
     const component = shallow(<Provider store={store}>
-                                <Search config={searchConfig}/>
-                              </Provider>);
+        <Search config={searchConfig} />
+    </Provider>);
     expect(shallowToJson(component)).toMatchSnapshot();
- });
+});
 

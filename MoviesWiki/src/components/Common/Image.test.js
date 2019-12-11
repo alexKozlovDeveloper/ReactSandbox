@@ -5,7 +5,7 @@ import Adapter from 'enzyme-adapter-react-16';
 
 import Image from "./Image";
 
-configure({adapter: new Adapter()});
+configure({ adapter: new Adapter() });
 
 test('Image rendering test', () => {
 
@@ -13,5 +13,5 @@ test('Image rendering test', () => {
 
     const component = shallow(<Image image={image} />);
     expect(shallowToJson(component)).toMatchSnapshot();
- });
+});
 

@@ -3,9 +3,9 @@ import React, { Component } from "react";
 import styles from "../../styles/ReleaseDate.css"
 
 const ReleaseDate = ({ releaseDate }) => {
-    return  <div className={styles.releasedate}>
-                {releaseDate}
-            </div>;
+    return <div className={styles.releasedate}>
+        {releaseDate}
+    </div>;
 }
 
 export default ReleaseDate;

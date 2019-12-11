@@ -5,7 +5,7 @@ import Adapter from 'enzyme-adapter-react-16';
 
 import Genre from "./Genre";
 
-configure({adapter: new Adapter()});
+configure({ adapter: new Adapter() });
 
 test('Genre rendering test', () => {
 
@@ -13,5 +13,5 @@ test('Genre rendering test', () => {
 
     const component = shallow(<Genre genre={genre} />);
     expect(shallowToJson(component)).toMatchSnapshot();
- });
+});
 

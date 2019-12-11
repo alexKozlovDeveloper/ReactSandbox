@@ -5,7 +5,7 @@ import Adapter from 'enzyme-adapter-react-16';
 
 import Footer from "./Footer";
 
-configure({adapter: new Adapter()});
+configure({ adapter: new Adapter() });
 
 test('Footer rendering test', () => {
 
@@ -13,7 +13,7 @@ test('Footer rendering test', () => {
         title: "Copyright © 2019 AkTest"
     }
 
-    const component = shallow(<Footer config={footerConfig}/>);
+    const component = shallow(<Footer config={footerConfig} />);
     expect(shallowToJson(component)).toMatchSnapshot();
- });
+});
 

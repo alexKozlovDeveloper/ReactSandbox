@@ -8,7 +8,7 @@ import { Provider } from 'react-redux'
 
 import ItemBody from "./ItemBody";
 
-configure({adapter: new Adapter()});
+configure({ adapter: new Adapter() });
 
 test('ItemBody rendering test', () => {
 
@@ -16,5 +16,5 @@ test('ItemBody rendering test', () => {
 
     const component = shallow(<Provider store={store}><ItemBody /></Provider>);
     expect(shallowToJson(component)).toMatchSnapshot();
- });
+});
 

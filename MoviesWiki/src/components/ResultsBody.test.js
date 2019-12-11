@@ -8,7 +8,7 @@ import { Provider } from 'react-redux'
 
 import ResultsBody from "./ResultsBody";
 
-configure({adapter: new Adapter()});
+configure({ adapter: new Adapter() });
 
 test('ResultsBody rendering test', () => {
 
@@ -24,10 +24,10 @@ test('ResultsBody rendering test', () => {
         }
     }
 
-    var moviesList = [ {
+    var moviesList = [{
         title: "Interstellar",
         releaseDate: "2014",
-        image: "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SY1000_SX675_AL_.jpg",        
+        image: "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SY1000_SX675_AL_.jpg",
         genre: "action",
         rating: 7.2,
         duration: 145,
@@ -35,7 +35,7 @@ test('ResultsBody rendering test', () => {
     }, {
         title: "Interstellar 2",
         releaseDate: "2015",
-        image: "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SY1000_SX675_AL_.jpg",        
+        image: "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SY1000_SX675_AL_.jpg",
         genre: "action2",
         rating: 7.2,
         duration: 145,
@@ -43,7 +43,7 @@ test('ResultsBody rendering test', () => {
     }, {
         title: "Interstellar 3",
         releaseDate: "2016",
-        image: "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SY1000_SX675_AL_.jpg",        
+        image: "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SY1000_SX675_AL_.jpg",
         genre: "action 3",
         rating: 7.2,
         duration: 145,
@@ -61,7 +61,7 @@ test('ResultsBody rendering test', () => {
 
     const store = createStore(rootReducer, defaultStore)
 
-    const component = shallow(<Provider store={store}><ResultsBody items={moviesList} config={resultsBodyConfig}/></Provider>);
+    const component = shallow(<Provider store={store}><ResultsBody items={moviesList} config={resultsBodyConfig} /></Provider>);
     expect(shallowToJson(component)).toMatchSnapshot();
- });
+});
 

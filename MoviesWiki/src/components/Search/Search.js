@@ -20,55 +20,55 @@ class Search extends Component {
     submitSearch(e) {
         if (e.which == 13) {
             this.searchMovies()
-        }        
+        }
     }
 
     render() {
-        var selectedIndex = this.props.searchBy === 'title' ? "0" : "1";        
+        var selectedIndex = this.props.searchBy === 'title' ? "0" : "1";
 
-        return (            
-            <div className={styles.search}> 
-                <div>                
-                    <SearchField placeHolder={this.props.config.placeHolder} updateFunc={this.props.updateSearchTextFunc} submitFunc={(e) => this.submitSearch(e)}/>
-                    <SearchButton buttonText={this.props.config.buttonText} updateFunc={() => this.searchMovies()}/>
+        return (
+            <div className={styles.search}>
+                <div>
+                    <SearchField placeHolder={this.props.config.placeHolder} updateFunc={this.props.updateSearchTextFunc} submitFunc={(e) => this.submitSearch(e)} />
+                    <SearchButton buttonText={this.props.config.buttonText} updateFunc={() => this.searchMovies()} />
                 </div>
-                <CustomOptionList config={this.props.config.searchFilter} selectedIndex={selectedIndex} updateFunc={this.props.updateSearchByFunc}/>
-            </div>           
-        );  
-    }  
+                <CustomOptionList config={this.props.config.searchFilter} selectedIndex={selectedIndex} updateFunc={this.props.updateSearchByFunc} />
+            </div>
+        );
+    }
 }
 
 function mapDispatchToProps(dispatch) {
     return {
-         updateSearchTextFunc: (searchText) => {
-             dispatch(updateSearchText(searchText))
-         },
-         updateSearchByFunc: (searchBy) => {
+        updateSearchTextFunc: (searchText) => {
+            dispatch(updateSearchText(searchText))
+        },
+        updateSearchByFunc: (searchBy) => {
             dispatch(updateSearchBy(searchBy))
-         },
-         updateMoviesBySeachFunc: (searchText, searchBy) => {
+        },
+        updateMoviesBySeachFunc: (searchText, searchBy) => {
             dispatch(loading())
 
             var url = "https://reactjs-cdp.herokuapp.com/movies?search=" + searchText + "&searchBy=" + searchBy + "&sortBy=id&sortOrder=asc";
 
             fetch(url)
-            .then(res => res.json())
-            .then(
-                (result) => {
-                    dispatch(updateMovies(result.data));
-                    //dispatch(sortMovies())
-                },
-                (error) => {
-                    // TODO: Process error
-                })            
+                .then(res => res.json())
+                .then(
+                    (result) => {
+                        dispatch(updateMovies(result.data));
+                        //dispatch(sortMovies())
+                    },
+                    (error) => {
+                        // TODO: Process error
+                    })
         }
     }
 }
 
-function mapStateToProps(state){    
+function mapStateToProps(state) {
     const { movies, isLoaded, error, searchText, searchBy } = state.moviesReducer;
 
-    return { 
+    return {
         movies: movies,
         isLoaded: isLoaded,
         error: error,

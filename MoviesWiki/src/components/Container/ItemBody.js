@@ -21,24 +21,24 @@ class ItemBody extends Component {
         this.props.updateSelectedItemFunc(this.props.item);
     }
 
-    render() {        
+    render() {
         return (
             <div className={styles.body} onClick={this.handleClick}>
                 <Image image={this.props.item.poster_path} />
                 <ReleaseDate releaseDate={this.props.item.release_date} />
-                <Title title={this.props.item.title} />                
-                <Genre genre={this.props.item.genres.join(' ')} /> 
-                <Rating rating={this.props.item.vote_average} />                  
+                <Title title={this.props.item.title} />
+                <Genre genre={this.props.item.genres.join(' ')} />
+                <Rating rating={this.props.item.vote_average} />
             </div>
-        );    
+        );
     }
 }
 
 function mapDispatchToProps(dispatch) {
     return {
-         updateSelectedItemFunc: (item) => {
-             dispatch(updateSelectedItem(item))
-         }       
+        updateSelectedItemFunc: (item) => {
+            dispatch(updateSelectedItem(item))
+        }
     }
 }
 

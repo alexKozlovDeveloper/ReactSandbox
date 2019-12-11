@@ -5,7 +5,7 @@ import Adapter from 'enzyme-adapter-react-16';
 
 import Rating from "./Rating";
 
-configure({adapter: new Adapter()});
+configure({ adapter: new Adapter() });
 
 test('Rating rendering test', () => {
 
@@ -13,5 +13,5 @@ test('Rating rendering test', () => {
 
     const component = shallow(<Rating rating={rating} />);
     expect(shallowToJson(component)).toMatchSnapshot();
- });
+});
 

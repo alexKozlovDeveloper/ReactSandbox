@@ -5,7 +5,7 @@ import Adapter from 'enzyme-adapter-react-16';
 
 import Description from "./Description";
 
-configure({adapter: new Adapter()});
+configure({ adapter: new Adapter() });
 
 test('Description rendering test', () => {
 
@@ -13,5 +13,5 @@ test('Description rendering test', () => {
 
     const component = shallow(<Description description={description} />);
     expect(shallowToJson(component)).toMatchSnapshot();
- });
+});
 

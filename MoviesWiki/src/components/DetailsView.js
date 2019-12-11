@@ -20,27 +20,27 @@ class DetailsView extends Component {
     render() {
         var content;
 
-        if(this.props.item != null){
-            content = ( <>
-                    <div className={styles.imagecontainer}>
-                        <Image image={this.props.item.poster_path} />
+        if (this.props.item != null) {
+            content = (<>
+                <div className={styles.imagecontainer}>
+                    <Image image={this.props.item.poster_path} />
+                </div>
+                <div className={styles.detailscontainer}>
+                    <div className={styles.maintitlecontainer}>
+                        <DetailsTitle title={this.props.item.title} />
+                        <Rating rating={this.props.item.vote_average} />
                     </div>
-                    <div className={styles.detailscontainer}>
-                        <div className={styles.maintitlecontainer}>
-                            <DetailsTitle title={this.props.item.title} />  
-                            <Rating rating={this.props.item.vote_average} />     
-                        </div>
-                        <div className={styles.propertiescontainer}>
-                            <YearAndDuration year={this.props.item.release_date} duration={this.props.item.runtime}/>
-                        </div>
-                        <div className={styles.descriptioncontainer}>
-                            <Description description={this.props.item.overview} />   
-                        </div>  
-                    </div>  
-                    <div>
-                        <BackButton buttonText=""/>
+                    <div className={styles.propertiescontainer}>
+                        <YearAndDuration year={this.props.item.release_date} duration={this.props.item.runtime} />
                     </div>
-                </>)
+                    <div className={styles.descriptioncontainer}>
+                        <Description description={this.props.item.overview} />
+                    </div>
+                </div>
+                <div>
+                    <BackButton buttonText="" />
+                </div>
+            </>)
         } else {
             content = (<DetailsViewNoItemLabel></DetailsViewNoItemLabel>)
         }
@@ -49,14 +49,14 @@ class DetailsView extends Component {
             <div className={styles.body}>
                 {content}
             </div>
-        );   
-    } 
+        );
+    }
 }
 
-function mapStateToProps(state){    
+function mapStateToProps(state) {
     const { selectedItem } = state.moviesReducer;
 
-    return { 
+    return {
         item: selectedItem
     };
 }

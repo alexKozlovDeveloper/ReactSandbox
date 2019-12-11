@@ -5,11 +5,11 @@ import Adapter from 'enzyme-adapter-react-16';
 
 import NoItemLabel from "./NoItemLabel";
 
-configure({adapter: new Adapter()});
+configure({ adapter: new Adapter() });
 
 test('NoItemLabel rendering test', () => {
 
     const component = shallow(<NoItemLabel />);
     expect(shallowToJson(component)).toMatchSnapshot();
- });
+});
 

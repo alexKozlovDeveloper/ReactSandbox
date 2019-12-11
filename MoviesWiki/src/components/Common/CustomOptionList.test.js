@@ -6,7 +6,7 @@ import Adapter from 'enzyme-adapter-react-16';
 import CustomOptionList from "./CustomOptionList";
 import styles from "../../styles/CustomOptionList.css"
 
-configure({adapter: new Adapter()});
+configure({ adapter: new Adapter() });
 
 describe('CustomOptionList component', () => {
 
@@ -16,15 +16,15 @@ describe('CustomOptionList component', () => {
             title: "Search by",
             selectedIndex: "0",
             options: [{
-                title: "Title", 
+                title: "Title",
                 value: "title"
             }, {
-                title: "Genre", 
+                title: "Genre",
                 value: "genres"
             }]
-        } 
+        }
 
-        const component = mount(<CustomOptionList config={config} updateFunc={() => {}}/>);
+        const component = mount(<CustomOptionList config={config} updateFunc={() => { }} />);
         expect(shallowToJson(component)).toMatchSnapshot();
     });
 
@@ -34,18 +34,18 @@ describe('CustomOptionList component', () => {
             title: "Search by",
             selectedIndex: "0",
             options: [{
-                title: "Title", 
+                title: "Title",
                 value: "title"
             }, {
-                title: "Genre", 
+                title: "Genre",
                 value: "genres"
             }]
         }
-    
+
         var updateFunc = jest.fn();
 
-        const component = mount(<CustomOptionList config={config}  updateFunc={updateFunc}/>);
-                
+        const component = mount(<CustomOptionList config={config} updateFunc={updateFunc} />);
+
         component.findWhere(node => node.key() === '1').simulate('click');
 
         expect(component.findWhere(node => node.key() === '1').hasClass(styles.isactive)).toBe(true);
@@ -59,18 +59,18 @@ describe('CustomOptionList component', () => {
             title: "Search by",
             selectedIndex: "1",
             options: [{
-                title: "Title", 
+                title: "Title",
                 value: "title"
             }, {
-                title: "Genre", 
+                title: "Genre",
                 value: "genres"
             }]
         }
-    
+
         var updateFunc = jest.fn();
 
         const component = mount(<CustomOptionList config={config} updateFunc={updateFunc} />);
-                
+
         component.findWhere(node => node.key() === '0').simulate('click');
 
         expect(component.findWhere(node => node.key() === '0').hasClass(styles.isactive)).toBe(true);
