@@ -2,8 +2,8 @@ import React, { Component } from "react";
 
 import Header from "./Header";
 import Footer from "./Footer";
-import ResultsBody from "./ResultsBody";
-import DetailsView from "./DetailsView";
+import Home from "./Pages/Home";
+import MovieView from "./Pages/MovieView";
 
 import ErrorBoundary from "./Error/ErrorBoundary";
 
@@ -60,9 +60,8 @@ class App extends Component {
             <Router>
                 <ErrorBoundary>                    
                     <Header config={this.state.headerConfig} />
-                    <Route path="/view" component={DetailsView} />
-                    {/* <DetailsView /> */}
-                    <ResultsBody config={this.state.resultsBodyConfig} />
+                    <Route path="/view" component={MovieView} />
+                    <Route path="/" render={(props) => <Home {...props} resultsBodyConfig={this.state.resultsBodyConfig} />}/>
                     <Footer config={this.state.footerConfig} />
                 </ErrorBoundary>
             </Router>
