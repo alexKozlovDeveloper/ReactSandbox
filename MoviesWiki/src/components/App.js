@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 
-import Header from "./Header";
-import Footer from "./Footer";
 import Home from "./Pages/Home";
 import MovieView from "./Pages/MovieView";
+import NotFound from "./Pages/NotFound";
 
 import ErrorBoundary from "./Error/ErrorBoundary";
 
@@ -58,11 +57,10 @@ class App extends Component {
     render() {
         return <div className={styles.font}>
             <Router>
-                <ErrorBoundary>                    
-                    <Header config={this.state.headerConfig} />
-                    <Route path="/view" component={MovieView} />
-                    <Route path="/" render={(props) => <Home {...props} resultsBodyConfig={this.state.resultsBodyConfig} />}/>
-                    <Footer config={this.state.footerConfig} />
+                <ErrorBoundary>
+                    <Route path="/view" render={(props) => <MovieView {...props} footerConfig={this.state.footerConfig} />} />
+                    <Route exact path="/" render={(props) => <Home {...props} resultsBodyConfig={this.state.resultsBodyConfig} headerConfig={this.state.headerConfig} footerConfig={this.state.footerConfig} />} />
+                    <Route path="/404" component={NotFound} />
                 </ErrorBoundary>
             </Router>
         </div>;

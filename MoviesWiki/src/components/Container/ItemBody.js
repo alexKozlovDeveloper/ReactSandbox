@@ -8,6 +8,8 @@ import ReleaseDate from "../Common/ReleaseDate";
 import Rating from "../Common/Rating";
 import { updateSelectedItem } from "../../actions/index";
 
+import { Link } from 'react-router-dom'
+
 import styles from "../../styles/ItemBody.css"
 
 class ItemBody extends Component {
@@ -22,7 +24,7 @@ class ItemBody extends Component {
     }
 
     render() {
-        return (
+        return (<>
             <div className={styles.body} onClick={this.handleClick}>
                 <Image image={this.props.item.poster_path} />
                 <ReleaseDate releaseDate={this.props.item.release_date} />
@@ -30,6 +32,8 @@ class ItemBody extends Component {
                 <Genre genre={this.props.item.genres.join(' ')} />
                 <Rating rating={this.props.item.vote_average} />
             </div>
+            {/* <Link to="/view">Go to View</Link> */}
+            </>
         );
     }
 }
