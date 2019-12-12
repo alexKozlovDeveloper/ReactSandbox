@@ -37,8 +37,7 @@ class DetailsView extends Component {
                         <Description description={this.props.item.overview} />
                     </div>
                 </div>                
-                <BackButton buttonText="" />
-                
+                <BackButton buttonText="" />                
             </>)
         } else {
             content = (<DetailsViewNoItemLabel></DetailsViewNoItemLabel>)
