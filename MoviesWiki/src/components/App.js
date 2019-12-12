@@ -8,7 +8,7 @@ import ErrorBoundary from "./Error/ErrorBoundary";
 
 import styles from "../styles/App.css"
 
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 class App extends Component {
     constructor(props) {
@@ -58,9 +58,11 @@ class App extends Component {
         return <div className={styles.font}>
             <Router>
                 <ErrorBoundary>
-                    <Route path="/view" render={(props) => <MovieView {...props} footerConfig={this.state.footerConfig} />} />
-                    <Route exact path="/" render={(props) => <Home {...props} resultsBodyConfig={this.state.resultsBodyConfig} headerConfig={this.state.headerConfig} footerConfig={this.state.footerConfig} />} />
-                    <Route path="/404" component={NotFound} />
+                    <Switch>
+                        <Route path="/view" render={(props) => <MovieView {...props} footerConfig={this.state.footerConfig} />} />
+                        <Route exact path="/" render={(props) => <Home {...props} resultsBodyConfig={this.state.resultsBodyConfig} headerConfig={this.state.headerConfig} footerConfig={this.state.footerConfig} />} />
+                        <Route path="*" component={NotFound} />
+                    </Switch>
                 </ErrorBoundary>
             </Router>
         </div>;

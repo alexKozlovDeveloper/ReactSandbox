@@ -24,16 +24,14 @@ class ItemBody extends Component {
     }
 
     render() {
-        return (<>
-            <div className={styles.body} onClick={this.handleClick}>
+        return (
+            <Link to="/view" className={styles.body} onClick={this.handleClick}>
                 <Image image={this.props.item.poster_path} />
                 <ReleaseDate releaseDate={this.props.item.release_date} />
                 <Title title={this.props.item.title} />
                 <Genre genre={this.props.item.genres.join(' ')} />
                 <Rating rating={this.props.item.vote_average} />
-            </div>
-            {/* <Link to="/view">Go to View</Link> */}
-            </>
+            </Link>
         );
     }
 }
