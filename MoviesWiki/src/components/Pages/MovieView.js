@@ -9,40 +9,51 @@ import Spinner from "../Common/Spinner";
 
 import styles from "../../styles/MovieView.css"
 
-import { updateMovies, loading } from "../../actions/index";
+import { updateMovies, loading, updateSelectedItem } from "../../actions/index";
 
 class MovieView extends Component {
     constructor(props) {
         super(props);
+
+        this.props.loadingFunc();
     }
 
     componentDidMount() {
-        //debugger;
-        let genres = this.props.selectedItem.genres;
 
-        if (genres.lenght < 1) {
-            return;
-        }
+        var id = this.props.match.params.id;
 
-        let genre = genres[0]
+        let getMovieUrl = "https://reactjs-cdp.herokuapp.com/movies/" + id;
 
-        let url = "https://reactjs-cdp.herokuapp.com/movies?search=" + genre + "&searchBy=genres&sortBy=vote_average&sortOrder=asc"
-
-        this.props.loadingFunc()
- 
-        fetch(url)
+        fetch(getMovieUrl)
             .then(res => res.json())
             .then(
                 (result) => {
-                    //debugger;
-                    this.props.updateMoviesFunc(result);
+
+                    this.props.updateSelectedItemFunc(result);
+
+                    let genres = this.props.selectedItem.genres;
+
+                    if (genres.lenght < 1) {
+                        return;
+                    }
+
+                    let genre = genres[0]
+
+                    let url = "https://reactjs-cdp.herokuapp.com/movies?search=" + genre + "&searchBy=genres&sortBy=vote_average&sortOrder=asc"
+
+                    fetch(url)
+                        .then(res => res.json())
+                        .then(
+                            (result) => {
+                                //debugger;
+                                this.props.updateMoviesFunc(result);
+                            },
+                            (error) => {
+                            }
+                        )
                 },
                 (error) => {
-                    //debugger;
-                    // TODO: Process error
-                }
-            )
-
+                })
     }
 
     render() {
@@ -88,6 +99,9 @@ function mapDispatchToProps(dispatch) {
         },
         loadingFunc: () => {
             dispatch(loading())
+        },
+        updateSelectedItemFunc: (item) => {
+            dispatch(updateSelectedItem(item))
         }
     }
 }

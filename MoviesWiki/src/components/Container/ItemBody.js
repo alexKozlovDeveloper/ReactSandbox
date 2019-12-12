@@ -24,8 +24,10 @@ class ItemBody extends Component {
     }
 
     render() {
+        let id = this.props.item.id;
+
         return (
-            <Link to="/view" className={styles.body} onClick={this.handleClick}>
+            <Link to={"/film/" + id} className={styles.body} onClick={this.handleClick}>
                 <Image image={this.props.item.poster_path} />
                 <ReleaseDate releaseDate={this.props.item.release_date} />
                 <Title title={this.props.item.title} />
