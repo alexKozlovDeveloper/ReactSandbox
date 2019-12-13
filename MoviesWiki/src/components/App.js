@@ -32,9 +32,6 @@ class App extends Component {
                     }
                 }
             },
-            footerConfig: {
-                title: "Copyright © 2019 AkTest"
-            },
             resultsBodyConfig: {
                 itemsPerRow: 4,
                 resultSortConfig: {
@@ -59,9 +56,9 @@ class App extends Component {
             <Router>
                 <ErrorBoundary>
                     <Switch>Redirect
-                        <Route exact path="/" render={(props) => <Home {...props} resultsBodyConfig={this.state.resultsBodyConfig} headerConfig={this.state.headerConfig} footerConfig={this.state.footerConfig} />} />
-                        <Route path="/film/:id" render={(props) => <MovieView {...props} footerConfig={this.state.footerConfig} />} />                        
-                        <Redirect exact from="/film" to="/" />                    
+                        <Route exact path={["/", "/search/:searchQuery"]} render={(props) => <Home {...props} resultsBodyConfig={this.state.resultsBodyConfig} headerConfig={this.state.headerConfig} />} />
+                        <Redirect from='/search/' to='/' />
+                        <Route path="/film/:id" render={(props) => <MovieView {...props} />} />                        
                         <Route path="*" component={NotFound} />
                     </Switch>
                 </ErrorBoundary>

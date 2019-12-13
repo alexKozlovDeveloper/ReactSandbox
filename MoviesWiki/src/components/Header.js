@@ -4,12 +4,12 @@ import Search from "./Search/Search";
 
 import styles from "../styles/Header.css"
 
-const Header = ({ config }) => {
+const Header = ({ config, updateUrl }) => {
     return (
         <div className={styles.header}>
             <div className={styles.container}>
                 <div className={styles.headertitle}>{config.title}</div>
-                <Search config={config.searchConfig} />
+                <Search config={config.searchConfig} updateUrl={updateUrl}/>
             </div>
         </div>
     );

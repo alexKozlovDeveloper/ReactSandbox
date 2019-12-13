@@ -7,11 +7,11 @@ import Footer from "../Footer";
 
 import styles from "../../styles/Home.css"
 
-const Home = ({ resultsBodyConfig, headerConfig, footerConfig }) => {
+const Home = ({ resultsBodyConfig, headerConfig, match, history }) => {
     return <div className={styles.home}>
-        <Header config={headerConfig} />
+        <Header config={headerConfig} updateUrl={(searchText) => { history.push("/search/" + searchText.replace(" ", "%20"))}}/>
         <ResultsBody config={resultsBodyConfig}></ResultsBody>
-        <Footer config={footerConfig} />
+        <Footer />
     </div>;
 }
 

@@ -86,7 +86,7 @@ class MovieView extends Component {
                         <ItemsContainer items={this.props.movies} />
                     </div>
                 </div>
-                <Footer config={this.props.footerConfig} />
+                <Footer />
             </div>)
     }
 }
