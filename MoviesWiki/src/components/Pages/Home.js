@@ -9,7 +9,7 @@ import styles from "../../styles/Home.css"
 
 const Home = ({ resultsBodyConfig, headerConfig, match, history }) => {
     return <div className={styles.home}>
-        <Header config={headerConfig} updateUrl={(searchText) => { history.push("/search/" + searchText.replace(" ", "%20"))}}/>
+        <Header config={headerConfig}/>
         <ResultsBody config={resultsBodyConfig}></ResultsBody>
         <Footer />
     </div>;

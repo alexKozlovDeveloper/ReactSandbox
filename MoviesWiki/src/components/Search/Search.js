@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
+import { withRouter } from "react-router";
+
 import SearchField from "./SearchField";
 import SearchButton from "./SearchButton";
 import CustomOptionList from "../Common/CustomOptionList";
@@ -16,7 +18,10 @@ class Search extends Component {
 
     searchMovies() {
         this.props.updateMoviesBySeachFunc(this.props.searchText, this.props.searchBy);
-        this.props.updateUrl(this.props.searchText);
+
+    debugger;
+    this.props.history.push("/search/" + this.props.searchText.replace(" ", "%20"))
+        //this.props.updateUrl(this.props.searchText);
     }
 
     submitSearch(e) {
@@ -78,4 +83,4 @@ function mapStateToProps(state) {
     };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Search);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Search));
