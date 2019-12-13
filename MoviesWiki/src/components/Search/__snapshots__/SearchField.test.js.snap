@@ -4,6 +4,7 @@ exports[`SearchField rendering test 1`] = `
 <input
   className="searchfield"
   onInput={[Function]}
+  onKeyDown={[Function]}
   type="text"
 />
 `;

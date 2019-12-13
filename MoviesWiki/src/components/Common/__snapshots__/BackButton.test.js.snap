@@ -1,9 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BackButton rendering test 1`] = `
-<div
+<Link
   className="button"
+  to="/"
 >
   someButtonText
-</div>
+</Link>
 `;

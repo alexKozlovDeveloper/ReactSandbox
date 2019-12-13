@@ -4,62 +4,34 @@ exports[`App rendering test 1`] = `
 <div
   className="font"
 >
-  <ErrorBoundary>
-    <Header
-      config={
-        Object {
-          "searchConfig": Object {
-            "buttonText": "Search",
-            "placeHolder": "The Godfather",
-            "searchFilter": Object {
-              "options": Array [
-                Object {
-                  "title": "Title",
-                  "value": "title",
-                },
-                Object {
-                  "title": "Genre",
-                  "value": "genres",
-                },
-              ],
-              "title": "Search by",
-            },
-          },
-          "title": "Find Your Movies",
-        }
-      }
-    />
-    <Connect(DetailsView) />
-    <Connect(ResultsBody)
-      config={
-        Object {
-          "itemsPerRow": 4,
-          "resultSortConfig": Object {
-            "options": Array [
-              Object {
-                "title": "Release date",
-                "value": "release_date",
-              },
-              Object {
-                "title": "Rating",
-                "value": "vote_average",
-              },
-            ],
-            "title": "Sort by",
-          },
-          "resultsCountConfig": Object {
-            "title": "movies found",
-          },
-        }
-      }
-    />
-    <Footer
-      config={
-        Object {
-          "title": "Copyright © 2019 AkTest",
-        }
-      }
-    />
-  </ErrorBoundary>
+  <BrowserRouter>
+    <ErrorBoundary>
+      <Switch>
+        Redirect
+        <Route
+          exact={true}
+          path={
+            Array [
+              "/",
+              "/search/:searchQuery",
+            ]
+          }
+          render={[Function]}
+        />
+        <Redirect
+          from="/search/"
+          to="/"
+        />
+        <Route
+          path="/film/:id"
+          render={[Function]}
+        />
+        <Route
+          component={[Function]}
+          path="*"
+        />
+      </Switch>
+    </ErrorBoundary>
+  </BrowserRouter>
 </div>
 `;

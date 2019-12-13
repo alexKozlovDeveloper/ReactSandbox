@@ -1,139 +1,130 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ItemsContainer component Rendering test - empty 1`] = `
-<Provider
-  store={
-    Object {
-      "dispatch": [Function],
-      "getState": [Function],
-      "replaceReducer": [Function],
-      "subscribe": [Function],
-      Symbol(observable): [Function],
-    }
-  }
->
-  <ItemsContainer
-    config={
+<BrowserRouter>
+  <Router
+    history={
       Object {
-        "itemsPerRow": 4,
-        "resultSortConfig": Object {
-          "options": Array [
-            "Release date",
-            "Rating",
-          ],
-          "selectedIndex": "1",
-          "title": "Sort by",
+        "action": "POP",
+        "block": [Function],
+        "createHref": [Function],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "pathname": "/",
+          "search": "",
+          "state": undefined,
         },
-        "resultsCountConfig": Object {
-          "title": "movies found",
-        },
+        "push": [Function],
+        "replace": [Function],
       }
     }
-    items={Array []}
   >
-    <div
-      className="container"
+    <Provider
+      store={
+        Object {
+          "dispatch": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+          Symbol(observable): [Function],
+        }
+      }
     >
-      <NoItemLabel>
+      <ItemsContainer
+        config={
+          Object {
+            "itemsPerRow": 4,
+            "resultSortConfig": Object {
+              "options": Array [
+                "Release date",
+                "Rating",
+              ],
+              "selectedIndex": "1",
+              "title": "Sort by",
+            },
+            "resultsCountConfig": Object {
+              "title": "movies found",
+            },
+          }
+        }
+        items={Array []}
+      >
         <div
-          className="title"
+          className="container"
         >
-          No films found
+          <NoItemLabel>
+            <div
+              className="title"
+            >
+              No films found
+            </div>
+          </NoItemLabel>
         </div>
-      </NoItemLabel>
-    </div>
-  </ItemsContainer>
-</Provider>
+      </ItemsContainer>
+    </Provider>
+  </Router>
+</BrowserRouter>
 `;
 
 exports[`ItemsContainer component Rendering test - with items 1`] = `
-<Provider
-  store={
-    Object {
-      "dispatch": [Function],
-      "getState": [Function],
-      "replaceReducer": [Function],
-      "subscribe": [Function],
-      Symbol(observable): [Function],
-    }
-  }
->
-  <ItemsContainer
-    config={
+<BrowserRouter>
+  <Router
+    history={
       Object {
-        "itemsPerRow": 4,
-        "resultSortConfig": Object {
-          "options": Array [
-            "Release date",
-            "Rating",
-          ],
-          "selectedIndex": "1",
-          "title": "Sort by",
+        "action": "POP",
+        "block": [Function],
+        "createHref": [Function],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "pathname": "/",
+          "search": "",
+          "state": undefined,
         },
-        "resultsCountConfig": Object {
-          "title": "movies found",
-        },
+        "push": [Function],
+        "replace": [Function],
       }
     }
-    items={
-      Array [
-        Object {
-          "description": "is a 2014 British-American epic science fiction film directed and produced by Christopher Nolan. ... Set in a dystopian future where humanity is struggling to survive, the film follows a group of astronauts who travel through a wormhole near Saturn in search of a new home for humanity.",
-          "duration": 145,
-          "genres": Array [
-            "action",
-          ],
-          "image": "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SY1000_SX675_AL_.jpg",
-          "rating": 7.2,
-          "releaseDate": "2014",
-          "title": "Interstellar",
-        },
-        Object {
-          "description": "is a 2014 British-American epic science fiction film directed and produced by Christopher Nolan. ... Set in a dystopian future where humanity is struggling to survive, the film follows a group of astronauts who travel through a wormhole near Saturn in search of a new home for humanity.",
-          "duration": 145,
-          "genres": Array [
-            "action2",
-          ],
-          "image": "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SY1000_SX675_AL_.jpg",
-          "rating": 7.2,
-          "releaseDate": "2015",
-          "title": "Interstellar 2",
-        },
-        Object {
-          "description": "is a 2014 British-American epic science fiction film directed and produced by Christopher Nolan. ... Set in a dystopian future where humanity is struggling to survive, the film follows a group of astronauts who travel through a wormhole near Saturn in search of a new home for humanity.",
-          "duration": 145,
-          "genres": Array [
-            "action 3",
-          ],
-          "image": "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SY1000_SX675_AL_.jpg",
-          "rating": 7.2,
-          "releaseDate": "2016",
-          "title": "Interstellar 3",
-        },
-      ]
-    }
   >
-    <div
-      className="container"
+    <Provider
+      store={
+        Object {
+          "dispatch": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+          Symbol(observable): [Function],
+        }
+      }
     >
-      <Connect(ItemBody)
-        item={
+      <ItemsContainer
+        config={
           Object {
-            "description": "is a 2014 British-American epic science fiction film directed and produced by Christopher Nolan. ... Set in a dystopian future where humanity is struggling to survive, the film follows a group of astronauts who travel through a wormhole near Saturn in search of a new home for humanity.",
-            "duration": 145,
-            "genres": Array [
-              "action",
-            ],
-            "image": "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SY1000_SX675_AL_.jpg",
-            "rating": 7.2,
-            "releaseDate": "2014",
-            "title": "Interstellar",
+            "itemsPerRow": 4,
+            "resultSortConfig": Object {
+              "options": Array [
+                "Release date",
+                "Rating",
+              ],
+              "selectedIndex": "1",
+              "title": "Sort by",
+            },
+            "resultsCountConfig": Object {
+              "title": "movies found",
+            },
           }
         }
-        key="0"
-      >
-        <ItemBody
-          item={
+        items={
+          Array [
             Object {
               "description": "is a 2014 British-American epic science fiction film directed and produced by Christopher Nolan. ... Set in a dystopian future where humanity is struggling to survive, the film follows a group of astronauts who travel through a wormhole near Saturn in search of a new home for humanity.",
               "duration": 145,
@@ -144,72 +135,7 @@ exports[`ItemsContainer component Rendering test - with items 1`] = `
               "rating": 7.2,
               "releaseDate": "2014",
               "title": "Interstellar",
-            }
-          }
-          updateSelectedItemFunc={[Function]}
-        >
-          <div
-            className="body"
-            onClick={[Function]}
-          >
-            <Image>
-              <div
-                className="imagecontainer"
-              >
-                <img
-                  className="image"
-                />
-              </div>
-            </Image>
-            <ReleaseDate>
-              <div
-                className="releasedate"
-              />
-            </ReleaseDate>
-            <Title
-              title="Interstellar"
-            >
-              <div
-                className="title"
-              >
-                Interstellar
-              </div>
-            </Title>
-            <Genre
-              genre="action"
-            >
-              <div
-                className="genre"
-              >
-                action
-              </div>
-            </Genre>
-            <Rating>
-              <div
-                className="title"
-              />
-            </Rating>
-          </div>
-        </ItemBody>
-      </Connect(ItemBody)>
-      <Connect(ItemBody)
-        item={
-          Object {
-            "description": "is a 2014 British-American epic science fiction film directed and produced by Christopher Nolan. ... Set in a dystopian future where humanity is struggling to survive, the film follows a group of astronauts who travel through a wormhole near Saturn in search of a new home for humanity.",
-            "duration": 145,
-            "genres": Array [
-              "action2",
-            ],
-            "image": "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SY1000_SX675_AL_.jpg",
-            "rating": 7.2,
-            "releaseDate": "2015",
-            "title": "Interstellar 2",
-          }
-        }
-        key="1"
-      >
-        <ItemBody
-          item={
+            },
             Object {
               "description": "is a 2014 British-American epic science fiction film directed and produced by Christopher Nolan. ... Set in a dystopian future where humanity is struggling to survive, the film follows a group of astronauts who travel through a wormhole near Saturn in search of a new home for humanity.",
               "duration": 145,
@@ -220,72 +146,7 @@ exports[`ItemsContainer component Rendering test - with items 1`] = `
               "rating": 7.2,
               "releaseDate": "2015",
               "title": "Interstellar 2",
-            }
-          }
-          updateSelectedItemFunc={[Function]}
-        >
-          <div
-            className="body"
-            onClick={[Function]}
-          >
-            <Image>
-              <div
-                className="imagecontainer"
-              >
-                <img
-                  className="image"
-                />
-              </div>
-            </Image>
-            <ReleaseDate>
-              <div
-                className="releasedate"
-              />
-            </ReleaseDate>
-            <Title
-              title="Interstellar 2"
-            >
-              <div
-                className="title"
-              >
-                Interstellar 2
-              </div>
-            </Title>
-            <Genre
-              genre="action2"
-            >
-              <div
-                className="genre"
-              >
-                action2
-              </div>
-            </Genre>
-            <Rating>
-              <div
-                className="title"
-              />
-            </Rating>
-          </div>
-        </ItemBody>
-      </Connect(ItemBody)>
-      <Connect(ItemBody)
-        item={
-          Object {
-            "description": "is a 2014 British-American epic science fiction film directed and produced by Christopher Nolan. ... Set in a dystopian future where humanity is struggling to survive, the film follows a group of astronauts who travel through a wormhole near Saturn in search of a new home for humanity.",
-            "duration": 145,
-            "genres": Array [
-              "action 3",
-            ],
-            "image": "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SY1000_SX675_AL_.jpg",
-            "rating": 7.2,
-            "releaseDate": "2016",
-            "title": "Interstellar 3",
-          }
-        }
-        key="2"
-      >
-        <ItemBody
-          item={
+            },
             Object {
               "description": "is a 2014 British-American epic science fiction film directed and produced by Christopher Nolan. ... Set in a dystopian future where humanity is struggling to survive, the film follows a group of astronauts who travel through a wormhole near Saturn in search of a new home for humanity.",
               "duration": 145,
@@ -296,55 +157,286 @@ exports[`ItemsContainer component Rendering test - with items 1`] = `
               "rating": 7.2,
               "releaseDate": "2016",
               "title": "Interstellar 3",
-            }
-          }
-          updateSelectedItemFunc={[Function]}
+            },
+          ]
+        }
+      >
+        <div
+          className="container"
         >
-          <div
-            className="body"
-            onClick={[Function]}
+          <Connect(ItemBody)
+            item={
+              Object {
+                "description": "is a 2014 British-American epic science fiction film directed and produced by Christopher Nolan. ... Set in a dystopian future where humanity is struggling to survive, the film follows a group of astronauts who travel through a wormhole near Saturn in search of a new home for humanity.",
+                "duration": 145,
+                "genres": Array [
+                  "action",
+                ],
+                "image": "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SY1000_SX675_AL_.jpg",
+                "rating": 7.2,
+                "releaseDate": "2014",
+                "title": "Interstellar",
+              }
+            }
+            key="0"
           >
-            <Image>
-              <div
-                className="imagecontainer"
-              >
-                <img
-                  className="image"
-                />
-              </div>
-            </Image>
-            <ReleaseDate>
-              <div
-                className="releasedate"
-              />
-            </ReleaseDate>
-            <Title
-              title="Interstellar 3"
+            <ItemBody
+              item={
+                Object {
+                  "description": "is a 2014 British-American epic science fiction film directed and produced by Christopher Nolan. ... Set in a dystopian future where humanity is struggling to survive, the film follows a group of astronauts who travel through a wormhole near Saturn in search of a new home for humanity.",
+                  "duration": 145,
+                  "genres": Array [
+                    "action",
+                  ],
+                  "image": "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SY1000_SX675_AL_.jpg",
+                  "rating": 7.2,
+                  "releaseDate": "2014",
+                  "title": "Interstellar",
+                }
+              }
+              updateSelectedItemFunc={[Function]}
             >
-              <div
-                className="title"
+              <Link
+                className="body"
+                onClick={[Function]}
+                to="/film/undefined"
               >
-                Interstellar 3
-              </div>
-            </Title>
-            <Genre
-              genre="action 3"
+                <LinkAnchor
+                  className="body"
+                  href="/film/undefined"
+                  navigate={[Function]}
+                  onClick={[Function]}
+                >
+                  <a
+                    className="body"
+                    href="/film/undefined"
+                    onClick={[Function]}
+                  >
+                    <Image>
+                      <div
+                        className="imagecontainer"
+                      >
+                        <img
+                          className="image"
+                        />
+                      </div>
+                    </Image>
+                    <ReleaseDate>
+                      <div
+                        className="releasedate"
+                      />
+                    </ReleaseDate>
+                    <Title
+                      title="Interstellar"
+                    >
+                      <div
+                        className="title"
+                      >
+                        Interstellar
+                      </div>
+                    </Title>
+                    <Genre
+                      genre="action"
+                    >
+                      <div
+                        className="genre"
+                      >
+                        action
+                      </div>
+                    </Genre>
+                    <Rating>
+                      <div
+                        className="title"
+                      />
+                    </Rating>
+                  </a>
+                </LinkAnchor>
+              </Link>
+            </ItemBody>
+          </Connect(ItemBody)>
+          <Connect(ItemBody)
+            item={
+              Object {
+                "description": "is a 2014 British-American epic science fiction film directed and produced by Christopher Nolan. ... Set in a dystopian future where humanity is struggling to survive, the film follows a group of astronauts who travel through a wormhole near Saturn in search of a new home for humanity.",
+                "duration": 145,
+                "genres": Array [
+                  "action2",
+                ],
+                "image": "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SY1000_SX675_AL_.jpg",
+                "rating": 7.2,
+                "releaseDate": "2015",
+                "title": "Interstellar 2",
+              }
+            }
+            key="1"
+          >
+            <ItemBody
+              item={
+                Object {
+                  "description": "is a 2014 British-American epic science fiction film directed and produced by Christopher Nolan. ... Set in a dystopian future where humanity is struggling to survive, the film follows a group of astronauts who travel through a wormhole near Saturn in search of a new home for humanity.",
+                  "duration": 145,
+                  "genres": Array [
+                    "action2",
+                  ],
+                  "image": "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SY1000_SX675_AL_.jpg",
+                  "rating": 7.2,
+                  "releaseDate": "2015",
+                  "title": "Interstellar 2",
+                }
+              }
+              updateSelectedItemFunc={[Function]}
             >
-              <div
-                className="genre"
+              <Link
+                className="body"
+                onClick={[Function]}
+                to="/film/undefined"
               >
-                action 3
-              </div>
-            </Genre>
-            <Rating>
-              <div
-                className="title"
-              />
-            </Rating>
-          </div>
-        </ItemBody>
-      </Connect(ItemBody)>
-    </div>
-  </ItemsContainer>
-</Provider>
+                <LinkAnchor
+                  className="body"
+                  href="/film/undefined"
+                  navigate={[Function]}
+                  onClick={[Function]}
+                >
+                  <a
+                    className="body"
+                    href="/film/undefined"
+                    onClick={[Function]}
+                  >
+                    <Image>
+                      <div
+                        className="imagecontainer"
+                      >
+                        <img
+                          className="image"
+                        />
+                      </div>
+                    </Image>
+                    <ReleaseDate>
+                      <div
+                        className="releasedate"
+                      />
+                    </ReleaseDate>
+                    <Title
+                      title="Interstellar 2"
+                    >
+                      <div
+                        className="title"
+                      >
+                        Interstellar 2
+                      </div>
+                    </Title>
+                    <Genre
+                      genre="action2"
+                    >
+                      <div
+                        className="genre"
+                      >
+                        action2
+                      </div>
+                    </Genre>
+                    <Rating>
+                      <div
+                        className="title"
+                      />
+                    </Rating>
+                  </a>
+                </LinkAnchor>
+              </Link>
+            </ItemBody>
+          </Connect(ItemBody)>
+          <Connect(ItemBody)
+            item={
+              Object {
+                "description": "is a 2014 British-American epic science fiction film directed and produced by Christopher Nolan. ... Set in a dystopian future where humanity is struggling to survive, the film follows a group of astronauts who travel through a wormhole near Saturn in search of a new home for humanity.",
+                "duration": 145,
+                "genres": Array [
+                  "action 3",
+                ],
+                "image": "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SY1000_SX675_AL_.jpg",
+                "rating": 7.2,
+                "releaseDate": "2016",
+                "title": "Interstellar 3",
+              }
+            }
+            key="2"
+          >
+            <ItemBody
+              item={
+                Object {
+                  "description": "is a 2014 British-American epic science fiction film directed and produced by Christopher Nolan. ... Set in a dystopian future where humanity is struggling to survive, the film follows a group of astronauts who travel through a wormhole near Saturn in search of a new home for humanity.",
+                  "duration": 145,
+                  "genres": Array [
+                    "action 3",
+                  ],
+                  "image": "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SY1000_SX675_AL_.jpg",
+                  "rating": 7.2,
+                  "releaseDate": "2016",
+                  "title": "Interstellar 3",
+                }
+              }
+              updateSelectedItemFunc={[Function]}
+            >
+              <Link
+                className="body"
+                onClick={[Function]}
+                to="/film/undefined"
+              >
+                <LinkAnchor
+                  className="body"
+                  href="/film/undefined"
+                  navigate={[Function]}
+                  onClick={[Function]}
+                >
+                  <a
+                    className="body"
+                    href="/film/undefined"
+                    onClick={[Function]}
+                  >
+                    <Image>
+                      <div
+                        className="imagecontainer"
+                      >
+                        <img
+                          className="image"
+                        />
+                      </div>
+                    </Image>
+                    <ReleaseDate>
+                      <div
+                        className="releasedate"
+                      />
+                    </ReleaseDate>
+                    <Title
+                      title="Interstellar 3"
+                    >
+                      <div
+                        className="title"
+                      >
+                        Interstellar 3
+                      </div>
+                    </Title>
+                    <Genre
+                      genre="action 3"
+                    >
+                      <div
+                        className="genre"
+                      >
+                        action 3
+                      </div>
+                    </Genre>
+                    <Rating>
+                      <div
+                        className="title"
+                      />
+                    </Rating>
+                  </a>
+                </LinkAnchor>
+              </Link>
+            </ItemBody>
+          </Connect(ItemBody)>
+        </div>
+      </ItemsContainer>
+    </Provider>
+  </Router>
+</BrowserRouter>
 `;
