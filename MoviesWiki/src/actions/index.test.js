@@ -1,5 +1,5 @@
-import { updateMovies, updateSearchBy, updateSelectedItem, updateSortBy, sortMovies, updateSearchText, loading } from './index'
-import { UPDATE_MOVIES, UPDATE_SEARCH_BY, UPDATE_SELECTED_ITEM, UPDATE_SORT_BY, SORT_MOVIES, UPDATE_SEARCH_TEXT, LOADING } from './actionTypes';
+import { updateMovies, updateSearchBy, updateSelectedItem, updateSortBy, updateSearchText, loading } from './index'
+import { UPDATE_MOVIES, UPDATE_SEARCH_BY, UPDATE_SELECTED_ITEM, UPDATE_SORT_BY, UPDATE_SEARCH_TEXT, LOADING } from './actionTypes';
 
 describe('Test Actions', () => {
 
@@ -41,13 +41,6 @@ describe('Test Actions', () => {
       sortBy: content
     }
     expect(updateSortBy(content)).toEqual(expectedAction)
-  })
-
-  it('Test sortMovies action', () => {
-    const expectedAction = {
-      type: SORT_MOVIES
-    }
-    expect(sortMovies()).toEqual(expectedAction)
   })
 
   it('Test updateSearchText action', () => {
