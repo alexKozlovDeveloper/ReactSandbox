@@ -6,6 +6,8 @@ import rootReducer from '../../reducers'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 
+import { BrowserRouter as Router } from 'react-router-dom'
+
 import ItemsContainer from "./ItemsContainer";
 
 configure({ adapter: new Adapter() });
@@ -29,7 +31,7 @@ describe('ItemsContainer component', () => {
 
         const store = createStore(rootReducer)
 
-        const component = mount(<Provider store={store}><ItemsContainer items={moviesList} config={resultsBodyConfig} /></Provider>);
+        const component = mount(<Router><Provider store={store}><ItemsContainer items={moviesList} config={resultsBodyConfig} /></Provider></Router>);
         expect(shallowToJson(component)).toMatchSnapshot();
     });
 
@@ -74,7 +76,7 @@ describe('ItemsContainer component', () => {
 
         const store = createStore(rootReducer)
 
-        const component = mount(<Provider store={store}><ItemsContainer items={moviesList} config={resultsBodyConfig} /></Provider>);
+        const component = mount(<Router><Provider store={store}><ItemsContainer items={moviesList} config={resultsBodyConfig} /></Provider></Router>);
         expect(shallowToJson(component)).toMatchSnapshot();
     });
 

@@ -1,4 +1,4 @@
-import { updateMovies, updateSearchBy, updateSelectedItem, updateSortBy, sortMovies, updateSearchText, loading } from '../actions/index'
+import { updateMovies, updateSearchBy, updateSelectedItem, updateSortBy, updateSearchText, loading } from '../actions/index'
 
 import moviesReducer from './moviesReducer'
 
@@ -98,18 +98,6 @@ describe('movies Reducer', () => {
       isLoaded: false,
       movies: [],
       selectedItem: null
-    })
-  })
-
-  it('Test sortMovies action', () => {
-    expect(moviesReducer({ sortBy: sortBy, movies: movies }, sortMovies())).toEqual({
-      sortBy: sortBy,
-      movies: sortedByDateMovies
-    })
-
-    expect(moviesReducer({ sortBy: sortBy, movies: movies }, sortMovies())).not.toEqual({
-      sortBy: sortBy,
-      movies: sortedByRatingMovies
     })
   })
 })
