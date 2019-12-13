@@ -30,7 +30,7 @@ exports[`Search rendering test 1`] = `
     }
   }
 >
-  <Connect(Search)
+  <withRouter(Connect(Search))
     config={
       Object {
         "buttonText": "Search",

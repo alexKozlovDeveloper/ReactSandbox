@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow, configure } from 'enzyme';
+import { shallow, mount, configure } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
 import Adapter from 'enzyme-adapter-react-16';
 
@@ -58,9 +58,21 @@ test('MovieView rendering test', () => {
         }
     }
 
+    const { Response, Request, Headers, fetch } = require('whatwg-fetch');
+    global.Response = Response;
+    global.Request = Request;
+    global.Headers = Headers;
+    global.fetch = fetch;
+
+    var match = {
+        params: {
+            id: '99'
+        }
+    }
+
     const store = createStore(rootReducer, defaultStore)
 
-    const component = shallow(<Router><Provider store={store}><MovieView /></Provider></Router>);
+    const component = mount(<Router><Provider store={store}><MovieView match={match}/></Provider></Router>);
     expect(shallowToJson(component)).toMatchSnapshot();
 });
 
@@ -74,8 +86,20 @@ test('MovieView spinner rendering test', () => {
         }
     }
 
+    const { Response, Request, Headers, fetch } = require('whatwg-fetch');
+    global.Response = Response;
+    global.Request = Request;
+    global.Headers = Headers;
+    global.fetch = fetch;
+
     const store = createStore(rootReducer, defaultStore)
 
-    const component = shallow(<Router><Provider store={store}><MovieView /></Provider></Router>);
+    var match = {
+        params: {
+            id: '99'
+        }
+    }
+
+    const component = mount(<Router><Provider store={store}><MovieView match={match}/></Provider></Router>);
     expect(shallowToJson(component)).toMatchSnapshot();
 });

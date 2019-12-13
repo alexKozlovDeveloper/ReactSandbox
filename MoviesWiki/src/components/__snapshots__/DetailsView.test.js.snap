@@ -1,32 +1,47 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ItemDetails rendering test 1`] = `
-<ContextProvider
-  value={
+exports[`ItemDetails noItem rendering test 1`] = `
+<Provider
+  store={
     Object {
-      "store": Object {
-        "dispatch": [Function],
-        "getState": [Function],
-        "replaceReducer": [Function],
-        "subscribe": [Function],
-        Symbol(observable): [Function],
-      },
-      "subscription": Subscription {
-        "handleChangeWrapper": [Function],
-        "listeners": Object {
-          "notify": [Function],
-        },
-        "onStateChange": [Function],
-        "parentSub": undefined,
-        "store": Object {
-          "dispatch": [Function],
-          "getState": [Function],
-          "replaceReducer": [Function],
-          "subscribe": [Function],
-          Symbol(observable): [Function],
-        },
-        "unsubscribe": null,
-      },
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+      Symbol(observable): [Function],
+    }
+  }
+>
+  <Connect(DetailsView)>
+    <DetailsView
+      dispatch={[Function]}
+      item={null}
+    >
+      <div
+        className="body"
+      >
+        <DetailsViewNoItemLabel>
+          <div
+            className="title"
+          >
+            Select any movie...
+          </div>
+        </DetailsViewNoItemLabel>
+      </div>
+    </DetailsView>
+  </Connect(DetailsView)>
+</Provider>
+`;
+
+exports[`ItemDetails rendering test 1`] = `
+<Provider
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+      Symbol(observable): [Function],
     }
   }
 >
@@ -42,6 +57,23 @@ exports[`ItemDetails rendering test 1`] = `
         "title": "Interstellar 4",
       }
     }
-  />
-</ContextProvider>
+  >
+    <DetailsView
+      dispatch={[Function]}
+      item={null}
+    >
+      <div
+        className="body"
+      >
+        <DetailsViewNoItemLabel>
+          <div
+            className="title"
+          >
+            Select any movie...
+          </div>
+        </DetailsViewNoItemLabel>
+      </div>
+    </DetailsView>
+  </Connect(DetailsView)>
+</Provider>
 `;

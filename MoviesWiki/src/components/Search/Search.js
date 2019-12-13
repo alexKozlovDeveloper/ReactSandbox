@@ -19,9 +19,7 @@ class Search extends Component {
     searchMovies() {
         this.props.updateMoviesBySeachFunc(this.props.searchText, this.props.searchBy);
 
-    debugger;
-    this.props.history.push("/search/" + this.props.searchText.replace(" ", "%20"))
-        //this.props.updateUrl(this.props.searchText);
+        this.props.history.push("/search/" + this.props.searchText.replace(" ", "%20"))
     }
 
     submitSearch(e) {

@@ -12,7 +12,7 @@ exports[`Header rendering test 1`] = `
     >
       Find Your Movies
     </div>
-    <Connect(Search)
+    <withRouter(Connect(Search))
       config={
         Object {
           "buttonText": "Search",

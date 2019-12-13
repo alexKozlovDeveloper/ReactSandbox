@@ -1,79 +1,169 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`MovieView rendering test 1`] = `
-<Router
-  history={
-    Object {
-      "action": "POP",
-      "block": [Function],
-      "createHref": [Function],
-      "go": [Function],
-      "goBack": [Function],
-      "goForward": [Function],
-      "length": 1,
-      "listen": [Function],
-      "location": Object {
-        "hash": "",
-        "pathname": "/",
-        "search": "",
-        "state": undefined,
-      },
-      "push": [Function],
-      "replace": [Function],
-    }
-  }
->
-  <Provider
-    store={
+<BrowserRouter>
+  <Router
+    history={
       Object {
-        "dispatch": [Function],
-        "getState": [Function],
-        "replaceReducer": [Function],
-        "subscribe": [Function],
-        Symbol(observable): [Function],
+        "action": "POP",
+        "block": [Function],
+        "createHref": [Function],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "pathname": "/",
+          "search": "",
+          "state": undefined,
+        },
+        "push": [Function],
+        "replace": [Function],
       }
     }
   >
-    <Connect(MovieView) />
-  </Provider>
-</Router>
+    <Provider
+      store={
+        Object {
+          "dispatch": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+          Symbol(observable): [Function],
+        }
+      }
+    >
+      <Connect(MovieView)
+        match={
+          Object {
+            "params": Object {
+              "id": "99",
+            },
+          }
+        }
+      >
+        <MovieView
+          isLoaded={false}
+          loadingFunc={[Function]}
+          match={
+            Object {
+              "params": Object {
+                "id": "99",
+              },
+            }
+          }
+          movies={Array []}
+          selectedItem={null}
+          sortBy="vote_average"
+          updateMoviesFunc={[Function]}
+          updateSelectedItemFunc={[Function]}
+        >
+          <div
+            className="body"
+          >
+            <Spinner>
+              <div
+                className="spinnercontainer"
+              >
+                <div
+                  className="spinner"
+                >
+                  <div />
+                  <div />
+                  <div />
+                </div>
+              </div>
+            </Spinner>
+          </div>
+        </MovieView>
+      </Connect(MovieView)>
+    </Provider>
+  </Router>
+</BrowserRouter>
 `;
 
 exports[`MovieView spinner rendering test 1`] = `
-<Router
-  history={
-    Object {
-      "action": "POP",
-      "block": [Function],
-      "createHref": [Function],
-      "go": [Function],
-      "goBack": [Function],
-      "goForward": [Function],
-      "length": 1,
-      "listen": [Function],
-      "location": Object {
-        "hash": "",
-        "pathname": "/",
-        "search": "",
-        "state": undefined,
-      },
-      "push": [Function],
-      "replace": [Function],
-    }
-  }
->
-  <Provider
-    store={
+<BrowserRouter>
+  <Router
+    history={
       Object {
-        "dispatch": [Function],
-        "getState": [Function],
-        "replaceReducer": [Function],
-        "subscribe": [Function],
-        Symbol(observable): [Function],
+        "action": "POP",
+        "block": [Function],
+        "createHref": [Function],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "pathname": "/",
+          "search": "",
+          "state": undefined,
+        },
+        "push": [Function],
+        "replace": [Function],
       }
     }
   >
-    <Connect(MovieView) />
-  </Provider>
-</Router>
+    <Provider
+      store={
+        Object {
+          "dispatch": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+          Symbol(observable): [Function],
+        }
+      }
+    >
+      <Connect(MovieView)
+        match={
+          Object {
+            "params": Object {
+              "id": "99",
+            },
+          }
+        }
+      >
+        <MovieView
+          isLoaded={false}
+          loadingFunc={[Function]}
+          match={
+            Object {
+              "params": Object {
+                "id": "99",
+              },
+            }
+          }
+          movies={Array []}
+          selectedItem={null}
+          sortBy="vote_average"
+          updateMoviesFunc={[Function]}
+          updateSelectedItemFunc={[Function]}
+        >
+          <div
+            className="body"
+          >
+            <Spinner>
+              <div
+                className="spinnercontainer"
+              >
+                <div
+                  className="spinner"
+                >
+                  <div />
+                  <div />
+                  <div />
+                </div>
+              </div>
+            </Spinner>
+          </div>
+        </MovieView>
+      </Connect(MovieView)>
+    </Provider>
+  </Router>
+</BrowserRouter>
 `;

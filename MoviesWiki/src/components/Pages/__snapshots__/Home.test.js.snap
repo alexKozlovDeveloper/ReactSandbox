@@ -1,35 +1,435 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Home rendering test 1`] = `
-<ContextProvider
-  value={
-    Object {
-      "store": Object {
-        "dispatch": [Function],
-        "getState": [Function],
-        "replaceReducer": [Function],
-        "subscribe": [Function],
-        Symbol(observable): [Function],
-      },
-      "subscription": Subscription {
-        "handleChangeWrapper": [Function],
-        "listeners": Object {
-          "notify": [Function],
+<BrowserRouter>
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "createHref": [Function],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "pathname": "/",
+          "search": "",
+          "state": undefined,
         },
-        "onStateChange": [Function],
-        "parentSub": undefined,
-        "store": Object {
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
+  >
+    <Provider
+      store={
+        Object {
           "dispatch": [Function],
           "getState": [Function],
           "replaceReducer": [Function],
           "subscribe": [Function],
           Symbol(observable): [Function],
-        },
-        "unsubscribe": null,
-      },
-    }
-  }
->
-  <Home />
-</ContextProvider>
+        }
+      }
+    >
+      <Home
+        headerConfig={
+          Object {
+            "searchConfig": Object {
+              "buttonText": "Search",
+              "placeHolder": "The Godfather",
+              "searchFilter": Object {
+                "options": Array [
+                  Object {
+                    "title": "Title",
+                    "value": "title",
+                  },
+                  Object {
+                    "title": "Genre",
+                    "value": "genres",
+                  },
+                ],
+                "title": "Search by",
+              },
+            },
+            "title": "Find Your Movies",
+          }
+        }
+        resultsBodyConfig={
+          Object {
+            "itemsPerRow": 4,
+            "resultSortConfig": Object {
+              "options": Array [
+                Object {
+                  "title": "Release date",
+                  "value": "release_date",
+                },
+                Object {
+                  "title": "Rating",
+                  "value": "vote_average",
+                },
+              ],
+              "title": "Sort by",
+            },
+            "resultsCountConfig": Object {
+              "title": "movies found",
+            },
+          }
+        }
+      >
+        <div
+          className="home"
+        >
+          <Header
+            config={
+              Object {
+                "searchConfig": Object {
+                  "buttonText": "Search",
+                  "placeHolder": "The Godfather",
+                  "searchFilter": Object {
+                    "options": Array [
+                      Object {
+                        "title": "Title",
+                        "value": "title",
+                      },
+                      Object {
+                        "title": "Genre",
+                        "value": "genres",
+                      },
+                    ],
+                    "title": "Search by",
+                  },
+                },
+                "title": "Find Your Movies",
+              }
+            }
+          >
+            <div
+              className="header"
+            >
+              <div
+                className="container"
+              >
+                <div
+                  className="headertitle"
+                >
+                  Find Your Movies
+                </div>
+                <withRouter(Connect(Search))
+                  config={
+                    Object {
+                      "buttonText": "Search",
+                      "placeHolder": "The Godfather",
+                      "searchFilter": Object {
+                        "options": Array [
+                          Object {
+                            "title": "Title",
+                            "value": "title",
+                          },
+                          Object {
+                            "title": "Genre",
+                            "value": "genres",
+                          },
+                        ],
+                        "title": "Search by",
+                      },
+                    }
+                  }
+                >
+                  <Connect(Search)
+                    config={
+                      Object {
+                        "buttonText": "Search",
+                        "placeHolder": "The Godfather",
+                        "searchFilter": Object {
+                          "options": Array [
+                            Object {
+                              "title": "Title",
+                              "value": "title",
+                            },
+                            Object {
+                              "title": "Genre",
+                              "value": "genres",
+                            },
+                          ],
+                          "title": "Search by",
+                        },
+                      }
+                    }
+                    history={
+                      Object {
+                        "action": "POP",
+                        "block": [Function],
+                        "createHref": [Function],
+                        "go": [Function],
+                        "goBack": [Function],
+                        "goForward": [Function],
+                        "length": 1,
+                        "listen": [Function],
+                        "location": Object {
+                          "hash": "",
+                          "pathname": "/",
+                          "search": "",
+                          "state": undefined,
+                        },
+                        "push": [Function],
+                        "replace": [Function],
+                      }
+                    }
+                    location={
+                      Object {
+                        "hash": "",
+                        "pathname": "/",
+                        "search": "",
+                        "state": undefined,
+                      }
+                    }
+                    match={
+                      Object {
+                        "isExact": true,
+                        "params": Object {},
+                        "path": "/",
+                        "url": "/",
+                      }
+                    }
+                  >
+                    <Search
+                      config={
+                        Object {
+                          "buttonText": "Search",
+                          "placeHolder": "The Godfather",
+                          "searchFilter": Object {
+                            "options": Array [
+                              Object {
+                                "title": "Title",
+                                "value": "title",
+                              },
+                              Object {
+                                "title": "Genre",
+                                "value": "genres",
+                              },
+                            ],
+                            "title": "Search by",
+                          },
+                        }
+                      }
+                      history={
+                        Object {
+                          "action": "POP",
+                          "block": [Function],
+                          "createHref": [Function],
+                          "go": [Function],
+                          "goBack": [Function],
+                          "goForward": [Function],
+                          "length": 1,
+                          "listen": [Function],
+                          "location": Object {
+                            "hash": "",
+                            "pathname": "/",
+                            "search": "",
+                            "state": undefined,
+                          },
+                          "push": [Function],
+                          "replace": [Function],
+                        }
+                      }
+                      isLoaded={false}
+                      location={
+                        Object {
+                          "hash": "",
+                          "pathname": "/",
+                          "search": "",
+                          "state": undefined,
+                        }
+                      }
+                      match={
+                        Object {
+                          "isExact": true,
+                          "params": Object {},
+                          "path": "/",
+                          "url": "/",
+                        }
+                      }
+                      movies={Array []}
+                      searchBy="title"
+                      searchText=""
+                      updateMoviesBySeachFunc={[Function]}
+                      updateSearchByFunc={[Function]}
+                      updateSearchTextFunc={[Function]}
+                    >
+                      <div
+                        className="search"
+                      >
+                        <div>
+                          <SearchField
+                            placeHolder="The Godfather"
+                            searchText=""
+                            submitFunc={[Function]}
+                            updateFunc={[Function]}
+                          >
+                            <input
+                              className="searchfield"
+                              defaultValue=""
+                              onInput={[Function]}
+                              onKeyDown={[Function]}
+                              placeholder="The Godfather"
+                              type="text"
+                            />
+                          </SearchField>
+                          <SearchButton
+                            buttonText="Search"
+                            updateFunc={[Function]}
+                          >
+                            <button
+                              className="button"
+                              onClick={[Function]}
+                            >
+                              Search
+                            </button>
+                          </SearchButton>
+                        </div>
+                        <CustomOptionList
+                          config={
+                            Object {
+                              "options": Array [
+                                Object {
+                                  "title": "Title",
+                                  "value": "title",
+                                },
+                                Object {
+                                  "title": "Genre",
+                                  "value": "genres",
+                                },
+                              ],
+                              "title": "Search by",
+                            }
+                          }
+                          selectedIndex="0"
+                          updateFunc={[Function]}
+                        >
+                          <div
+                            className="container"
+                          >
+                            <div
+                              className="title"
+                            >
+                              Search by
+                            </div>
+                            <div
+                              className="item isactive"
+                              key="0"
+                              name="option0"
+                              onClick={[Function]}
+                              value="title"
+                            >
+                              Title
+                            </div>
+                            <div
+                              className="item"
+                              key="1"
+                              name="option1"
+                              onClick={[Function]}
+                              value="genres"
+                            >
+                              Genre
+                            </div>
+                          </div>
+                        </CustomOptionList>
+                      </div>
+                    </Search>
+                  </Connect(Search)>
+                </withRouter(Connect(Search))>
+              </div>
+            </div>
+          </Header>
+          <Connect(ResultsBody)
+            config={
+              Object {
+                "itemsPerRow": 4,
+                "resultSortConfig": Object {
+                  "options": Array [
+                    Object {
+                      "title": "Release date",
+                      "value": "release_date",
+                    },
+                    Object {
+                      "title": "Rating",
+                      "value": "vote_average",
+                    },
+                  ],
+                  "title": "Sort by",
+                },
+                "resultsCountConfig": Object {
+                  "title": "movies found",
+                },
+              }
+            }
+          >
+            <ResultsBody
+              config={
+                Object {
+                  "itemsPerRow": 4,
+                  "resultSortConfig": Object {
+                    "options": Array [
+                      Object {
+                        "title": "Release date",
+                        "value": "release_date",
+                      },
+                      Object {
+                        "title": "Rating",
+                        "value": "vote_average",
+                      },
+                    ],
+                    "title": "Sort by",
+                  },
+                  "resultsCountConfig": Object {
+                    "title": "movies found",
+                  },
+                }
+              }
+              isLoaded={false}
+              movies={Array []}
+              sortBy="vote_average"
+              updateMoviesFunc={[Function]}
+              updateSelectedItemFunc={[Function]}
+              updateSortByFunc={[Function]}
+            >
+              <div
+                className="body"
+              >
+                <Spinner>
+                  <div
+                    className="spinnercontainer"
+                  >
+                    <div
+                      className="spinner"
+                    >
+                      <div />
+                      <div />
+                      <div />
+                    </div>
+                  </div>
+                </Spinner>
+              </div>
+            </ResultsBody>
+          </Connect(ResultsBody)>
+          <Footer>
+            <div
+              className="footer"
+            >
+              <div
+                className="container"
+              >
+                Copyright © 2019 AkTest
+              </div>
+            </div>
+          </Footer>
+        </div>
+      </Home>
+    </Provider>
+  </Router>
+</BrowserRouter>
 `;

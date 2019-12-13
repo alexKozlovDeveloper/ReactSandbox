@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow, configure } from 'enzyme';
+import { shallow, mount, configure } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
 import Adapter from 'enzyme-adapter-react-16';
 import rootReducer from '../reducers'
@@ -30,9 +30,24 @@ test('ItemDetails rendering test', () => {
 
     const store = createStore(rootReducer, defaultStore)
 
-    const component = shallow(<Provider store={store}>
+    const component = mount(<Provider store={store}>
         <DetailsView item={item} />
     </Provider>);
     expect(shallowToJson(component)).toMatchSnapshot();
 });
 
+test('ItemDetails noItem rendering test', () => {
+
+    var defaultStore = {
+        moviesReducer: {
+            selectedItem: null
+        }
+    }
+
+    const store = createStore(rootReducer, defaultStore)
+
+    const component = mount(<Provider store={store}>
+        <DetailsView  />
+    </Provider>);
+    expect(shallowToJson(component)).toMatchSnapshot();
+});

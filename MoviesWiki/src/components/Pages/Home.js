@@ -7,7 +7,7 @@ import Footer from "../Footer";
 
 import styles from "../../styles/Home.css"
 
-const Home = ({ resultsBodyConfig, headerConfig, match, history }) => {
+const Home = ({ resultsBodyConfig, headerConfig }) => {
     return <div className={styles.home}>
         <Header config={headerConfig}/>
         <ResultsBody config={resultsBodyConfig}></ResultsBody>
