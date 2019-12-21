@@ -24,7 +24,9 @@ function renderHTML(html) {
 
 export default function serverRenderer() {
   return (req, res) => {
-    const htmlString = renderToString(<App Router={StaticRouter} />);
+    const context = {};
+
+    const htmlString = renderToString(<App Router={StaticRouter} context={context} location={req.url}/>);
 
     res.send(renderHTML(htmlString));
   };
