@@ -1,4 +1,4 @@
-function renderHTML() {
+function renderHTML(thml) {
     return `
         <!doctype html>
         <html>
@@ -7,7 +7,7 @@ function renderHTML() {
             <title>React Server Side Rendering</title>
           </head>
           <body>
-            <div id="root">abd</div>
+            <div id="root"></div>
             <script src="/js/main.js"></script>
           </body>
         </html>
