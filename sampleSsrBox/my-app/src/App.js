@@ -4,7 +4,7 @@ import Home from './Pages/Home';
 import About from './Pages/About';
 import NotFound from './Pages/NotFound';
 
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
+import { StaticRouter as Router, Route, Switch, Link } from 'react-router-dom'
 
 class App extends Component {
 
