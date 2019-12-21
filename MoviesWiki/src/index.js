@@ -8,6 +8,7 @@ import { createLogger } from 'redux-logger'
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import { PersistGate } from 'redux-persist/lib/integration/react';
+import thunkMiddleware from 'redux-thunk';
 
 const persistConfig = {
     key: 'root',
@@ -17,7 +18,7 @@ const persistConfig = {
 const pReducer = persistReducer(persistConfig, rootReducer);
 const logger = createLogger()
 
-const store = createStore(pReducer, undefined, applyMiddleware(logger));
+const store = createStore(pReducer, undefined, applyMiddleware(logger, thunkMiddleware));
 const persistor = persistStore(store);
 
 render(
