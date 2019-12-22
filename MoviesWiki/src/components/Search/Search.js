@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 
 import { withRouter } from 'react-router';
 
@@ -14,10 +13,6 @@ import {
 import styles from '../../styles/Search.css';
 
 class Search extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   searchMovies() {
     this.props.updateMoviesBySeachFunc(this.props.searchText, this.props.searchBy);
 
@@ -25,7 +20,7 @@ class Search extends Component {
   }
 
   submitSearch(e) {
-    if (e.which == 13) {
+    if (e.which === 13) {
       this.searchMovies();
     }
   }
@@ -65,7 +60,7 @@ function mapDispatchToProps(dispatch) {
             dispatch(updateMovies(result.data));
           },
           (error) => {
-            // TODO: Process error
+            console.log(error, 'error');
           },
         );
     },

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import ItemBody from './ItemBody';
 import NoItemLabel from './NoItemLabel';
@@ -6,8 +6,8 @@ import NoItemLabel from './NoItemLabel';
 import styles from '../../styles/ItemsContainer.css';
 
 const ItemsContainer = ({ items }) => {
-  function getDivTable(items) {
-    const tableContent = items.map((item, index) => <ItemBody key={index} item={item} />);
+  function getDivTable(objs) {
+    const tableContent = objs.map((item, index) => <ItemBody key={index} item={item} />);
 
     return tableContent;
   }

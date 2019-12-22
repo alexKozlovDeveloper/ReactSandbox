@@ -42,9 +42,9 @@ class MovieView extends Component {
           fetch(url)
             .then((res) => res.json())
             .then(
-              (result) => {
+              (data) => {
                 // debugger;
-                this.props.updateMoviesFunc(result);
+                this.props.updateMoviesFunc(data);
               },
               (error) => {
               },

@@ -13,10 +13,6 @@ import {
 import styles from '../styles/ResultsBody.css';
 
 class ResultsBody extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   componentDidMount() {
     this.props.downloadMoviesAsync('https://reactjs-cdp.herokuapp.com/movies?sortBy=id');
   }

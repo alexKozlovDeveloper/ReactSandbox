@@ -10,7 +10,7 @@
     "server": "webpack-dev-server",
     "test": "jest",
     "cypress": "cypress open",
-    "lint": "eslint ./ --cache --ignore-pattern .gitignore --fix"
+    "lint": "eslint ./src --cache --ignore-pattern .gitignore --fix"
   },
   "author": "",
   "license": "ISC",

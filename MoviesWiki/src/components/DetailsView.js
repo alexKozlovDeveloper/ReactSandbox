@@ -13,10 +13,6 @@ import styles from '../styles/DetailsView.css';
 
 
 class DetailsView extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     let content;
 

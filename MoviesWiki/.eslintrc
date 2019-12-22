@@ -3,7 +3,7 @@
   "rules": {
     "max-len": [
       1,
-      120,
+      500,
       2,
       {
         "ignoreComments": true
@@ -12,5 +12,17 @@
   },
   "extends": [
     "airbnb-base"
-  ]
+  ],
+  "globals": {
+    "fetch": false,
+    "describe": false,
+    "it": false,
+    "react": false,
+    "test": false,
+    "expect": false,
+    "jest": false
+  },
+  "env": {
+    "browser": true
+    }
 }

@@ -9,7 +9,6 @@ import { BrowserRouter as Router, Link } from 'react-router-dom';
 import rootReducer from '../../reducers';
 
 import ItemBody from './ItemBody';
-import styles from '../../styles/ItemBody.css';
 
 configure({ adapter: new Adapter() });
 

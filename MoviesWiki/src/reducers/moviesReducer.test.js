@@ -23,8 +23,6 @@ const item3 = {
 };
 
 const movies = [item2, item1, item3];
-const sortedByRatingMovies = [item3, item2, item1];
-const sortedByDateMovies = [item1, item2, item3];
 const searchText = 'father';
 const searchBy = 'ganres';
 const sortBy = 'release_date';
