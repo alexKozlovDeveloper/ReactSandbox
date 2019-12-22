@@ -2,7 +2,9 @@ import React from 'react';
 import { mount, configure } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
 import Adapter from 'enzyme-adapter-react-16';
-
+import {
+  Response, Request, Headers, fetch,
+} from 'whatwg-fetch';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
@@ -57,9 +59,6 @@ test('MovieView rendering test', () => {
     },
   };
 
-  const {
-    Response, Request, Headers, fetch,
-  } = require('whatwg-fetch');
   global.Response = Response;
   global.Request = Request;
   global.Headers = Headers;
@@ -86,9 +85,6 @@ test('MovieView spinner rendering test', () => {
     },
   };
 
-  const {
-    Response, Request, Headers, fetch,
-  } = require('whatwg-fetch');
   global.Response = Response;
   global.Request = Request;
   global.Headers = Headers;

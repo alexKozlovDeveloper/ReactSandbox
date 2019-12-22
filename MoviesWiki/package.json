@@ -54,7 +54,8 @@
     "webpack-dev-middleware": "^3.7.2",
     "webpack-dev-server": "^3.9.0",
     "webpack-hot-middleware": "^2.25.0",
-    "webpack-hot-server-middleware": "^0.6.0"
+    "webpack-hot-server-middleware": "^0.6.0",
+    "whatwg-fetch": "^3.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.7.0",

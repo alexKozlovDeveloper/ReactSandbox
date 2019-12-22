@@ -21,7 +21,8 @@
     "react": false,
     "test": false,
     "expect": false,
-    "jest": false
+    "jest": false,
+    "require": false
   },
   "env": {
     "browser": true

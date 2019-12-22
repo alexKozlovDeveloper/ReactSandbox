@@ -5,6 +5,9 @@ import Adapter from 'enzyme-adapter-react-16';
 
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
+import {
+  Response, Request, Headers, fetch,
+} from 'whatwg-fetch';
 
 import { BrowserRouter as Router } from 'react-router-dom';
 import rootReducer from '../../reducers';
@@ -50,9 +53,6 @@ test('Home rendering test', () => {
     },
   };
 
-  const {
-    Response, Request, Headers, fetch,
-  } = require('whatwg-fetch');
   global.Response = Response;
   global.Request = Request;
   global.Headers = Headers;
