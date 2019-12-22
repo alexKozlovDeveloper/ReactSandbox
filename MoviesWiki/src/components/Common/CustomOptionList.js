@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import styles from '../../styles/CustomOptionList.css';
 
@@ -27,12 +28,21 @@ class CustomOptionList extends Component {
     });
 
     return (
-            <div className={styles.container}>
-                <div className={styles.title}>{this.props.config.title}</div>
-                {optionsHtml}
-            </div>
+      <div className={styles.container}>
+        <div className={styles.title}>{this.props.config.title}</div>
+        {optionsHtml}
+      </div>
     );
   }
 }
+
+CustomOptionList.propTypes = {
+  selectedIndex: PropTypes.string,
+  updateFunc: PropTypes.func,
+  config: PropTypes.shape({
+    title: PropTypes.string,
+    options: PropTypes.array,
+  }),
+};
 
 export default CustomOptionList;
