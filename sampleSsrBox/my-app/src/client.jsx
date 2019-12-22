@@ -12,6 +12,9 @@ import { BrowserRouter } from 'react-router-dom';
 
 const store = createStore(rootReducer, window.PRELOADED_STATE)
 
+console.log(window.PRELOADED_STATE, "window.PRELOADED_STATE")
+console.log(store, "store")
+
 const root = (
     <App Router={BrowserRouter} store={store} />
 );

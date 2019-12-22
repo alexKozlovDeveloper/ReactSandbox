@@ -11,9 +11,11 @@ const store = createStore(rootReducer)
 
 import { StaticRouter } from 'react-router-dom';
 
-const preloadedState = {
-  title: "from server"
-}
+// const preloadedState = {
+//   title: "from server"
+// }
+
+const preloadedState = { TitleReducer: { title: 'from server-state' } }
 
 function renderHTML(html, State) {
   return `
