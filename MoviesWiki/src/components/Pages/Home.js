@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import ResultsBody from '../ResultsBody';
 
@@ -12,5 +13,12 @@ const Home = ({ resultsBodyConfig, headerConfig }) => <div className={styles.hom
         <ResultsBody config={resultsBodyConfig}></ResultsBody>
         <Footer />
     </div>;
+
+
+Home.propTypes = {
+  resultsBodyConfig: PropTypes.object,
+  headerConfig: PropTypes.object,
+};
+
 
 export default Home;

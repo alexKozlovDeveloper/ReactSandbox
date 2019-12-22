@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import DetailsView from '../DetailsView';
 import ItemsContainer from '../Container/ItemsContainer';
@@ -111,5 +112,20 @@ function mapStateToProps(state) {
     sortBy,
   };
 }
+
+MovieView.propTypes = {
+  selectedItem: PropTypes.object,
+  movies: PropTypes.array,
+  isLoaded: PropTypes.bool,
+  sortBy: PropTypes.string,
+  updateMoviesFunc: PropTypes.func,
+  loadingFunc: PropTypes.func,
+  updateSelectedItemFunc: PropTypes.func,
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      id: PropTypes.string,
+    }),
+  }),
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(MovieView);

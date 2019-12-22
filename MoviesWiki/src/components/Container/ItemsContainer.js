@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import ItemBody from './ItemBody';
 import NoItemLabel from './NoItemLabel';
@@ -25,6 +26,10 @@ const ItemsContainer = ({ items }) => {
             {table}
         </div>
   );
+};
+
+ItemsContainer.propTypes = {
+  items: PropTypes.array,
 };
 
 export default ItemsContainer;

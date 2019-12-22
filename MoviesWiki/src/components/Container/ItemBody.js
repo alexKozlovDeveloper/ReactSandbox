@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import { Link } from 'react-router-dom';
 import Title from '../Common/Title';
@@ -45,5 +46,17 @@ function mapDispatchToProps(dispatch) {
     },
   };
 }
+
+ItemBody.propTypes = {
+  updateSelectedItemFunc: PropTypes.func,
+  item: PropTypes.shape({
+    id: PropTypes.string,
+    title: PropTypes.string,
+    poster_path: PropTypes.string,
+    release_date: PropTypes.string,
+    genres: PropTypes.array,
+    vote_average: PropTypes.string,
+  }),
+};
 
 export default connect(null, mapDispatchToProps)(ItemBody);

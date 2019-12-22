@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import ResultsCount from './Common/ResultsCount';
 import ItemsContainer from './Container/ItemsContainer';
@@ -86,5 +87,24 @@ function mapStateToProps(state) {
     sortBy,
   };
 }
+
+ResultsBody.propTypes = {
+  movies: PropTypes.array,
+  isLoaded: PropTypes.bool,
+  sortBy: PropTypes.string,
+  updateMoviesFunc: PropTypes.func,
+  downloadMoviesAsync: PropTypes.func,
+  updateSortByFunc: PropTypes.func,
+  updateSelectedItemFunc: PropTypes.func,
+  config: PropTypes.shape({
+    resultSortConfig: PropTypes.shape({
+      title: PropTypes.string,
+    }),
+    resultsCountConfig: PropTypes.shape({
+      title: PropTypes.string,
+    }),
+    itemsPerRow: PropTypes.string,
+  }),
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(ResultsBody);

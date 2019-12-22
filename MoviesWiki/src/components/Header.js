@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Search from './Search/Search';
 
@@ -12,5 +13,12 @@ const Header = ({ config }) => (
             </div>
         </div>
 );
+
+Header.propTypes = {
+  config: PropTypes.shape({
+    title: PropTypes.string,
+    searchConfig: PropTypes.object,
+  }),
+};
 
 export default Header;

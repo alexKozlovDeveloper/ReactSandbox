@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import PropTypes from 'prop-types';
 import Image from './Common/Image';
 import DetailsTitle from './Common/DetailsTitle';
 import Rating from './Common/Rating';
@@ -54,5 +55,18 @@ function mapStateToProps(state) {
     item: selectedItem,
   };
 }
+
+DetailsView.propTypes = {
+  item: PropTypes.shape({
+    id: PropTypes.string,
+    title: PropTypes.string,
+    poster_path: PropTypes.string,
+    release_date: PropTypes.string,
+    genres: PropTypes.array,
+    vote_average: PropTypes.string,
+    runtime: PropTypes.string,
+    overview: PropTypes.string,
+  }),
+};
 
 export default connect(mapStateToProps)(DetailsView);

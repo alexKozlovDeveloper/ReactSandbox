@@ -5,7 +5,7 @@ import Adapter from 'enzyme-adapter-react-16';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import rootReducer from '../../reducers';
 
 import ItemBody from './ItemBody';

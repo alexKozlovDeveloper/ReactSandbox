@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import { withRouter } from 'react-router';
 
@@ -77,5 +78,22 @@ function mapStateToProps(state) {
     searchBy,
   };
 }
+
+Search.propTypes = {
+  movies: PropTypes.array,
+  isLoaded: PropTypes.bool,
+  error: PropTypes.object,
+  searchText: PropTypes.string,
+  searchBy: PropTypes.string,
+  updateSearchTextFunc: PropTypes.func,
+  updateSearchByFunc: PropTypes.func,
+  updateMoviesBySeachFunc: PropTypes.func,
+  history: PropTypes.array,
+  config: PropTypes.shape({
+    buttonText: PropTypes.string,
+    placeHolder: PropTypes.string,
+    searchFilter: PropTypes.object,
+  }),
+};
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Search));
