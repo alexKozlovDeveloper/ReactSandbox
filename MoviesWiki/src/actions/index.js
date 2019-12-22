@@ -32,3 +32,14 @@ export const updateSearchText = (searchText) => ({
 export const loading = () => ({
   type: LOADING
 });
+
+// Async Actions
+export function fetchMovies(url) {
+  return (dispatch) => {
+    dispatch(loading());
+
+    fetch(url)
+      .then(res => res.json())
+      .then(items => dispatch(updateMovies(items.data)));
+  };
+}

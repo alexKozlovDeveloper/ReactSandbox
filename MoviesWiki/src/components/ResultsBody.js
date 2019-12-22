@@ -6,7 +6,7 @@ import ItemsContainer from "./Container/ItemsContainer";
 import CustomOptionList from "./Common/CustomOptionList";
 import Spinner from "./Common/Spinner";
 
-import { updateSelectedItem, updateMovies, updateSortBy } from "../actions/index";
+import { updateSelectedItem, updateMovies, updateSortBy, fetchMovies } from "../actions/index";
 
 import styles from "../styles/ResultsBody.css"
 
@@ -16,22 +16,10 @@ class ResultsBody extends Component {
     }
 
     componentDidMount() {
-        if (this.props.isLoaded == false) {
-            fetch("https://reactjs-cdp.herokuapp.com/movies?sortBy=id")
-                .then(res => res.json())
-                .then(
-                    (result) => {
-                        this.props.updateMoviesFunc(result);
-                    },
-                    (error) => {
-                        // TODO: Process error
-                    }
-                )
-        }
+        this.props.downloadMoviesAsync("https://reactjs-cdp.herokuapp.com/movies?sortBy=id")
     }
 
     render() {
-
         if (this.props.isLoaded === false || this.props.movies == null) {
             return (
                 <div className={styles.body}>
@@ -78,6 +66,9 @@ function mapDispatchToProps(dispatch) {
     return {
         updateMoviesFunc: (movies) => {
             dispatch(updateMovies(movies.data))
+        },
+        downloadMoviesAsync: (url) => {
+            dispatch(fetchMovies(url))
         },
         updateSortByFunc: (sortBy) => {
             dispatch(updateSortBy(sortBy))
