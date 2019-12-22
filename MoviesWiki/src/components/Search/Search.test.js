@@ -1,42 +1,40 @@
 import React from 'react';
-import { Provider } from 'react-redux'
+import { Provider } from 'react-redux';
 import { shallow, configure } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
 import Adapter from 'enzyme-adapter-react-16';
-import rootReducer from '../../reducers'
-import { createStore } from 'redux'
+import { createStore } from 'redux';
+import rootReducer from '../../reducers';
 
-import Search from "./Search";
+import Search from './Search';
 
 configure({ adapter: new Adapter() });
 
 test('Search rendering test', () => {
+  const searchConfig = {
+    placeHolder: 'Quentin Tarantino',
+    buttonText: 'Search',
+    searchFilter: {
+      title: 'Search by',
+      selectedIndex: '0',
+      options: ['Title', 'Genre'],
+    },
+  };
 
-    var searchConfig = {
-        placeHolder: "Quentin Tarantino",
-        buttonText: "Search",
-        searchFilter: {
-            title: "Search by",
-            selectedIndex: "0",
-            options: ["Title", "Genre"]
-        }
-    }
+  const defaultStore = {
+    moviesReducer: {
+      movies: [],
+      isLoaded: true,
+      error: null,
+      searchText: 'father',
+      searchBy: 'title',
+    },
+  };
 
-    var defaultStore = {
-        moviesReducer: {
-            movies: [],
-            isLoaded: true,
-            error: null,
-            searchText: 'father',
-            searchBy: 'title',
-        }
-    }
+  const store = createStore(rootReducer, defaultStore);
 
-    const store = createStore(rootReducer, defaultStore)
-
-    const component = shallow(<Provider store={store}>
+  const component = shallow(<Provider store={store}>
         <Search config={searchConfig} />
     </Provider>);
-    expect(shallowToJson(component)).toMatchSnapshot();
+  expect(shallowToJson(component)).toMatchSnapshot();
 });
-

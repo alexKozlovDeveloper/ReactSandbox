@@ -1,9 +1,7 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import styles from "../../styles/SearchButton.css"
+import styles from '../../styles/SearchButton.css';
 
-const SearchButton = ({ buttonText, updateFunc }) => {
-    return <button className={styles.button} onClick={() => updateFunc()}>{buttonText}</button>;
-}
+const SearchButton = ({ buttonText, updateFunc }) => <button className={styles.button} onClick={() => updateFunc()}>{buttonText}</button>;
 
 export default SearchButton;

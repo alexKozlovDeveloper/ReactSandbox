@@ -1,27 +1,27 @@
-import React, { Component } from "react";
-import { connect } from 'react-redux'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-import Image from "./Common/Image";
-import DetailsTitle from "./Common/DetailsTitle";
-import Rating from "./Common/Rating";
-import Description from "./Common/Description";
-import YearAndDuration from "./Common/YearAndDuration";
-import BackButton from "./Common/BackButton";
-import DetailsViewNoItemLabel from "./Common/DetailsViewNoItemLabel";
+import Image from './Common/Image';
+import DetailsTitle from './Common/DetailsTitle';
+import Rating from './Common/Rating';
+import Description from './Common/Description';
+import YearAndDuration from './Common/YearAndDuration';
+import BackButton from './Common/BackButton';
+import DetailsViewNoItemLabel from './Common/DetailsViewNoItemLabel';
 
-import styles from "../styles/DetailsView.css"
+import styles from '../styles/DetailsView.css';
 
 
 class DetailsView extends Component {
-    constructor(props) {
-        super(props);
-    }
+  constructor(props) {
+    super(props);
+  }
 
-    render() {
-        var content;
+  render() {
+    let content;
 
-        if (this.props.item != null) {
-            content = (<>
+    if (this.props.item != null) {
+      content = (<>
                 <div className={styles.imagecontainer}>
                     <Image image={this.props.item.poster_path} />
                 </div>
@@ -36,27 +36,27 @@ class DetailsView extends Component {
                     <div className={styles.descriptioncontainer}>
                         <Description description={this.props.item.overview} />
                     </div>
-                </div>                
-                <BackButton buttonText="" />                
-            </>)
-        } else {
-            content = (<DetailsViewNoItemLabel></DetailsViewNoItemLabel>)
-        }
+                </div>
+                <BackButton buttonText="" />
+      </>);
+    } else {
+      content = (<DetailsViewNoItemLabel></DetailsViewNoItemLabel>);
+    }
 
-        return (
+    return (
             <div className={styles.body}>
                 {content}
             </div>
-        );
-    }
+    );
+  }
 }
 
 function mapStateToProps(state) {
-    const { selectedItem } = state.moviesReducer;
+  const { selectedItem } = state.moviesReducer;
 
-    return {
-        item: selectedItem
-    };
+  return {
+    item: selectedItem,
+  };
 }
 
 export default connect(mapStateToProps)(DetailsView);

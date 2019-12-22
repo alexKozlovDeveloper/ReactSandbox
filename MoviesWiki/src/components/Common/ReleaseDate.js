@@ -1,11 +1,9 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import styles from "../../styles/ReleaseDate.css"
+import styles from '../../styles/ReleaseDate.css';
 
-const ReleaseDate = ({ releaseDate }) => {
-    return <div className={styles.releasedate}>
+const ReleaseDate = ({ releaseDate }) => <div className={styles.releasedate}>
         {releaseDate}
     </div>;
-}
 
 export default ReleaseDate;

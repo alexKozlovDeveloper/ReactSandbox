@@ -1,13 +1,9 @@
-import React, { Component, useMemo } from "react";
+import React, { Component, useMemo } from 'react';
 
-import styles from "../../styles/Rating.css"
+import styles from '../../styles/Rating.css';
 
-const Rating = ({ rating }) => {
-    return useMemo(() => {
-        return <div className={styles.title}>
+const Rating = ({ rating }) => useMemo(() => <div className={styles.title}>
             {rating}
-        </div>
-    });
-}
+        </div>);
 
 export default Rating;

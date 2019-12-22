@@ -1,9 +1,7 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-const Description = ({ description }) => {
-    return <div>
+const Description = ({ description }) => <div>
         {description}
     </div>;
-}
 
 export default Description;

@@ -1,4 +1,6 @@
-import { UPDATE_MOVIES, UPDATE_SEARCH_BY, UPDATE_SELECTED_ITEM, UPDATE_SORT_BY, SORT_MOVIES, UPDATE_SEARCH_TEXT, LOADING } from '../actions/actionTypes';
+import {
+  UPDATE_MOVIES, UPDATE_SEARCH_BY, UPDATE_SELECTED_ITEM, UPDATE_SORT_BY, SORT_MOVIES, UPDATE_SEARCH_TEXT, LOADING,
+} from '../actions/actionTypes';
 
 const initialState = {
   searchText: '',
@@ -6,8 +8,8 @@ const initialState = {
   sortBy: 'vote_average',
   isLoaded: false,
   movies: [],
-  selectedItem: null
-}
+  selectedItem: null,
+};
 
 const moviesReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -15,61 +17,61 @@ const moviesReducer = (state = initialState, action) => {
       return {
         ...state,
         selectedItem: action.selectedItem,
-      }
+      };
 
     case UPDATE_MOVIES:
       return {
         ...state,
         isLoaded: true,
-        movies: action.movies
-      }
+        movies: action.movies,
+      };
 
     case UPDATE_SEARCH_TEXT:
       return {
         ...state,
         searchText: action.searchText,
-      }
+      };
 
     case UPDATE_SEARCH_BY:
       return {
         ...state,
-        searchBy: action.searchBy
-      }
+        searchBy: action.searchBy,
+      };
 
     case LOADING:
       return {
         ...state,
-        isLoaded: false
-      }
+        isLoaded: false,
+      };
 
     case UPDATE_SORT_BY:
       return {
         ...state,
-        sortBy: action.sortBy
-      }
+        sortBy: action.sortBy,
+      };
 
-    // case SORT_MOVIES:
-    //   function compare( a, b ) {
-    //     if ( a[state.sortBy] < b[state.sortBy] ){
-    //       return -1;
-    //     }
-    //     if ( a[state.sortBy] > b[state.sortBy] ){
-    //       return 1;
-    //     }
-    //     return 0;
-    //   }
+      // case SORT_MOVIES:
+      //   function compare( a, b ) {
+      //     if ( a[state.sortBy] < b[state.sortBy] ){
+      //       return -1;
+      //     }
+      //     if ( a[state.sortBy] > b[state.sortBy] ){
+      //       return 1;
+      //     }
+      //     return 0;
+      //   }
 
-    //   let sortedMovies = state.movies.concat([]);
-    //   sortedMovies.sort(compare);
+      //   let sortedMovies = state.movies.concat([]);
+      //   sortedMovies.sort(compare);
 
-    //   return {
-    //     ...state,
-    //     movies: sortedMovies
-    //   }
+      //   return {
+      //     ...state,
+      //     movies: sortedMovies
+      //   }
 
     default:
-      return initialState
+      return initialState;
   }
-}
+};
 
-export default moviesReducer
+export default moviesReducer;

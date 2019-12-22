@@ -1,79 +1,77 @@
-import React, { Component } from "react";
-import { connect } from 'react-redux'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-import DetailsView from "../DetailsView";
-import ItemsContainer from "../Container/ItemsContainer";
+import DetailsView from '../DetailsView';
+import ItemsContainer from '../Container/ItemsContainer';
 
-import Footer from "../Footer";
-import Spinner from "../Common/Spinner";
+import Footer from '../Footer';
+import Spinner from '../Common/Spinner';
 
-import styles from "../../styles/MovieView.css"
+import styles from '../../styles/MovieView.css';
 
-import { updateMovies, loading, updateSelectedItem } from "../../actions/index";
+import { updateMovies, loading, updateSelectedItem } from '../../actions/index';
 
 class MovieView extends Component {
-    constructor(props) {
-        super(props);
+  constructor(props) {
+    super(props);
 
-        this.props.loadingFunc();
-    }
+    this.props.loadingFunc();
+  }
 
-    componentDidMount() {
+  componentDidMount() {
+    const { id } = this.props.match.params;
 
-        var id = this.props.match.params.id;
+    const getMovieUrl = `https://reactjs-cdp.herokuapp.com/movies/${id}`;
 
-        let getMovieUrl = "https://reactjs-cdp.herokuapp.com/movies/" + id;
+    fetch(getMovieUrl)
+      .then((res) => res.json())
+      .then(
+        (result) => {
+          this.props.updateSelectedItemFunc(result);
 
-        fetch(getMovieUrl)
-            .then(res => res.json())
+          const { genres } = this.props.selectedItem;
+
+          if (genres.lenght < 1) {
+            return;
+          }
+
+          const genre = genres[0];
+
+          const url = `https://reactjs-cdp.herokuapp.com/movies?search=${genre}&searchBy=genres&sortBy=vote_average&sortOrder=asc`;
+
+          fetch(url)
+            .then((res) => res.json())
             .then(
-                (result) => {
+              (result) => {
+                // debugger;
+                this.props.updateMoviesFunc(result);
+              },
+              (error) => {
+              },
+            );
+        },
+        (error) => {
+        },
+      );
+  }
 
-                    this.props.updateSelectedItemFunc(result);
-
-                    let genres = this.props.selectedItem.genres;
-
-                    if (genres.lenght < 1) {
-                        return;
-                    }
-
-                    let genre = genres[0]
-
-                    let url = "https://reactjs-cdp.herokuapp.com/movies?search=" + genre + "&searchBy=genres&sortBy=vote_average&sortOrder=asc"
-
-                    fetch(url)
-                        .then(res => res.json())
-                        .then(
-                            (result) => {
-                                //debugger;
-                                this.props.updateMoviesFunc(result);
-                            },
-                            (error) => {
-                            }
-                        )
-                },
-                (error) => {
-                })
-    }
-
-    render() {
-
-        if (this.props.isLoaded === false || this.props.movies == null) {
-            return (
+  render() {
+    if (this.props.isLoaded === false || this.props.movies == null) {
+      return (
                 <div className={styles.body}>
                     <Spinner></Spinner>
-                </div>)
-        }
+                </div>);
+    }
 
-        let genres = this.props.selectedItem.genres;
+    const { genres } = this.props.selectedItem;
 
-        if (genres.lenght < 1) {
-            return;
-        }
+    if (genres.lenght < 1) {
+      return;
+    }
 
-        let genre = genres[0];
+    const genre = genres[0];
 
-        return (
+    return (
             <div className={styles.MovieView}>
                 <DetailsView />
                 <div className={styles.body}>
@@ -87,34 +85,36 @@ class MovieView extends Component {
                     </div>
                 </div>
                 <Footer />
-            </div>)
-    }
+            </div>);
+  }
 }
 
 
 function mapDispatchToProps(dispatch) {
-    return {
-        updateMoviesFunc: (movies) => {
-            dispatch(updateMovies(movies.data))
-        },
-        loadingFunc: () => {
-            dispatch(loading())
-        },
-        updateSelectedItemFunc: (item) => {
-            dispatch(updateSelectedItem(item))
-        }
-    }
+  return {
+    updateMoviesFunc: (movies) => {
+      dispatch(updateMovies(movies.data));
+    },
+    loadingFunc: () => {
+      dispatch(loading());
+    },
+    updateSelectedItemFunc: (item) => {
+      dispatch(updateSelectedItem(item));
+    },
+  };
 }
 
 function mapStateToProps(state) {
-    const { movies, isLoaded, sortBy, selectedItem } = state.moviesReducer;
+  const {
+    movies, isLoaded, sortBy, selectedItem,
+  } = state.moviesReducer;
 
-    return {
-        selectedItem: selectedItem,
-        movies: movies,
-        isLoaded: isLoaded,
-        sortBy: sortBy
-    };
+  return {
+    selectedItem,
+    movies,
+    isLoaded,
+    sortBy,
+  };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(MovieView);

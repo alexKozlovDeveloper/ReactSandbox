@@ -3,15 +3,13 @@ import { shallow, configure } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
 import Adapter from 'enzyme-adapter-react-16';
 
-import DetailsTitle from "./DetailsTitle";
+import DetailsTitle from './DetailsTitle';
 
 configure({ adapter: new Adapter() });
 
 test('DetailsTitle rendering test', () => {
+  const title = 'someTitle';
 
-    var title = "someTitle";
-
-    const component = shallow(<DetailsTitle title={title} />);
-    expect(shallowToJson(component)).toMatchSnapshot();
+  const component = shallow(<DetailsTitle title={title} />);
+  expect(shallowToJson(component)).toMatchSnapshot();
 });
-
