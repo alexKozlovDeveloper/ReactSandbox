@@ -59,9 +59,6 @@ function mapDispatchToProps(dispatch) {
           (result) => {
             dispatch(updateMovies(result.data));
           },
-          (error) => {
-            console.log(error, 'error');
-          },
         );
     },
   };

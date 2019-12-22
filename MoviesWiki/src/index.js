@@ -5,10 +5,10 @@ import { createStore, applyMiddleware } from 'redux';
 import { createLogger } from 'redux-logger';
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-// import { PersistGate } from 'redux-persist/lib/integration/react';
+import { PersistGate } from 'redux-persist/lib/integration/react';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
-import App from './components/App.js';
+import App from './components/App';
 import rootReducer from './reducers';
 
 const persistConfig = {
@@ -24,9 +24,9 @@ const persistor = persistStore(store);
 
 render(
     <Provider store={store}>
-        {/* <PersistGate persistor={persistor}> */}
+        <PersistGate persistor={persistor}>
             <App />
-        {/* </PersistGate> */}
+        </PersistGate>
     </Provider>,
     document.getElementById('root'),
 );

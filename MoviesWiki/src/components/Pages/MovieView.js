@@ -43,14 +43,9 @@ class MovieView extends Component {
             .then((res) => res.json())
             .then(
               (data) => {
-                // debugger;
                 this.props.updateMoviesFunc(data);
               },
-              (error) => {
-              },
             );
-        },
-        (error) => {
         },
       );
   }
@@ -66,7 +61,7 @@ class MovieView extends Component {
     const { genres } = this.props.selectedItem;
 
     if (genres.lenght < 1) {
-      return;
+      return (<div></div>);
     }
 
     const genre = genres[0];

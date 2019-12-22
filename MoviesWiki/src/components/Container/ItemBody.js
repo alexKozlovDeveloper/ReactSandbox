@@ -19,7 +19,7 @@ class ItemBody extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick(e) {
+  handleClick() {
     this.props.updateSelectedItemFunc(this.props.item);
   }
 
