@@ -88,7 +88,7 @@ Search.propTypes = {
   updateSearchTextFunc: PropTypes.func,
   updateSearchByFunc: PropTypes.func,
   updateMoviesBySeachFunc: PropTypes.func,
-  history: PropTypes.array,
+  history: PropTypes.object,
   config: PropTypes.shape({
     buttonText: PropTypes.string,
     placeHolder: PropTypes.string,

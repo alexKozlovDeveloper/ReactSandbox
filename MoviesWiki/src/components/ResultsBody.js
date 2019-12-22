@@ -103,7 +103,7 @@ ResultsBody.propTypes = {
     resultsCountConfig: PropTypes.shape({
       title: PropTypes.string,
     }),
-    itemsPerRow: PropTypes.string,
+    itemsPerRow: PropTypes.number,
   }),
 };
 

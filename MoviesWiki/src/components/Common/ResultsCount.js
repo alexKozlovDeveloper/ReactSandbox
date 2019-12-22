@@ -8,7 +8,7 @@ const ResultsCount = ({ count, title }) => <div className={styles.container}>
     </div>;
 
 ResultsCount.propTypes = {
-  count: PropTypes.string,
+  count: PropTypes.number,
   title: PropTypes.string,
 };
 

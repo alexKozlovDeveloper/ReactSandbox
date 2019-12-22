@@ -50,12 +50,12 @@ function mapDispatchToProps(dispatch) {
 ItemBody.propTypes = {
   updateSelectedItemFunc: PropTypes.func,
   item: PropTypes.shape({
-    id: PropTypes.string,
+    id: PropTypes.number,
     title: PropTypes.string,
     poster_path: PropTypes.string,
     release_date: PropTypes.string,
     genres: PropTypes.array,
-    vote_average: PropTypes.string,
+    vote_average: PropTypes.number,
   }),
 };
 

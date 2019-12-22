@@ -8,7 +8,7 @@ const Rating = ({ rating }) => useMemo(() => <div className={styles.title}>
         </div>);
 
 Rating.propTypes = {
-  rating: PropTypes.string,
+  rating: PropTypes.number,
 };
 
 
